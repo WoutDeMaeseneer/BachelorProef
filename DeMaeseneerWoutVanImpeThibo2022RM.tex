@@ -9,7 +9,7 @@
 
 %---------- Titel & auteur ----------------------------------------------------
 
-\PaperTitle{De ontwikkeling van een applicatie voor het beheren en uitlezen van MiFare- en chip-kaarten.}
+\PaperTitle{De ontwikkeling van een driver/extensie voor het inlezen van MiFare- en chip-kaarten in een web-applicatie.}
 
 \PaperType{Onderzoeksvoorstel Bachelorproef 2022-2023}
 
@@ -23,11 +23,10 @@
 %---------- Abstract ----------------------------------------------------------
 
 \Abstract{
-De paper gaat over onderwijs in de metaverse. Er wordt uitgelegd wat de metaverse is en hoe het de kwaliteit van het onderwijs ten goede kan komen, omdat de metaverse met zijn visuele en interactieve kwaliteiten het 'spelend leren' ondersteunt. Vervolgens wordt de veiligheid binnen de metaverse besproken, deze zal geïmplementeerd worden met behulp van verscheidene protocollen en van organisaties die instaan voor de veiligheid van de gebruiker. De metaverse zou ook in situaties, zoals een pandemie, ter vervanging van normaal onderwijs kunnen dienen. Vervolgens wordt de kost besproken om de metaverse te kunnen betreden. Hierbij komt dan hoofdzakelijk de kost van de VR bril kijken.
-Tenslotte bevat de paper een methodologie gevolgd door de verwachte resultaten op basis van de literatuurstudie.
+In deze bachelorproef zal er onderzocht worden wat de beste manier is om een extensie/driver te maken die vanuit de web-applicatie een MiFare- of chip-kaart kan inlezen m.b.v. een card reader. Vervolgens zal er dan als proof-of-concept een web-applicatie worden gemaakt die m.b.v. die extensie/driver MiFare- en chip-kaarten zal kunnen inlezen vanuit een card reader. Deze applicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw, en bij het scannen van maaltijdcheques.
 }
 
-\Keywords{Andere (Metaverse); onderwijs}
+\Keywords{MiFare-card; chip-card; card reader}
 \newcommand{\keywordname}{Sleutelwoorden}
 
 %---------- Titel, inhoud -----------------------------------------------------
@@ -43,83 +42,29 @@ Tenslotte bevat de paper een methodologie gevolgd door de verwachte resultaten o
 % Hoofdtekst
 %------------------------------------------------------------------------------
 
-\section{Inleiding}
-Geschiedenislessen in het Rooms Coloseum? Of aardrijkskundelessen tussen de Noorse Fjorden? Met de metaverse is het allemaal mogelijk.
+\section{Introductie}
+Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web-app die online draait.
 
-``Na de computer, internet en de mobiele telefoon zijn AR en VR het ‘volgende grote ding’. AR (augmented reality) en VR (virtual reality) sluiten tenslotte dicht aan bij hoe de metaverse eruit zal zien. Net als AR zal je de metaverse beleving ook in de echte wereld kunnen betrekken.'' \autocite{Kamenov2017}
+\section{State-of-the-art}
+\subsection{Wat is een MiFare-kaart}
+Volgens \textcite{Digitalid} zijn MiFare-kaarten contactloze kaarten die vroeger vooral populair waren als transport passen, maar tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data kan op worden bewaard dankzij de technologische mogelijkheiden van de kaart.
+De MiFare-kaarten hebben net als andere contactloze kaarten een antenna en chip die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
 
-``Nu mensen minder tijd samen doorbrengen in persoonlijke ontmoetingen en elke voorbijgaande generatie meer online thuis is dan de vorige, is het logisch dat de nieuwe plaats van samenzijn in cyberspace zou moeten zijn.''\autocite{Phemex}
+\subsection{Voordelen van MiFare-kaart}
+Een MiFare-kaart heeft volgens \textcite{Digitalid} ook enkele voordelen. Het eerst voodeel is een beveiligings encryptie dat moeilijk te clonen is. Ook kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones. En tenslotte is het voordelig dat het al gebruikt kan worden door het dichtbij een reader te houden ipv fysiek in een apparaat te steken.
 
-Maar zou het ook een goed idee zijn om onderwijs te organiseren binnen de metaverse? Welke voor- en nadelen kan dit met zich meebrengen en hoe kan dit het onderwijs naar een hogere kwaliteit tillen? In deze paper gaat besproken worden wat de metaverse is, de veiligheid van de metaverse, of het ter vervanging van online onderwijs kan dienen, de kost en hoe het de kwaliteit van het onderwijs zou kunnen verhogen. Met een advies als resultaat van het onderzoek.
-
-
-\section{Literatuurstudie}
-\subsection{Wat is de metaverse?}
-Volgens \textcite{Phemex} is de 'Metaverse' ontstaan uit de combinatie van de woorden 'meta' en 'verse', deze betekenen samen 'voorbij universum'. Met andere woorden: Voorbij onze wereld. Er zijn al technologieën met een soortgelijk concept als de Metaverse met als voorbeelden virtual reality (VR) en augmented reality (AR) die worden gebruikt in bijvoorbeeld PokemonGo, waar de echte wereld gemengd wordt met een virtuele wereld.
-
-``Een Metaverse zou grenzen, samenlevingen, bedrijven, landen en beschavingen overstijgen. Het kan voor allerlei dingen worden gebruikt, zoals het verkennen van een nieuwe wereld, het spelen van games, professioneel advies inwinnen van een arts of advocaat (die in de Metaverse als hun avatars aanwezig zou zijn), of als uzelf deelnemen aan een zakelijke bijeenkomst of conferentie . In plaats van een videogesprek zou je een digitale kamer binnenlopen als je avatar, gaan zitten, luisteren, bijdragen of presenteren aan andere avatars in de kamer.'' \autocite{Phemex}
-
-``Er zijn 6 ‘regels’ die een metaverse maken zoals het is. Het is continuerend, het stopt nooit en heeft geen grenzen. Het is open, iedereen kan eraan deelnemen. Het heeft een eigen economie, er moet dus een betaalmiddel aanwezig zijn. Het moet zowel de digitale als de fysieke wereld overschrijden. Het moet interoperabel zijn, activa in de vorm van geld, NFT’s (non-fungible tokens) of iets anders moeten kunnen worden verplaatst over de hele metaverse. En tenslote kan iedereen bijdragen leveren om de metaverse te maken, uit te breiden en te ontwikkelen.'' \autocite{Phemex}
-
-``De metaverse kan bestaan zonder cryptocurrencies en blockchain. De echte metaverse is echter intrinsiek verbonden met het blockchain-concept van een open, interoperabel netwerk waar virtuele activa worden uitgewisseld en opgeslagen via een betrouwbaar en verifieerbaar grootboek.'' \autocite{Capra2022}
-
-\subsection{Kwaliteit van onderwijs in de metaverse}
-``Stel je voor dat bij een les geschiedenis leerlingen leren over de Grieken en hun Goden, wanneer ze plots mee worden genomen terug in de tijd. Ze komen terecht in de metaverse van de Griekse cultuur en zien op een heuvel de tempels van de Griekse goden. De leerlingen vragen zich af hoe we weten wat er zich vroeger allemaal afspeelde, waarop de leerkracht hen terug brengt naar het heden en de muren om hen heen laat veranderen in beelden van bruin stof en stukken zuilen. Elke leerling krijgt nu de kans om archeoloog te worden en hun avatar, uitgerust met schop en borstel, te gebruiken om de beelden en zuilen te onderzoeken. Ze ontdekken, ze denken na en ze leren. Merk op dat er sociale interacties tussen mensen bij te pas komen en dat de leerkracht nog steeds een belangrijke rol speelt in deze ervaring. Het is onze taak om ervoor te zorgen dat de betrokkenheid van de metaverse het onderwijs verbetert in plaats van het af te breken en hoe het sociale activiteiten kan behouden.'' \autocite{HirshPasek2022}
-
-``Om onderwijs te kunnen geven in de metaverse zal er een plaats of app moeten ontwikkeld worden waarin onderwijs zal kunnen gegeven worden. Deze plaats zal aan 4 principes moeten voldoen om goed onderwijs te creëren. Het leren moet actief zijn, de app of plaats moet innemend zijn in plaats van afleidend. De app zal een soort connectie met kinderen moeten hebben die hen alles makkelijker doet begrijpen. En tenslotte moet sociale interactie aangemoedigd worden.'' \autocite{HirshPasek2015}
-
-``De principes van actief, betrokken, zinvol, sociaal interactief, iteratief en vreugdevol komen samen in wat we 'spelend leren' noemden, een overkoepelende term gebaseerd op de wetenschap die in grote lijnen omvat hoe kinderen leren door zowel vrij spel als begeleid spel. De sleutel om deze apps echt educatief te maken, vereist echter een extra stap. Leren vindt het beste plaats wanneer de speelse activiteit een goed geformuleerd leerdoel heeft.'' \autocite{HirshPasek2022}
-
-``Het is op dit moment, terwijl de metaverse wordt ontwikkeld, absoluut noodzakelijk dat wetenschappers, opvoeders en ontwikkelaars samen boeiende, meeslepende en samenwerkingsmogelijkheden creëren die goed zijn voor kinderen en gezinnen. Begrijpen hoe leerdoelen te ondersteunen door gebruik te maken van de kracht van actieve, boeiende, zinvolle, sociaal interactieve, iteratieve en vrolijke contexten, zal flitsende en leuke digitale ervaringen transformeren in echt educatieve ervaringen met echte sociale interactie als kern. De ervaring met leren op afstand onderstreept alleen maar hoe belangrijk de sociaal-emotionele interactie is voor kinderen en hoe deze vanaf het begin in de metaverse moet worden ingebouwd.'' \autocite{HirshPasek2022} 
-
-De metaverse kan dus de kwaliteit van het onderwijs naar een hoger niveau brengen, maar het moet wel op een goede manier worden gedaan, met de wetenschap van leren en het welzijn van de leerling in gedachten. 
-
-
-
-\subsection{Metaverse als vervanger voor online onderwijs}
-Zoals eerder vermeld kan de metaverse de kwaliteit van de lessen verhogen maar er ook voor zorgen dat leerlingen beter opletten en de leerstof beter verwerken. Tijdens de coronapandemie is gebleken dat online onderwijs een alternatief kan bieden voor normaal onderwijs. 
-
-``De cijfers die door de NOS zijn vrijgegeven duiden erop dat sinds scholen weer opengaan het aantal besmettingen fors stijgt. Dit komt doordat veel jongeren in één klas moeten zitten en de volledige dag met elkaar moeten omgaan. Dit zorgt ervoor dat onderwijs een risico is voor besmettingen op te lopen.'' \autocite{NIEUWS2021}
-
-Door de pandemie gingen scholen gebruik maken van online lessen.  
-
-``Maar de online lessen waren niet altijd van goede kwaliteit omdat het allemaal snel moest gebeuren, wat voor slechte motivatie en stress zorgt bij zowel de studenten als de leerkrachten. De studenten moesten veel discipline hebben om op te letten en de leerkrachten wisten niet hoe ze hun leerstof precies moesten overbrengen zonder of met weinig sociaal en fysiek contact. Dit zorgde voor slechtere resultaten maar daar kan verandering in komen als de digitalisering verbeterd wordt en meer kwaliteitsvol gemaakt wordt.'' \autocite{Jeugdinstituut2022}
-
-De metaverse kan dus ook als eventuele vervanger van het online onderwijs dienen.
-
-\subsection{Veiligheid binnen de metaverse}
-``Er komen vele gevaren kijken bij het bouwen van een parallel digitaal universum. Het niet in staat zijn om onderscheid te maken tussen wat echt en nep is, wat manipulatie als gevolg kan hebben. Wat zal er gebeuren als degenen met een gevestigd belang de controle over de metaverse overnemen, en vervolgens over het leven van de gebruikers. Dit is een sterk argument tegen privé-eigendom van de metaverse. Dit vormt een probleem omdat de early adopters van de technologie grote bedrijven zoals Facebook zijn, die een invloed gaan proberen hebben op de gebruikers van de metaverse. Positief is echter dat de decentralisatie van blockchain-technologie middelen kan bieden om te voorkomen dat te veel gecentraliseerde macht wordt verzameld door een belanghebbende.'' \autocite{Phemex}
-
-``Virtueel seksueel overschrijdend gedrag vormt ook een gevaar voor de veiligheid van de gebruikers in de metaverse. Om dit te voorkomen, kunnen zoals Meta doet, samenwerkingen worden aangegaan met organisaties die zich inzetten om seksueel overschrijdend gedrag te voorkomen en met universiteiten die er onderzoeken naar kunnen doen. Ze kunnen helpen tot oplossingen te komen. Ook heeft Meta aangekondigd dat een grens van 4 feet rond de avatar een oplossing kan bieden tegen dit gevaar.'' \autocite{CHATTERJEE2022}
-
-Identiteitsfraude en diefstal vormen een groot risico in de metaverse, waardoor de digitale identiteitsbescherming van de gebruiker van vitaal belang is. De metaverse zal veel meer persoonlijke informatie bevatten dan onze Google-accounts. Afgezien van onze creditcard- en bankrekeninggegevens, verzamelde Meta naar verluidt biometrische gegevens, waaronder de bewegingen van de leerlingen en hun lichaamshoudingen, om hun avatars en hypergerichte advertenties te maken. 
-
-``De metaverse is ook een gemakkelijk doelwit voor adverteerders om ruimtes te overweldigen. Vanwege de zintuiglijke overbelasting in de metaverse, kunnen constante video-pop-ups, gesponsorde inhoud en repetitieve advertenties nog meer opdringerig zijn voor gebruikers. Critici verwachten dat de metaverse zal worden gevuld met een spervuur van advertenties.'' \autocite{CHATTERJEE2022}
-
-``Onderzoek heeft uitgewezen dat virtuele aanvallen kunnen veranderen in fysieke aanvallen. Een aanvaller zou de fysieke grenzen van h!ardware kunnen resetten door het VR-platform te manipuleren zoals een gebruiker van een trap kan worden geduwd. Naarmate augmented reality op het toneel verschijnt, kunnen gebruikers mogelijk misleid worden naar gevaarlijke situaties zoals overvallen. Zelfs hypothetische aanvallen kunnen gebruikers misselijk maken door reisziekte.'' \autocite{CHATTERJEE2022}
-
-
-
-\subsection{Kosten van de metaverse}
-Fysiek onderwijs kost geld en dat is ook het geval voor de metaverse. De kosten van onderwijs zullen eerst even besproken worden omdat deze zowel fysiek als in de metaverse sowieso aanwezig zijn. Vervolgens gaan de kosten voor het toetreden tot de metaverse besproken worden. 
-
-Volgens \textcite{Ellen2021} schatte het CEBUD bij de start van het academiejaar in 2020 de kostprijs nog op respectievelijk 13.906 en 9.245 euro. Dit academiejaar wordt het dus 197 euro duurder om een kotstudent een jaar te laten studeren, voor pendelstudenten gaat het om een stijging van 86 euro. Een kotstudent kost nu 14.103 euro, wie pendelt heeft 9.331 euro nodig voor een academiejaar. 
-
-Van waar komt dan de stijging? "De energieprijs ligt in 2021 hoger, omdat de prijzen van energieproducten in 2020 heel laag stonden door de coronacrisis", zegt onderzoeker Ilse Cornelis. "Ook de kosten voor vervoer, in het bijzonder de treinen, zijn licht gestegen."
-
-Om onderwijs in de metaverse te volgen zullen er nog enkele kosten bijkomen om tot de metaverse toe te treden. Hier bovenop komt dan de kost van een VR of AR bril bij kijken.  
-
-\textcite{Meta} zal gebruik maken van de oculus headset, deze kost 350 euro op het moment dat de paper geschreven wordt. 
-
-Zo een bril is niet verplicht om de metaverse te kunnen betreden. Er kan ook een normale monitor gebruikt worden, dit heeft echter het nadeel dat het effect, dat de gebruiker zich echt in de virtuele wereld bevindt, verdwijnt. 
+\subsection{Waarvoor worden MiFare-kaarten gebruikt}
+Door de vele voordelen van een MiFare-kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studenten kaarten, transport tickets, event tickets, bib kaarten, hotel key kaarten en bankkaarten.
 
 \section{Methodologie}
-Gedurende de eerste week van semester 2 starten we met het contacteren van 3 scholen die lesgeven met behulp van video games, in dit geval Minecraft. Dit doen we omdat er op dit moment nog geen scholen zijn die lessen geven in de metaverse. Lesgeven met behulp van video games is zeer vergelijkbaar met het lesgeven in de metaverse, met het grootste verschil dat er geen VR brillen aan te pas komen.
-De drie scholen zijn de Viktor Rydberg school in Stockholm, Orion (een school voor speciaal onderwijs) en De Clingel.
-Vervolgens zullen we gedurende week 2 van semester 2 de scholen ondervragen. Na de ondervraging gaan we het gemiddelde resultaat van de toetsen voor het gebruik van video games bij het lesgeven en het gemiddelde resultaat van de toetsen na het gebruik van video games verzamelen en vergelijken met elkaar. Bij een verschil van de gemiddeldes van 7\% of meer kan er geconcludeerd worden dat dit verschil ook zal plaatsvinden bij het lesgeven in de metaverse aangezien de metaverse een nog groter effect kan hebben omdat de leerling zich dan echt in de metaverse wereld bevindt.
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web-app rechtstreeks een MiFare- of chip-kaart kan inlezen, alsook hoe een MiFare-kaart en card reader werken. In het tweede luik van het ondezoek zal er een prove-of-concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een web-applicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten en maaltijdcheques via de web-applicatie.
 
 \section{Verwachte resultaten}
-Er wordt nog volop gebouwd aan de metaverse maar uit deze literatuurstudie kan er al geconcludeerd worden dat het de potentie heeft om de kwaliteit van het onderwijs naar een hoger niveau te tillen. Onderwijs in de metaverse zal zoals eerder vermeld het ‘spelend leren’ aanmoedigen en leerlingen de kans geven om de leerstof visueel te verkennen. De coronapandemie heeft het idee zeker een duwtje in de rug gegeven door de mogelijkheid van online lessen teweeg te brengen. Om voor de leerlingen een veilige omgeving te voorzien zal de metaverse verscheidene protocollen moeten voorzien. Samenwerken met organisaties die instaan voor de veiligheid van mensen en ook de blockchain zal zijn rol spelen in het decentraal maken van dit virtueel universum. De kosten voor een VR bril zijn echter een nadeel want hoewel het een eenmalige kost is, zal niet iedereen in staat zijn deze te kunnen betalen. Uit al deze tussentitels samen kunnen we concluderen dat de metaverse de mogelijkheid biedt om leerling een unieke ervaring te geven tijdens hun leerproces en het onderwijs in het algemeen positief te beïnvloeden.
+Het verwachte resultaat zal om te beginnen een literatuurstudie bevatten omtrend MiFare-kaarten en hoe een card reader het best rechtstreeks met een web-app in de browser verbinding kan maken.
+Ook zal het resultaat een web-applicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare-kaarten rechtstreeks in kan lezen. Via die web-applicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdscheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques voor de persoon die gelinkt is aan de kaart.
+
+\section{Verwachte conclusies}
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een web-app vanuit de browser rechtstreeks te verbinden met een card reader. De PoC web-app zal aantonen dat dit mogelijk is en dat er MiFare-kaarten ingescand kunnen worden in de browser waarna de web-applicatie gebruik zal maken van data op de kaart om te gebruiken bij het beheren van toegansuren of maaltijdcheques. Hopelijk vloeit uit deze PoC een die klaar is voor de consument die opzoek is naar een systeem voor het inlezen van chip-kaarten in de browser.
 
 \phantomsection
 \printbibliography[heading=bibintoc]

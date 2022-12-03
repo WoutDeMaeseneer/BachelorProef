@@ -2792,37 +2792,13 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliografie.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Kamenov2017</bcf:citekey>
-    <bcf:citekey order="2">Phemex</bcf:citekey>
-    <bcf:citekey order="3">Phemex</bcf:citekey>
-    <bcf:citekey order="4">Phemex</bcf:citekey>
-    <bcf:citekey order="5">Phemex</bcf:citekey>
-    <bcf:citekey order="6">Phemex</bcf:citekey>
-    <bcf:citekey order="7">Capra2022</bcf:citekey>
-    <bcf:citekey order="8">HirshPasek2022</bcf:citekey>
-    <bcf:citekey order="9">HirshPasek2015</bcf:citekey>
-    <bcf:citekey order="10">HirshPasek2022</bcf:citekey>
-    <bcf:citekey order="11">HirshPasek2022</bcf:citekey>
-    <bcf:citekey order="12">NIEUWS2021</bcf:citekey>
-    <bcf:citekey order="13">Jeugdinstituut2022</bcf:citekey>
-    <bcf:citekey order="14">Phemex</bcf:citekey>
-    <bcf:citekey order="15">CHATTERJEE2022</bcf:citekey>
-    <bcf:citekey order="16">CHATTERJEE2022</bcf:citekey>
-    <bcf:citekey order="17">CHATTERJEE2022</bcf:citekey>
-    <bcf:citekey order="18">Ellen2021</bcf:citekey>
-    <bcf:citekey order="19">Ellen2021</bcf:citekey>
-    <bcf:citekey order="20">Meta</bcf:citekey>
-    <bcf:citekey order="21">Meta</bcf:citekey>
-    <bcf:citekey order="22">Kamenov2017</bcf:citekey>
-    <bcf:citekey order="23">Phemex</bcf:citekey>
-    <bcf:citekey order="24">Capra2022</bcf:citekey>
-    <bcf:citekey order="25">HirshPasek2022</bcf:citekey>
-    <bcf:citekey order="26">HirshPasek2015</bcf:citekey>
-    <bcf:citekey order="27">NIEUWS2021</bcf:citekey>
-    <bcf:citekey order="28">Jeugdinstituut2022</bcf:citekey>
-    <bcf:citekey order="29">CHATTERJEE2022</bcf:citekey>
-    <bcf:citekey order="30">Ellen2021</bcf:citekey>
-    <bcf:citekey order="31">Meta</bcf:citekey>
+    <bcf:citekey order="1">Digitalid</bcf:citekey>
+    <bcf:citekey order="2">Digitalid</bcf:citekey>
+    <bcf:citekey order="3">Digitalid</bcf:citekey>
+    <bcf:citekey order="4">Digitalid</bcf:citekey>
+    <bcf:citekey order="5">Digitalid</bcf:citekey>
+    <bcf:citekey order="6">Digitalid</bcf:citekey>
+    <bcf:citekey order="7">Digitalid</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

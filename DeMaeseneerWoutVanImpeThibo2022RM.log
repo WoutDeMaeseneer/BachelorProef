@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  29 NOV 2022 23:23
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  3 DEC 2022 03:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -824,7 +824,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'dutch'.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 35
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 34
 .
 
 (D:\MiKTeX\tex/latex/psnfss\t1ptm.fd
@@ -832,32 +832,32 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (DeMaeseneerWoutVanImpeThibo2022RM.aux)
 \openout1 = `DeMaeseneerWoutVanImpeThibo2022RM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-5.
+4.
 
 (D:\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -893,7 +893,7 @@ LaTeX Font Info:    ... okay on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 34.
 (D:\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -905,9 +905,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count451
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \nameref on input line 34.
 
 (DeMaeseneerWoutVanImpeThibo2022RM.out) (DeMaeseneerWoutVanImpeThibo2022RM.out)
 \@outlinefile=\write4
@@ -917,7 +917,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 35.
+(lastpage)             ! on input line 34.
 Package biblatex Info: Trying to load language 'dutch' -> 'dutch-apa'...
 Package biblatex Info: ... file 'dutch-apa.lbx' found.
 (D:\MiKTeX\tex/latex/biblatex-apa\dutch-apa.lbx
@@ -971,13 +971,13 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'DeMaeseneerWoutVanImpeThibo2022RM.bbl' found.
 
 (DeMaeseneerWoutVanImpeThibo2022RM.bbl)
-Package biblatex Info: Reference section=0 on input line 35.
-Package biblatex Info: Reference segment=0 on input line 35.
-LaTeX Info: Redefining \microtypecontext on input line 35.
-Package microtype Info: Applying patch `item' on input line 35.
-Package microtype Info: Applying patch `toc' on input line 35.
-Package microtype Info: Applying patch `eqnum' on input line 35.
-Package microtype Info: Applying patch `footnote' on input line 35.
+Package biblatex Info: Reference section=0 on input line 34.
+Package biblatex Info: Reference segment=0 on input line 34.
+LaTeX Info: Redefining \microtypecontext on input line 34.
+Package microtype Info: Applying patch `item' on input line 34.
+Package microtype Info: Applying patch `toc' on input line 34.
+Package microtype Info: Applying patch `eqnum' on input line 34.
+Package microtype Info: Applying patch `footnote' on input line 34.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -987,7 +987,7 @@ Package microtype Info: No adjustment of kerning.
 (D:\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 39
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 38
 .
  (D:\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
@@ -997,7 +997,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 39.
+ 38.
  (D:\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -1006,34 +1006,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 39.
+ 38.
 
 (D:\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 39.
+ 38.
 
 (D:\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 39.
+ 38.
 
 (D:\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-9.
+8.
  (D:\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 (D:\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
@@ -1041,84 +1041,31 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 
 (DeMaeseneerWoutVanImpeThibo2022RM.toc)
 \tf@toc=\write5
 \openout5 = `DeMaeseneerWoutVanImpeThibo2022RM.toc'.
 
 
-Missing character: There is no ‘ in font ptmr8t!
-Missing character: There is no ’ in font ptmr8t!
-
-Overfull \hbox (3.0783pt too wide) in paragraph at lines 51--52
-\T1/ptm/m/n/10 van sa-men-zijn in cy-ber-space zou moe-ten zijn.''([]Phemex, []
-[]2021[][]) 
+Overfull \hbox (4.00763pt too wide) in paragraph at lines 50--52
+\T1/ptm/m/n/10 Volgens []Di-gi-ta-lid ([][]2022[][]) zijn MiFare-kaarten con-ta
+ct-loze kaar-
  []
 
-Missing character: There is no ‘ in font ptmr8t!
-Missing character: There is no ’ in font ptmr8t!
-Missing character: There is no ’ in font ptmr8t!
 [1
 
 
 ]
-File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
-<img/HOGENT_Logo_Pos_rgb.png>
- [2]
-Overfull \hbox (1.18839pt too wide) in paragraph at lines 112--113
-[][]\T1/ptm/m/n/10 Meta ([][]g.d.[][]) zal ge-bruik ma-ken van de ocu-lus head-
-set, deze
- []
-
-Missing character: There is no ‘ in font ptmr8t!
-Missing character: There is no ’ in font ptmr8t!
-
-Overfull \hbox (13.4022pt too wide) in paragraph at lines 125--125
-[][]$\T1/ptm/m/n/10 https : / / coinmarketcap . com / alexandria / article / fa
-cebook -[]
- []
-
-Missing character: There is no “ in font ptmri8t!
-Missing character: There is no ” in font ptmri8t!
-
-Overfull \hbox (3.33174pt too wide) in paragraph at lines 125--125
-[][]\T1/ptm/m/n/10 Hirsh-Pasek, K., M. Zosh, J., Mich-nick Go-lin-koff, R., H. 
-Gray,
- []
-
-
-Overfull \hbox (41.79338pt too wide) in paragraph at lines 125--125
-[][]$\T1/ptm/m/n/10 https : / / journals . sagepub . com / doi / 10 . 1177 / 15
-29100615569721$[][] 
- []
-
-File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
-<img/HOGENT_Logo_Pos_rgb.png>
-[3]
-Missing character: There is no — in font ptmri8t!
-
-Overfull \hbox (7.61722pt too wide) in paragraph at lines 125--125
-[][]\T1/ptm/m/n/10 Meta. (g.d.). Ver-kre-gen 15 mei 2022, van [][]$https : / / 
-store . facebook .
- []
-
-
-Overfull \hbox (4.90062pt too wide) in paragraph at lines 125--125
-[][]\T1/ptm/m/n/10 NIEUWS, N. (2021, sep-tem-ber 7). \T1/ptm/m/it/10 Co-rona-ci
-j-fers sta-biel, maar
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 [][][]\T1/ptm/m/n/8 Github-repository: https://github.com/HoGentTIN/rm-2122-pap
 er-
  []
@@ -1127,24 +1074,31 @@ er-
 AED: lastpage setting LastPage
 File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <img/HOGENT_Logo_Pos_rgb.png>
-[4
+[2
 
 ] (DeMaeseneerWoutVanImpeThibo2022RM.aux)
-Package rerunfilecheck Info: File `DeMaeseneerWoutVanImpeThibo2022RM.out' has n
-ot changed.
-(rerunfilecheck)             Checksum: 67D8B87BE2367E43DC8BA296EA2A6D33;1687.
+
+Package rerunfilecheck Warning: File `DeMaeseneerWoutVanImpeThibo2022RM.out' ha
+s changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `DeMaeseneerWoutVanImpeThibo2022RM.o
+ut':
+(rerunfilecheck)             Before: 97769801166C81B1AF3637B27BC1ED30;1365
+(rerunfilecheck)             After:  9F087D7683A5E9D31DF4AF1E8F54B7D6;1350.
 Package logreq Info: Writing requests to 'DeMaeseneerWoutVanImpeThibo2022RM.run
 .xml'.
 \openout1 = `DeMaeseneerWoutVanImpeThibo2022RM.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24850 strings out of 410967
- 431345 string characters out of 2830858
- 1403771 words of memory out of 3000000
- 45289 multiletter control sequences out of 15000+600000
+ 24762 strings out of 410967
+ 428923 string characters out of 2830858
+ 1399727 words of memory out of 3000000
+ 45210 multiletter control sequences out of 15000+600000
  527678 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,12n,82p,1170b,5385s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 75i,11n,82p,1032b,5013s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on DeMaeseneerWoutVanImpeThibo2022RM.pdf (4 pages).
+Output written on DeMaeseneerWoutVanImpeThibo2022RM.pdf (2 pages).
