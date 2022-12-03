@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bcf</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bbl</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -71,19 +71,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>DeMaeseneerWoutVanImpeThibo2022RM</infile>
+      <infile>DeMaeseneerWout_BP_Voorstel_2022-2023</infile>
     </cmdline>
     <input>
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bcf</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bcf</file>
     </input>
     <output>
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bbl</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bbl</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>DeMaeseneerWoutVanImpeThibo2022RM.bcf</file>
+      <file>DeMaeseneerWout_BP_Voorstel_2022-2023.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliografie.bib</file>

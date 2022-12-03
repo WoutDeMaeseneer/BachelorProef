@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  3 DEC 2022 03:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  3 DEC 2022 03:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**./DeMaeseneerWoutVanImpeThibo2022RM.tex
-(DeMaeseneerWoutVanImpeThibo2022RM.tex
+**./DeMaeseneerWout_BP_Voorstel_2022-2023.tex
+(DeMaeseneerWout_BP_Voorstel_2022-2023.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (hogent-article.cls
 Document Class: hogent-article 2019/01/10 Artikel voor gebruik in de opleiding 
@@ -829,8 +829,9 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 34
 
 (D:\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-) (DeMaeseneerWoutVanImpeThibo2022RM.aux)
-\openout1 = `DeMaeseneerWoutVanImpeThibo2022RM.aux'.
+)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.aux)
+\openout1 = `DeMaeseneerWout_BP_Voorstel_2022-2023.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
@@ -843,8 +844,7 @@ LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
 4.
-
-(D:\MiKTeX\tex/latex/base\ts1cmr.fd
+ (D:\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 34.
@@ -909,9 +909,10 @@ LaTeX Info: Redefining \ref on input line 34.
 LaTeX Info: Redefining \pageref on input line 34.
 LaTeX Info: Redefining \nameref on input line 34.
 
-(DeMaeseneerWoutVanImpeThibo2022RM.out) (DeMaeseneerWoutVanImpeThibo2022RM.out)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.out)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.out)
 \@outlinefile=\write4
-\openout4 = `DeMaeseneerWoutVanImpeThibo2022RM.out'.
+\openout4 = `DeMaeseneerWout_BP_Voorstel_2022-2023.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -920,6 +921,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 34.
 Package biblatex Info: Trying to load language 'dutch' -> 'dutch-apa'...
 Package biblatex Info: ... file 'dutch-apa.lbx' found.
+
 (D:\MiKTeX\tex/latex/biblatex-apa\dutch-apa.lbx
 File: dutch-apa.lbx 2021/12/24 v9.15 APA biblatex localisation
 Package biblatex Info: Trying to load language 'dutch'...
@@ -965,12 +967,13 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `DeMaeseneerWoutVanImpeThibo2022RM.bcf'.
+\openout3 = `DeMaeseneerWout_BP_Voorstel_2022-2023.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'DeMaeseneerWoutVanImpeThibo2022RM.bbl' found.
+Package biblatex Info: ... file 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' fou
+nd.
 
-(DeMaeseneerWoutVanImpeThibo2022RM.bbl)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.bbl)
 Package biblatex Info: Reference section=0 on input line 34.
 Package biblatex Info: Reference segment=0 on input line 34.
 LaTeX Info: Redefining \microtypecontext on input line 34.
@@ -1051,9 +1054,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
 
-(DeMaeseneerWoutVanImpeThibo2022RM.toc)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.toc)
 \tf@toc=\write5
-\openout5 = `DeMaeseneerWoutVanImpeThibo2022RM.toc'.
+\openout5 = `DeMaeseneerWout_BP_Voorstel_2022-2023.toc'.
 
 
 Overfull \hbox (4.00763pt too wide) in paragraph at lines 50--52
@@ -1076,29 +1079,22 @@ File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <img/HOGENT_Logo_Pos_rgb.png>
 [2
 
-] (DeMaeseneerWoutVanImpeThibo2022RM.aux)
-
-Package rerunfilecheck Warning: File `DeMaeseneerWoutVanImpeThibo2022RM.out' ha
-s changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `DeMaeseneerWoutVanImpeThibo2022RM.o
-ut':
-(rerunfilecheck)             Before: 97769801166C81B1AF3637B27BC1ED30;1365
-(rerunfilecheck)             After:  9F087D7683A5E9D31DF4AF1E8F54B7D6;1350.
-Package logreq Info: Writing requests to 'DeMaeseneerWoutVanImpeThibo2022RM.run
-.xml'.
-\openout1 = `DeMaeseneerWoutVanImpeThibo2022RM.run.xml'.
+] (DeMaeseneerWout_BP_Voorstel_2022-2023.aux)
+Package rerunfilecheck Info: File `DeMaeseneerWout_BP_Voorstel_2022-2023.out' h
+as not changed.
+(rerunfilecheck)             Checksum: 9F087D7683A5E9D31DF4AF1E8F54B7D6;1350.
+Package logreq Info: Writing requests to 'DeMaeseneerWout_BP_Voorstel_2022-2023
+.run.xml'.
+\openout1 = `DeMaeseneerWout_BP_Voorstel_2022-2023.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  24762 strings out of 410967
- 428923 string characters out of 2830858
- 1399727 words of memory out of 3000000
+ 429035 string characters out of 2830858
+ 1399736 words of memory out of 3000000
  45210 multiletter control sequences out of 15000+600000
  527678 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,11n,82p,1032b,5013s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 75i,11n,82p,1036b,5013s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on DeMaeseneerWoutVanImpeThibo2022RM.pdf (2 pages).
+Output written on DeMaeseneerWout_BP_Voorstel_2022-2023.pdf (2 pages).

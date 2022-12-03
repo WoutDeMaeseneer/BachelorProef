@@ -1,0 +1,72 @@
+\documentclass{hogent-article}
+\usepackage{lipsum} % Voor vultekst
+\usepackage{biblatex}
+\addbibresource{bibliografie.bib}
+
+%------------------------------------------------------------------------------
+% Metadata over het artikel
+%------------------------------------------------------------------------------
+
+%---------- Titel & auteur ----------------------------------------------------
+
+\PaperTitle{De ontwikkeling van een driver/extensie voor het inlezen van MiFare- en chip-kaarten in een web-applicatie.}
+
+\PaperType{Onderzoeksvoorstel Bachelorproef 2022-2023}
+
+\Authors{Wout De Maeseneer\textsuperscript{1}} % Authors
+
+\CoPromotor{Kevin Lommens}
+
+\affiliation{
+  \textsuperscript{1} \href{mailto:wout.demaeseneer@student.hogent.be}{mailto:wout.demaeseneer@student.hogent.be}}
+
+%---------- Abstract ----------------------------------------------------------
+
+\Abstract{
+In deze bachelorproef zal er onderzocht worden wat de beste manier is om een extensie/driver te maken die vanuit de web-applicatie een MiFare- of chip-kaart kan inlezen m.b.v. een card reader. Vervolgens zal er dan als proof-of-concept een web-applicatie worden gemaakt die m.b.v. die extensie/driver MiFare- en chip-kaarten zal kunnen inlezen vanuit een card reader. Deze applicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw, en bij het scannen van maaltijdcheques.
+}
+
+\Keywords{MiFare-card; chip-card; card reader}
+\newcommand{\keywordname}{Sleutelwoorden}
+
+%---------- Titel, inhoud -----------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+\maketitle % Print the title and abstract box
+\tableofcontents % Print the contents section
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%------------------------------------------------------------------------------
+% Hoofdtekst
+%------------------------------------------------------------------------------
+
+\section{Introductie}
+Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web-app die online draait.
+
+\section{State-of-the-art}
+\subsection{Wat is een MiFare-kaart}
+Volgens \textcite{Digitalid} zijn MiFare-kaarten contactloze kaarten die vroeger vooral populair waren als transport passen, maar tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data kan op worden bewaard dankzij de technologische mogelijkheiden van de kaart.
+De MiFare-kaarten hebben net als andere contactloze kaarten een antenna en chip die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
+
+\subsection{Voordelen van MiFare-kaart}
+Een MiFare-kaart heeft volgens \textcite{Digitalid} ook enkele voordelen. Het eerst voodeel is een beveiligings encryptie dat moeilijk te clonen is. Ook kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones. En tenslotte is het voordelig dat het al gebruikt kan worden door het dichtbij een reader te houden ipv fysiek in een apparaat te steken.
+
+\subsection{Waarvoor worden MiFare-kaarten gebruikt}
+Door de vele voordelen van een MiFare-kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studenten kaarten, transport tickets, event tickets, bib kaarten, hotel key kaarten en bankkaarten.
+
+\section{Methodologie}
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web-app rechtstreeks een MiFare- of chip-kaart kan inlezen, alsook hoe een MiFare-kaart en card reader werken. In het tweede luik van het ondezoek zal er een prove-of-concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een web-applicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten en maaltijdcheques via de web-applicatie.
+
+\section{Verwachte resultaten}
+Het verwachte resultaat zal om te beginnen een literatuurstudie bevatten omtrend MiFare-kaarten en hoe een card reader het best rechtstreeks met een web-app in de browser verbinding kan maken.
+Ook zal het resultaat een web-applicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare-kaarten rechtstreeks in kan lezen. Via die web-applicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdscheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques voor de persoon die gelinkt is aan de kaart.
+
+\section{Verwachte conclusies}
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een web-app vanuit de browser rechtstreeks te verbinden met een card reader. De PoC web-app zal aantonen dat dit mogelijk is en dat er MiFare-kaarten ingescand kunnen worden in de browser waarna de web-applicatie gebruik zal maken van data op de kaart om te gebruiken bij het beheren van toegansuren of maaltijdcheques. Hopelijk vloeit uit deze PoC een die klaar is voor de consument die opzoek is naar een systeem voor het inlezen van chip-kaarten in de browser.
+
+\phantomsection
+\printbibliography[heading=bibintoc]
+\footnote{Github-repository: https://github.com/HoGentTIN/rm-2122-paper-rmdemaeseneervanimpe}
+\end{document}
