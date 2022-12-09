@@ -2792,13 +2792,17 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliografie.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Digitalid</bcf:citekey>
-    <bcf:citekey order="2">Digitalid</bcf:citekey>
-    <bcf:citekey order="3">Digitalid</bcf:citekey>
-    <bcf:citekey order="4">Digitalid</bcf:citekey>
+    <bcf:citekey order="1">Seniorweb</bcf:citekey>
+    <bcf:citekey order="3">Webopedia</bcf:citekey>
     <bcf:citekey order="5">Digitalid</bcf:citekey>
     <bcf:citekey order="6">Digitalid</bcf:citekey>
     <bcf:citekey order="7">Digitalid</bcf:citekey>
+    <bcf:citekey order="8">Digitalid</bcf:citekey>
+    <bcf:citekey order="9">Digitalid</bcf:citekey>
+    <bcf:citekey order="10">Digitalid</bcf:citekey>
+    <bcf:citekey order="11">Seniorweb</bcf:citekey>
+    <bcf:citekey order="12">Webopedia</bcf:citekey>
+    <bcf:citekey order="13">Digitalid</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

@@ -23,7 +23,7 @@
 %---------- Abstract ----------------------------------------------------------
 
 \Abstract{
-In deze bachelorproef zal er onderzocht worden wat de beste manier is om een extensie/driver te maken die een card reader rechtstreeks kan verbinden met een web-applicatie in de browser. Vervolgens zal er dan als Proof of Concept een web-applicatie worden gemaakt die m.b.v. die extensie/driver MiFare- of chipkaart direct zal kunnen inlezen in de web-app met een card reader. Deze applicatie zal gemaakt worden met Angular voor de front-end en C\# voor de back-end. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw, en bij het scannen van maaltijdcheques.
+In deze bachelorproef zal er onderzocht worden wat de beste manier is om een extensie/driver te maken die een card reader rechtstreeks kan verbinden met een webapplicatie in de browser. Vervolgens zal er dan als Proof of Concept een webapplicatie worden gemaakt die m.b.v. die extensie/driver MiFare- of chipkaart direct zal kunnen inlezen in de web app met een card reader. Deze applicatie zal gemaakt worden met Angular voor de front-end en C\# voor de back-end. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw, en bij het scannen van maaltijdcheques.
 }
 
 \Keywords{MiFare-card; chip-card; card reader}
@@ -43,28 +43,35 @@ In deze bachelorproef zal er onderzocht worden wat de beste manier is om een ext
 %------------------------------------------------------------------------------
 
 \section{Introductie}
-Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web-app die online draait. Zo kunnen bijvoorbeeld toeganspassen worden ingelezen, dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
+Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web app die online draait. Zo kunnen bijvoorbeeld toeganspassen worden ingelezen, dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
 
 \section{State-of-the-art}
-\subsection{Wat is een MiFare-kaart}
-Volgens \textcite{Digitalid} zijn MiFare-kaarten contactloze kaarten die vroeger vooral populair waren als transport passen, maar tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data kan op worden bewaard dankzij de technologische mogelijkheiden van de kaart.
-De MiFare-kaarten hebben net als andere contactloze kaarten een antenna en chip die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
 
-\subsection{Voordelen van MiFare-kaart}
-Een MiFare-kaart heeft volgens \textcite{Digitalid} ook enkele voordelen. Het eerst voodeel is een beveiligings encryptie dat moeilijk te clonen is. Ook kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones. En tenslotte is het voordelig dat het al gebruikt kan worden door het dichtbij een reader te houden ipv fysiek in een apparaat te steken.
+\subsection{Wat is een extensie}
+Op \textcite{Seniorweb} is te lezen dat een extensie, ook wel plug-in of add-on genoemd, een uitbreiding is voor de browser. Het geeft de gebruiker toegang tot extra functionaliteiten. Een extensie kan bijvoorbeeld worden gebruikt om advertenties te blokkeren of om video's te downloaden van het internet.
 
-\subsection{Waarvoor worden MiFare-kaarten gebruikt}
-Door de vele voordelen van een MiFare-kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studenten kaarten, transport tickets, event tickets, bib kaarten, hotel key kaarten en bankkaarten.
+\subsection{Wat is een driver}
+Volgens \textcite{Webopedia} zorgen drivers voor de verbinding tussen een operating system en een hardware device of software applicatie. Zonder de drivers zou de hardware en software niet (goed) werken. Drivers vertellen aan de hardware of applicatie hoe ze moeten functioneren, dit gebeurt aan de hand van requests. Enkele apparaten die gebruik maken van driver zijn: Printers, Controllers, Modems en \textbf{Card readers}.
+
+\subsection{Wat is een MiFare kaart}
+Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger vooral populair waren als transport passen, maar tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data kan op worden bewaard dankzij de technologische mogelijkheden van de kaart.
+De MiFare kaarten hebben net als andere contactloze kaarten een chip die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
+
+\subsection{Voordelen van MiFare kaart}
+Een MiFare kaart heeft volgens \textcite{Digitalid} ook enkele voordelen. Het eerste voodeel is een beveiligingsencryptie dat moeilijk te clonen is. Ook kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones. En tenslotte is het voordelig dat het al gebruikt kan worden door het dicht bij een card reader te houden i.p.v. fysiek in een apparaat te steken.
+
+\subsection{Waarvoor worden MiFare kaarten gebruikt}
+Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studentenkaarten, transport tickets, event tickets, bib kaarten, hotelsleutelkaarten en bankkaarten.
 
 \section{Methodologie}
-In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web-app rechtstreeks een MiFare- of chip-kaart kan inlezen, alsook hoe een MiFare-kaart en card reader werken. In het tweede luik van het ondezoek zal er een prove-of-concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een web-applicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten en maaltijdcheques via de web-applicatie.
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web app rechtstreeks een MiFare- of chip-kaart kan inlezen, alsook hoe een MiFare kaart en card reader werken. In het tweede luik van het ondezoek zal er een Prove of Concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten en maaltijdcheques via de webapplicatie.
 
 \section{Verwachte resultaten}
-Het verwachte resultaat zal om te beginnen een literatuurstudie bevatten omtrend MiFare-kaarten en hoe een card reader het best rechtstreeks met een web-app in de browser verbinding kan maken.
-Ook zal het resultaat een web-applicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare-kaarten rechtstreeks in kan lezen. Via die web-applicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdscheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques voor de persoon die gelinkt is aan de kaart.
+Het verwachte resultaat zal om te beginnen een literatuurstudie bevatten omtrent MiFare kaarten en hoe een card reader het best rechtstreeks met een web app in de browser verbinding kan maken.
+Ook zal het resultaat een webapplicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare kaarten rechtstreeks in kan lezen. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
 
 \section{Verwachte conclusies}
-Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een web-app vanuit de browser rechtstreeks te verbinden met een card reader. De PoC web-app zal aantonen dat dit mogelijk is en dat er MiFare-kaarten ingescand kunnen worden in de browser waarna de web-applicatie gebruik zal maken van data op de kaart om te gebruiken bij het beheren van toegansuren of maaltijdcheques. Hopelijk vloeit uit deze PoC een die klaar is voor de consument die opzoek is naar een systeem voor het inlezen van chip-kaarten in de browser.
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De PoC zal aantonen dat dit mogelijk is en dat er dus MiFare kaarten ingescand kunnen worden in de web app waardoor die gebruik zal kunnen maken van data op de kaart om toegangskaarten of maaltijdcheques te kunnen beheren. Hopelijk vloeit uit dit onderzoek een PoC die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
 
 \phantomsection
 \printbibliography[heading=bibintoc]
