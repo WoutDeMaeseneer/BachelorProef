@@ -1,18 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'DeMaeseneerWout_BP_Voorstel_2022-2023.blg'
-[156] biber-MSWIN64:340> INFO - === 
-[201] Biber.pm:418> INFO - Reading 'DeMaeseneerWout_BP_Voorstel_2022-2023.bcf'
-[355] Biber.pm:972> INFO - Found 1 citekeys in bib section 0
-[374] Biber.pm:4383> INFO - Processing section 0
-[390] Biber.pm:4574> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
-[439] bibtex.pm:1713> INFO - LaTeX decoding ...
-[448] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
-[492] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[492] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[492] Biber.pm:4203> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
-[492] Biber.pm:4209> INFO - No sort tailoring available for locale 'nl-NL'
-[501] bbl.pm:654> INFO - Writing 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' with encoding 'UTF-8'
-[501] bbl.pm:757> INFO - Output to DeMaeseneerWout_BP_Voorstel_2022-2023.bbl
-[502] Biber.pm:130> WARN - Duplicate entry key: 'Digitalid' in file 'bibliografie.bib', skipping ...
-[502] Biber.pm:130> WARN - Duplicate entry key: 'Digitalid' in file 'bibliografie.bib', skipping ...
-[502] Biber.pm:132> INFO - WARNINGS: 2
+[123] biber-MSWIN64:340> INFO - === 
+[164] Biber.pm:418> INFO - Reading 'DeMaeseneerWout_BP_Voorstel_2022-2023.bcf'
+[316] Biber.pm:972> INFO - Found 3 citekeys in bib section 0
+[335] Biber.pm:4383> INFO - Processing section 0
+[349] Biber.pm:4574> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
+[397] bibtex.pm:1713> INFO - LaTeX decoding ...
+[406] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
+[455] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[455] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[455] Biber.pm:4203> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
+[455] Biber.pm:4209> INFO - No sort tailoring available for locale 'nl-NL'
+[464] bbl.pm:654> INFO - Writing 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' with encoding 'UTF-8'
+[466] bbl.pm:757> INFO - Output to DeMaeseneerWout_BP_Voorstel_2022-2023.bbl

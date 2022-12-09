@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  9 DEC 2022 14:15
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  9 DEC 2022 14:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1065,12 +1065,6 @@ ie
  []
 
 
-LaTeX Warning: Citation 'Seniorweb' on page 1 undefined on input line 51.
-
-
-LaTeX Warning: Citation 'Webopedia' on page 1 undefined on input line 54.
-
-
 Overfull \hbox (2.5777pt too wide) in paragraph at lines 57--59
 \T1/ptm/m/n/10 Volgens []Di-gi-ta-lid ([][]2022[][]) zijn Mi-Fare kaar-ten con-
 tact-loze kaar-
@@ -1092,6 +1086,18 @@ Overfull \hbox (0.1774pt too wide) in paragraph at lines 64--65
  []
 
 
+Overfull \hbox (1.88245pt too wide) in paragraph at lines 77--77
+\T1/ptm/m/n/10 seniorweb . nl / artikel / extensies -[] vinden -[] en -[] insta
+lleren$[][] 
+ []
+
+
+Overfull \hbox (10.30502pt too wide) in paragraph at lines 77--77
+\T1/ptm/m/n/10 ber 2022, van [][]$https : / / www . webopedia . com / de^^\niti
+ons /
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 78--78
 [][][]\T1/ptm/m/n/8 Github-repository: https://github.com/HoGentTIN/rm-2122-pap
 er-
@@ -1101,32 +1107,22 @@ er-
 AED: lastpage setting LastPage
 File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 <img/HOGENT_Logo_Pos_rgb.png>
-[2
-
-] (DeMaeseneerWout_BP_Voorstel_2022-2023.aux)
-
-LaTeX Warning: There were undefined references.
-
+[2] (DeMaeseneerWout_BP_Voorstel_2022-2023.aux)
 Package rerunfilecheck Info: File `DeMaeseneerWout_BP_Voorstel_2022-2023.out' h
 as not changed.
 (rerunfilecheck)             Checksum: 9896536D3C8812436B73825DE1D9DCCC;1673.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                DeMaeseneerWout_BP_Voorstel_2022-2023
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'DeMaeseneerWout_BP_Voorstel_2022-2023
 .run.xml'.
 \openout1 = `DeMaeseneerWout_BP_Voorstel_2022-2023.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24764 strings out of 410967
- 429070 string characters out of 2830858
- 1401128 words of memory out of 3000000
- 45212 multiletter control sequences out of 15000+600000
+ 24780 strings out of 410967
+ 429540 string characters out of 2830858
+ 1401198 words of memory out of 3000000
+ 45226 multiletter control sequences out of 15000+600000
  529374 words of font info for 114 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,11n,82p,1036b,5013s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 75i,11n,82p,1036b,5015s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 Output written on DeMaeseneerWout_BP_Voorstel_2022-2023.pdf (2 pages).
