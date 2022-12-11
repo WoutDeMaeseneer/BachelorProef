@@ -19,6 +19,44 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
+    \entry{Webopedia}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1ccb9ca8df0a0c6c8b3be84b0293ace4}{%
+           family={Beal},
+           familyi={B\bibinitperiod},
+           given={Vangie},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \strng{fullhash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \strng{bibnamehash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \strng{authorbibnamehash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \strng{authornamehash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \strng{authorfullhash}{1ccb9ca8df0a0c6c8b3be84b0293ace4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{8}
+      \field{title}{Driver}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.webopedia.com/definitions/driver/
+      \endverb
+      \verb{url}
+      \verb https://www.webopedia.com/definitions/driver/
+      \endverb
+    \endentry
     \entry{Digitalid}{online}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=49879e0920177537a371ac5df2ad1a61}{%
@@ -54,6 +92,37 @@
       \verb https://www.digitalid.co.uk/blog/introduction-mifare-cards/
       \endverb
     \endentry
+    \entry{Printplast}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a71fd97285b3c250876cd9e65ed5b9c5}{%
+           family={Printplast},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \strng{fullhash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \strng{bibnamehash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \strng{authorbibnamehash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \strng{authornamehash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \strng{authorfullhash}{a71fd97285b3c250876cd9e65ed5b9c5}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is a MIFARE Card?}
+      \field{urlday}{11}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.printplast.com/what-is-a-mifare-card/
+      \endverb
+      \verb{url}
+      \verb https://www.printplast.com/what-is-a-mifare-card/
+      \endverb
+      \warn{\item Entry 'Printplast' (bibliografie.bib): Invalid format '*no date found*' of date field 'date' - ignoring}
+    \endentry
     \entry{Seniorweb}{online}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=260b81f3681c2b8736f46453ec9dae83}{%
@@ -87,41 +156,6 @@
       \endverb
       \verb{url}
       \verb https://www.seniorweb.nl/artikel/extensies-vinden-en-installeren
-      \endverb
-    \endentry
-    \entry{Webopedia}{online}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=ba0f08319631b0d391c172e43ba41ace}{%
-           family={Webopedia},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{ba0f08319631b0d391c172e43ba41ace}
-      \strng{fullhash}{ba0f08319631b0d391c172e43ba41ace}
-      \strng{bibnamehash}{ba0f08319631b0d391c172e43ba41ace}
-      \strng{authorbibnamehash}{ba0f08319631b0d391c172e43ba41ace}
-      \strng{authornamehash}{ba0f08319631b0d391c172e43ba41ace}
-      \strng{authorfullhash}{ba0f08319631b0d391c172e43ba41ace}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{1}
-      \field{month}{8}
-      \field{title}{Driver}
-      \field{urlday}{9}
-      \field{urlmonth}{12}
-      \field{urlyear}{2022}
-      \field{year}{2022}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.webopedia.com/definitions/driver/
-      \endverb
-      \verb{url}
-      \verb https://www.webopedia.com/definitions/driver/
       \endverb
     \endentry
   \enddatalist

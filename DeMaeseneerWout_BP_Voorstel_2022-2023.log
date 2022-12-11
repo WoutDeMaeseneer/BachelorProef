@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  9 DEC 2022 14:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  11 DEC 2022 22:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -973,7 +973,14 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' fou
 nd.
 
-(DeMaeseneerWout_BP_Voorstel_2022-2023.bbl)
+(DeMaeseneerWout_BP_Voorstel_2022-2023.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'Printplast':
+(biblatex)                - Entry 'Printplast' (bibliografie.bib): Invalid form
+at '*no date found*' of date field 'date' - ignoring.
+
+)
 Package biblatex Info: Reference section=0 on input line 34.
 Package biblatex Info: Reference segment=0 on input line 34.
 LaTeX Info: Redefining \microtypecontext on input line 34.
@@ -986,13 +993,13 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
-
-(D:\MiKTeX\tex/latex/microtype\mt-ptm.cfg
+ (D:\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 38
 .
- (D:\MiKTeX\tex/latex/psnfss\t1phv.fd
+
+(D:\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1074,31 +1081,25 @@ tact-loze kaar-
 
 
 ]
-Overfull \hbox (0.43762pt too wide) in paragraph at lines 64--65
+Overfull \hbox (0.43762pt too wide) in paragraph at lines 65--66
 \T1/ptm/m/n/10 zijn en-kele voor-beel-den: Cam-pus/studentenkaarten, trans-port
 
  []
 
 
-Overfull \hbox (0.1774pt too wide) in paragraph at lines 64--65
+Overfull \hbox (0.1774pt too wide) in paragraph at lines 65--66
 \T1/ptm/m/n/10 tic-kets, event tic-kets, bib kaar-ten, ho-tel-sleu-tel-kaar-ten
  en bank-
  []
 
 
-Overfull \hbox (1.88245pt too wide) in paragraph at lines 77--77
+Overfull \hbox (1.88245pt too wide) in paragraph at lines 78--78
 \T1/ptm/m/n/10 seniorweb . nl / artikel / extensies -[] vinden -[] en -[] insta
 lleren$[][] 
  []
 
 
-Overfull \hbox (10.30502pt too wide) in paragraph at lines 77--77
-\T1/ptm/m/n/10 ber 2022, van [][]$https : / / www . webopedia . com / de^^\niti
-ons /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
 [][][]\T1/ptm/m/n/8 Github-repository: https://github.com/HoGentTIN/rm-2122-pap
 er-
  []
@@ -1117,10 +1118,10 @@ Package logreq Info: Writing requests to 'DeMaeseneerWout_BP_Voorstel_2022-2023
 
  ) 
 Here is how much of TeX's memory you used:
- 24780 strings out of 410967
- 429540 string characters out of 2830858
- 1401198 words of memory out of 3000000
- 45226 multiletter control sequences out of 15000+600000
+ 24788 strings out of 410967
+ 429785 string characters out of 2830858
+ 1401251 words of memory out of 3000000
+ 45233 multiletter control sequences out of 15000+600000
  529374 words of font info for 114 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,11n,82p,1036b,5015s stack positions out of 10000i,1000n,20000p,200000b,80000s
