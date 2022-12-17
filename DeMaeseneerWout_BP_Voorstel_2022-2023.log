@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  11 DEC 2022 22:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  14 DEC 2022 19:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1093,13 +1093,13 @@ Overfull \hbox (0.1774pt too wide) in paragraph at lines 65--66
  []
 
 
-Overfull \hbox (1.88245pt too wide) in paragraph at lines 78--78
+Overfull \hbox (1.88245pt too wide) in paragraph at lines 77--77
 \T1/ptm/m/n/10 seniorweb . nl / artikel / extensies -[] vinden -[] en -[] insta
 lleren$[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 [][][]\T1/ptm/m/n/8 Github-repository: https://github.com/HoGentTIN/rm-2122-pap
 er-
  []
@@ -1126,4 +1126,5 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  75i,11n,82p,1036b,5015s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on DeMaeseneerWout_BP_Voorstel_2022-2023.pdf (2 pages).
+Error 1 (driver return code) generating output;
+file DeMaeseneerWout_BP_Voorstel_2022-2023.pdf may not be valid.
