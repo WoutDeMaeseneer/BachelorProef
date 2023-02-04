@@ -2792,8 +2792,8 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliografie.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Seniorweb</bcf:citekey>
-    <bcf:citekey order="2">Seniorweb</bcf:citekey>
+    <bcf:citekey order="1">Desktop.com</bcf:citekey>
+    <bcf:citekey order="2">Desktop.com</bcf:citekey>
     <bcf:citekey order="3">Webopedia</bcf:citekey>
     <bcf:citekey order="4">Webopedia</bcf:citekey>
     <bcf:citekey order="5">Digitalid</bcf:citekey>
@@ -2802,7 +2802,7 @@
     <bcf:citekey order="8">Printplast</bcf:citekey>
     <bcf:citekey order="9">Digitalid</bcf:citekey>
     <bcf:citekey order="10">Digitalid</bcf:citekey>
-    <bcf:citekey order="11">Seniorweb</bcf:citekey>
+    <bcf:citekey order="11">Desktop.com</bcf:citekey>
     <bcf:citekey order="12">Webopedia</bcf:citekey>
     <bcf:citekey order="13">Digitalid</bcf:citekey>
     <bcf:citekey order="14">Printplast</bcf:citekey>

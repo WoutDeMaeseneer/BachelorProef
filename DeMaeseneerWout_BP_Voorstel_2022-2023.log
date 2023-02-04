@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  14 DEC 2022 19:02
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 22.1) (preloaded format=xelatex 2022.5.10)  4 FEB 2023 22:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1072,7 +1072,7 @@ ie
  []
 
 
-Overfull \hbox (2.5777pt too wide) in paragraph at lines 57--59
+Overfull \hbox (2.5777pt too wide) in paragraph at lines 58--60
 \T1/ptm/m/n/10 Volgens []Di-gi-ta-lid ([][]2022[][]) zijn Mi-Fare kaar-ten con-
 tact-loze kaar-
  []
@@ -1081,27 +1081,15 @@ tact-loze kaar-
 
 
 ]
-Overfull \hbox (0.43762pt too wide) in paragraph at lines 65--66
+Overfull \hbox (0.43762pt too wide) in paragraph at lines 66--67
 \T1/ptm/m/n/10 zijn en-kele voor-beel-den: Cam-pus/studentenkaarten, trans-port
 
  []
 
 
-Overfull \hbox (0.1774pt too wide) in paragraph at lines 65--66
+Overfull \hbox (0.1774pt too wide) in paragraph at lines 66--67
 \T1/ptm/m/n/10 tic-kets, event tic-kets, bib kaar-ten, ho-tel-sleu-tel-kaar-ten
  en bank-
- []
-
-
-Overfull \hbox (1.88245pt too wide) in paragraph at lines 77--77
-\T1/ptm/m/n/10 seniorweb . nl / artikel / extensies -[] vinden -[] en -[] insta
-lleren$[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[][][]\T1/ptm/m/n/8 Github-repository: https://github.com/HoGentTIN/rm-2122-pap
-er-
  []
 
 
@@ -1111,20 +1099,19 @@ File: img/HOGENT_Logo_Pos_rgb.png Graphic file (type bmp)
 [2] (DeMaeseneerWout_BP_Voorstel_2022-2023.aux)
 Package rerunfilecheck Info: File `DeMaeseneerWout_BP_Voorstel_2022-2023.out' h
 as not changed.
-(rerunfilecheck)             Checksum: 9896536D3C8812436B73825DE1D9DCCC;1673.
+(rerunfilecheck)             Checksum: 96EA54823558B1842F69D5C33DB61B51;1716.
 Package logreq Info: Writing requests to 'DeMaeseneerWout_BP_Voorstel_2022-2023
 .run.xml'.
 \openout1 = `DeMaeseneerWout_BP_Voorstel_2022-2023.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24788 strings out of 410967
- 429785 string characters out of 2830858
- 1401251 words of memory out of 3000000
- 45233 multiletter control sequences out of 15000+600000
- 529374 words of font info for 114 fonts, out of 8000000 for 9000
+ 24782 strings out of 410967
+ 429694 string characters out of 2830858
+ 1401209 words of memory out of 3000000
+ 45227 multiletter control sequences out of 15000+600000
+ 524442 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,11n,82p,1036b,5015s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Error 1 (driver return code) generating output;
-file DeMaeseneerWout_BP_Voorstel_2022-2023.pdf may not be valid.
+Output written on DeMaeseneerWout_BP_Voorstel_2022-2023.pdf (2 pages).

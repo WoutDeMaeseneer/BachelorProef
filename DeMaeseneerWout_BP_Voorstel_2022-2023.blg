@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'DeMaeseneerWout_BP_Voorstel_2022-2023.blg'
-[148] biber-MSWIN64:340> INFO - === 
-[189] Biber.pm:418> INFO - Reading 'DeMaeseneerWout_BP_Voorstel_2022-2023.bcf'
-[347] Biber.pm:972> INFO - Found 4 citekeys in bib section 0
-[365] Biber.pm:4383> INFO - Processing section 0
-[380] Biber.pm:4574> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
-[432] bibtex.pm:1713> INFO - LaTeX decoding ...
-[448] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
-[504] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[504] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[504] Biber.pm:4203> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
-[504] Biber.pm:4209> INFO - No sort tailoring available for locale 'nl-NL'
-[514] bbl.pm:654> INFO - Writing 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' with encoding 'UTF-8'
+[161] biber-MSWIN64:340> INFO - === 
+[204] Biber.pm:418> INFO - Reading 'DeMaeseneerWout_BP_Voorstel_2022-2023.bcf'
+[356] Biber.pm:972> INFO - Found 4 citekeys in bib section 0
+[376] Biber.pm:4383> INFO - Processing section 0
+[390] Biber.pm:4574> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
+[439] bibtex.pm:1713> INFO - LaTeX decoding ...
+[450] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
+[505] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[505] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[505] Biber.pm:4203> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
+[505] Biber.pm:4209> INFO - No sort tailoring available for locale 'nl-NL'
+[515] bbl.pm:654> INFO - Writing 'DeMaeseneerWout_BP_Voorstel_2022-2023.bbl' with encoding 'UTF-8'
 [517] bbl.pm:757> INFO - Output to DeMaeseneerWout_BP_Voorstel_2022-2023.bbl
-[517] Biber.pm:130> WARN - Entry 'Printplast' (bibliografie.bib): Invalid format '*no date found*' of date field 'date' - ignoring
-[517] Biber.pm:132> INFO - WARNINGS: 1
+[518] Biber.pm:130> WARN - Entry 'Printplast' (bibliografie.bib): Invalid format '*no date found*' of date field 'date' - ignoring
+[518] Biber.pm:132> INFO - WARNINGS: 1
