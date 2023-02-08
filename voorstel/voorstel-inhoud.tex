@@ -1,51 +1,14 @@
-\documentclass{hogent-article}
-\usepackage{lipsum} % Voor vultekst
-\usepackage{biblatex}
-\addbibresource{bibliografie.bib}
+%---------- Inleiding ---------------------------------------------------------
 
-%------------------------------------------------------------------------------
-% Metadata over het artikel
-%------------------------------------------------------------------------------
+\section{Introductie}%
+\label{sec:introductie}
 
-%---------- Titel & auteur ----------------------------------------------------
-
-\PaperTitle{De ontwikkeling van een driver/extensie voor het inlezen van MiFare- en chipkaarten in een web-applicatie.}
-
-\PaperType{Onderzoeksvoorstel Bachelorproef 2022-2023}
-
-\Authors{Wout De Maeseneer\textsuperscript{1}} % Authors
-
-\CoPromotor{Kevin Lommens}
-
-\affiliation{
-  \textsuperscript{1} \href{mailto:wout.demaeseneer@student.hogent.be}{mailto:wout.demaeseneer@student.hogent.be}}
-
-%---------- Abstract ----------------------------------------------------------
-
-\Abstract{
-In deze bachelorproef zal er onderzocht worden wat de beste manier is om een extensie/driver te maken die een card reader rechtstreeks kan verbinden met een webapplicatie in de browser. Vervolgens zal er dan als Proof of Concept een webapplicatie worden gemaakt die m.b.v. die extensie/driver MiFare- of chipkaart direct zal kunnen inlezen in de web app met een card reader. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw, en bij het scannen van maaltijdcheques.
-}
-
-\Keywords{MiFare-card; chip-card; card reader}
-\newcommand{\keywordname}{Sleutelwoorden}
-
-%---------- Titel, inhoud -----------------------------------------------------
-
-\begin{document}
-
-\flushbottom % Makes all text pages the same height
-\maketitle % Print the title and abstract box
-\tableofcontents % Print the contents section
-\thispagestyle{empty} % Removes page numbering from the first page
-
-%------------------------------------------------------------------------------
-% Hoofdtekst
-%------------------------------------------------------------------------------
-
-\section{Introductie}
 Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web app die online draait. Zo kunnen bijvoorbeeld toegangspassen worden ingelezen, dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
 
-\section{State-of-the-art}
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{State-of-the-art}%
+\label{sec:state-of-the-art}
 
 \subsection{Wat is een browser extensie}
 Op \textcite{Desktop.com} is te lezen dat een browser extensie een klein software programmatje is dat kan gebruikt worden om je web browser aan te passen en te verbeteren. Een extensie kan bestaande functies van de browser aanpassen, nieuwe toevoegen of aanpassen hoe de browser eruit ziet.
@@ -65,15 +28,19 @@ Het maakt ook gebruik van een beveiligingsencryptie dat moeilijk te clonen is. O
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
 Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studentenkaarten, transport tickets, event tickets, bib kaarten, hotelsleutelkaarten en bankkaarten.
 
-\section{Methodologie}
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}%
+\label{sec:methodologie}
+
 In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web app rechtstreeks een MiFare- of chip-kaart kan inlezen met een card reader, alsook hoe een MiFare kaart en card reader werken. In het tweede luik van het ondezoek zal er een Proof of Concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
 
-\section{Verwachte resultaten}
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwacht resultaat}%
+\label{sec:verwachte_resultaten}
+
 Het verwachte resultaat zal een webapplicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare kaarten rechtstreeks in kan lezen. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
 
-\section{Verwachte conclusies}
-Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De PoC zal aantonen dat dit mogelijk is en dat er dus MiFare kaarten ingescand kunnen worden in de web app waardoor die gebruik zal kunnen maken van data op de kaart om toegangskaarten of maaltijdcheques te kunnen beheren. Hopelijk vloeit uit dit onderzoek een PoC die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
+\section{Verwachte conclusies}%
+\label{sec:Verwachte_conclusies}
 
-\phantomsection
-\printbibliography[heading=bibintoc]
-\end{document}
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De PoC zal aantonen dat dit mogelijk is en dat er dus MiFare kaarten ingescand kunnen worden in de web app waardoor die gebruik zal kunnen maken van data op de kaart om toegangskaarten of maaltijdcheques te kunnen beheren. Hopelijk vloeit uit dit onderzoek een PoC die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
