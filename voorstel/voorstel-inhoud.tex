@@ -28,11 +28,22 @@ Het maakt ook gebruik van een beveiligingsencryptie dat moeilijk te clonen is. O
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
 Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studentenkaarten, transport tickets, event tickets, bib kaarten, hotelsleutelkaarten en bankkaarten.
 
+
+\subsection{Stappen om de driver te maken}
+Om de driver te maken die de ervoor moet zorgen dat de kaartlezer met de browser kan worden verbonden kunnen over het algemeen de volgende stappen worden gevolgd:
+\begin{itemize}
+    \item 1. Bepaal de communicatie-interface van de kaartlezer (bijv. USB, seriële poort, Bluetooth).
+    \item 2. Schrijf de code voor de communicatie tussen de kaartlezer en de computer via de interface.
+    \item 3. Implementeer de code voor de communicatie-interface als onderdeel van het besturingssysteem van de computer.
+    \item 4. Schrijf de code om de kaartlezer te detecteren en een bericht te sturen naar de webbrowser.
+    \item 5. Implementeer de code in de webbrowser om de kaartlezer te detecteren en met de juiste toestemming toegang te krijgen tot de kaartinformatie.
+\end{itemize}
+
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over wat de beste manier is om een extensie/driver te maken die vanuit de web app rechtstreeks een MiFare- of chip-kaart kan inlezen met een card reader, alsook hoe een MiFare kaart en card reader werken. In het tweede luik van het ondezoek zal er een Proof of Concept worden gedaan. Het resultaat van het ondezoek naar de best mogelijke manier om zo een extensie/driver te maken zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- of chip-kaart en de card reader. In het tweede luik van het ondezoek zal er een requirement analyse worden gemaakt over het verbinden van een kaartlezer met de browser. Dit zal dus alles inhouden wat er nodig is om een kaartlezer te doen werken in een browser. Om hier antwoorden op te krijgen zal een interview worden afgenomen met de co-promotor. Tenslotte zal er een Proof of Concept worden gemaakt. Het resultaat van de requirement analyse zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat}%
