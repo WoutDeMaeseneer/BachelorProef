@@ -28,6 +28,10 @@ Het maakt ook gebruik van een beveiligingsencryptie dat moeilijk te clonen is. O
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
 Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt, hier zijn enkele voorbeelden: Campus/studentenkaarten, transport tickets, event tickets, bib kaarten, hotelsleutelkaarten en bankkaarten.
 
+\subsection{Wat zijn Web NFC en Web USB}
+Volgens een artikel van \textcite{FrançoisBeaufortUSB} zorgt Web USB ervoor dat USB apparaat services kunnen worden gebruikt op het Web. Met deze API hebben hardware fabrikanten de mogelijkheid om cross-platform SDK’s te bouwen voor hun apparaten. Maar het belangrijkste voordeel is dat het USB veiliger maakt door het naar het Web te brengen.
+NFC staat voor ‘Near Field Communication’, de communicatie tussen het scan toestel en de tag is gebeurt volgens \textcite{FrançoisBeaufortNFC} op een afstand van minder dan 10 centimeter. Web NFC zorgt ervoor dat je via sites read en write acties kan uitvoeren op een NFC tag die zich in de buurt van het scan toestel bevind. Web NFC maakt gebruik van het NFC Data Exchange Format (NDEF) om data uit te wisselen, dit omdat de security eigenschappen van NDEF makkelijker kwantificeerbaar zijn.
+Over het algemeen geldt dat als de kaartlezer een USB-interface gebruikt en nauwkeurige controle over de communicatie met het apparaat nodig is, Web USB waarschijnlijk de betere optie is. Als de kaartlezer NFC gebruikt en een hoogwaardige API nodig is voor het lezen en schrijven van NFC-tags, is Web NFC wellicht de betere optie.
 
 \subsection{Stappen om de driver te maken}
 Om de driver te maken die de ervoor moet zorgen dat de kaartlezer met de browser kan worden verbonden kunnen over het algemeen de volgende stappen worden gevolgd:
