@@ -22,7 +22,7 @@ Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger
 De MiFare kaarten hebben net als andere contactloze kaarten een chip die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
 
 \subsection{Voordelen van MiFare kaart}
-Een MiFare kaart heeft volgens \textcite{Printplast} ook enkele voordelen. Het eerste voodeel is dat de kaart kan ingelezen worden van een maximum afstand van 10cm wat de gebruiker een touch-and-go beleving geeft.
+Een MiFare kaart heeft volgens \textcite{Printplast} ook enkele voordelen. Het eerste voordeel is dat de kaart kan ingelezen worden van een maximum afstand van 10cm wat de gebruiker een touch-and-go beleving geeft.
 Het maakt ook gebruik van een beveiligingsencryptie dat moeilijk te clonen is. Ook supporten MiFare kaarten een multi interface, dit wil zeggen dat het buiten contactloos inlezen ook mogelijk is om de kaart met contact in te lezen. En tenslotte kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones.
 
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
@@ -30,11 +30,11 @@ Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid
 
 \subsection{Wat zijn Web NFC en Web USB}
 Volgens een artikel van \textcite{FrançoisBeaufortUSB} zorgt Web USB ervoor dat USB apparaat services kunnen worden gebruikt op het Web. Met deze API hebben hardware fabrikanten de mogelijkheid om cross-platform SDK’s te bouwen voor hun apparaten. Maar het belangrijkste voordeel is dat het USB veiliger maakt door het naar het Web te brengen.
-NFC staat voor ‘Near Field Communication’, de communicatie tussen het scan toestel en de tag is gebeurt volgens \textcite{FrançoisBeaufortNFC} op een afstand van minder dan 10 centimeter. Web NFC zorgt ervoor dat je via sites read en write acties kan uitvoeren op een NFC tag die zich in de buurt van het scan toestel bevind. Web NFC maakt gebruik van het NFC Data Exchange Format (NDEF) om data uit te wisselen, dit omdat de security eigenschappen van NDEF makkelijker kwantificeerbaar zijn.
+NFC staat voor ‘Near Field Communication’, de communicatie tussen het scan toestel en de tag gebeurt volgens \textcite{FrançoisBeaufortNFC} op een afstand van minder dan 10 centimeter. Web NFC zorgt ervoor dat je via sites read en write acties kan uitvoeren op een NFC tag die zich in de buurt van het scan toestel bevindt. Web NFC maakt gebruik van het NFC Data Exchange Format (NDEF) om data uit te wisselen, dit omdat de security eigenschappen van NDEF makkelijker kwantificeerbaar zijn.
 Over het algemeen geldt dat als de kaartlezer een USB-interface gebruikt en nauwkeurige controle over de communicatie met het apparaat nodig is, Web USB waarschijnlijk de betere optie is. Als de kaartlezer NFC gebruikt en een hoogwaardige API nodig is voor het lezen en schrijven van NFC-tags, is Web NFC wellicht de betere optie.
 
 \subsection{Stappen om de driver te maken}
-Om de driver te maken die de ervoor moet zorgen dat de kaartlezer met de browser kan worden verbonden kunnen over het algemeen de volgende stappen worden gevolgd:
+Om de driver te maken die ervoor moet zorgen dat de kaartlezer met de browser kan worden verbonden kunnen over het algemeen de volgende stappen worden gevolgd:
 \begin{itemize}
     \item 1. Bepaal de communicatie-interface van de kaartlezer (bijv. USB, seriële poort, Bluetooth).
     \item 2. Schrijf de code voor de communicatie tussen de kaartlezer en de computer via de interface.
@@ -47,13 +47,13 @@ Om de driver te maken die de ervoor moet zorgen dat de kaartlezer met de browser
 \section{Methodologie}%
 \label{sec:methodologie}
 
-In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- of chip-kaart en de card reader. In het tweede luik van het ondezoek zal er een requirement analyse worden gemaakt over het verbinden van een kaartlezer met de browser. Dit zal dus alles inhouden wat er nodig is om een kaartlezer te doen werken in een browser. Om hier antwoorden op te krijgen zal een interview worden afgenomen met de co-promotor. Tenslotte zal er een Proof of Concept worden gemaakt. Het resultaat van de requirement analyse zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- of chip-kaart en de card reader. In het tweede luik van het onderzoek zal er een requirement analyse worden gemaakt over het verbinden van een kaartlezer met de browser. Dit zal dus alles inhouden wat er nodig is om een kaartlezer te doen werken in een browser. Om hier antwoorden op te krijgen zal een interview worden afgenomen. Tenslotte zal er een Proof of Concept worden gemaakt. Het resultaat van de requirement analyse zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat}%
 \label{sec:verwachte_resultaten}
 
-Het verwachte resultaat zal een webapplicatie bevatten die gebruik maakt van de ontwikkelde extensie/driver en dus MiFare kaarten rechtstreeks in kan lezen. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
+Het verwachte resultaat zal een extensie/driver zijn die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
 
 \section{Verwachte conclusies}%
 \label{sec:Verwachte_conclusies}
