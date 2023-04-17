@@ -8,16 +8,32 @@
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
 \section{Introductie}
-\label{sec:introductie}
+Bij het verbinden van een card reader met de webapplicatie komen verschillende technologieën aan te pas. Om ervoor te zorgen dat u alles goed begrijpt in deze bachelor proef is deze stand van zaken opgesteld die u de nodige inleiding geeft tot de technologieën die voorbij zullen komen in deze bachelor proef.  
 
-Deze komt nog aja
+Hierin zal er info staan over card readers, hoe een card reader werkt, welke soorten card readers er zijn en meer info over de ACR122U card reader die zal worden gebruikt in de Proof of Concept. Ook zal er uitleg zijn over de contactloze smart card, de karakterisering ervan, de technologie die erachter zit en de voor- en nadelen ervan met nog extra info over de MiFare kaart die zal gebruikt worden voor de Proof of Concept.  
+
+Vervolgens gaat er info zijn over hoe een smart card kan uitgelezen worden, dit is belangrijk omdat het in de PoC de bedoeling zal zijn dat de tag kan worden opgehaald om die vervolgens richting de webapplicatie te versturen. Verder zal er informatie zijn over WebUSB, dat vanuit de front-end al voor de verbinding met USB-apparaten kan zorgen. Echter zullen Server-Sent Events en de SignalR library van groter belang zijn voor deze bachelor proef, deze zullen namelijk zorgen voor de real-time web functionaliteit. SignalR werkt met Hubs en Clients die voor de communicatie moeten zorgen, hierover zal ook uitleg zijn. 
+
+Om het plaatje compleet te maken zal er nog info zijn over Services, deze zullen op de achtergrond draaien en wanneer er een kaart wordt gescand de tag van die kaart doorsturen naar de webapplicatie met behulp van de eerder vermelde SignalR library.
+
 
 \section{Card Readers}
 \subsection{Inleiding tot de card reader}
-``Een kaartlezer is in wezen een stukje elektronische technologie dat ontworpen is om de informatie in de magneetstrip of chip van de kaart te decoderen. Het elektronische apparaat voor gegevensinvoer dat de kaartlezer is, kan in de hand worden gehouden, draadloos zijn, of via een kabel zijn aangesloten op een pc of een verkoopterminal, en heeft verschillende gemeenschappelijke kenmerken voor de verschillende apparaten die op de markt verkrijgbaar zijn.
-Traditioneel bevatten deze apparaten een scherm, een toetsenbord, of een touchpad voor slimme apparaten, en belangrijke functies die de kaartlezer in staat stellen de kaart van de klant te lezen. Deze functies kunnen bestaan uit de mogelijkheid om de kaart fysiek in de kaartlezer te steken of de chip te lezen, de mogelijkheid om met de magneetstrip van de kaart te vegen, een pinpad of een touchpad, en functies waarmee de kaartlezer contactloze transacties kan verwerken.''
+``Een kaartlezer is in wezen een stukje elektronische technologie dat ontworpen is om de informatie in de magneetstrip of chip van de kaart te decoderen. Het elektronische apparaat voor gegevensinvoer dat de kaartlezer is, kan in de hand worden gehouden, draadloos zijn, of via een kabel zijn aangesloten op een pc of een verkoopterminal, en heeft verschillende gemeenschappelijke kenmerken voor de verschillende apparaten die op de markt verkrijgbaar zijn.''\autocite{MarinPenchevCardReader}
 
-Volgens Marin Penchev zijn er verschillende types van card reader. De mobile card reader is zoals de naam zegt mobiel, ze zijn geconnecteerd over het internet en kunnen worden teruggevonden in bijvoorbeeld taxi's. De portable card reader is ook een mobiele soort card reader, het verschil tussen de mobile en de portable card readers is dat de mobile card reader gemaakt is om in beweging te gebruiken. Ook zijn er bijvoorbeeld de countertop card reader, deze is te vinden bij bijvoorbeeld de kassa van een winkelen. Dan zijn er ook nog de payment gerelateerde card readers zoals de magnetic stripe en de chip&PIN. En ten slotte ook nog de (contactloze) smart card reader. Aangezien er voor de Proof of Concept van deze bachelorproef een ACR122U smart card reader gaat worden gebruikt gaat er gefocust worden op smart card readers.
+Een kaartlezer kan volgens \textcite{MarinPenchevCardReader} ook enkele functies bevatten die de kaartlezer de mogelijkheid geven om de kaart van een klant in te lezen. De functies kunnen bestaan uit het fysiek inlezen van de kaart, de mogelijkheid te bieden om de kaart in te lezen door de magneetstrip van de kaart tegen het apparaat te vegen, of de aanwezigheid van een pinpad of touchpad. Ook kan het bijvoorbeeld de functie hebben om contactloze transacties te verwerken. Kaartlezers kunnen tenslotte een scherm, toetsenbord of touchscreen bevatten die het inlezen van de kaart vergemakkelijken.
+
+Volgens \textcite{MarinPenchevCardReader} zijn er verschillende types van card reader. 
+\begin{itemize}
+    \item De mobile card reader is zoals de naam zegt mobiel, ze zijn geconnecteerd over het internet en kunnen worden teruggevonden in bijvoorbeeld taxi's.
+    \item De portable card reader is ook een mobiele soort card reader, het verschil tussen de mobile en de portable card readers is dat de mobile card reader gemaakt is om in beweging te gebruiken.
+    \item Ook zijn er bijvoorbeeld de countertop card reader, deze is te vinden bij bijvoorbeeld de kassa van een winkelen.
+    \item Dan zijn er ook nog de payment gerelateerde card readers zoals de magnetic stripe en de chip\&PIN.
+    \item En ten slotte ook nog de (contactloze) smart card reader. Aangezien er voor de Proof of Concept van deze bachelorproef een ACR122U smart card reader gaat worden gebruikt gaat er gefocust worden op smart card readers.
+\end{itemize}
+
+
+
 
 
 \section{Smart Card Readers}
@@ -26,15 +42,15 @@ Volgens Marin Penchev zijn er verschillende types van card reader. De mobile car
 
 Wat betreft het communicatie protocol maakt de ACR122U-A9 smart card reader (die voor de POC gaat gebruikt worden) gebruik van het contactless protocol, via de contactless interface ISO/IEC 14443. Als een kaart geen gebruik maakt van een standard transmission protocol, maar wel een custom/proprietary protocol, dan wordt het communicatie protocol aangeduid als T=14.
 
-Readers die tot de 0x0B klasse behoren hebben geen drivers nodig als ze gebruikt worden via PC/SC-compliant operating systems, dit is omdat het operating system al standard de driver levert. Dit is mogelijk omdat de laatste PC/SC CCID specificaties een nieuw smart card framework definiëren dat werkt USB devices die behoren tot de 0x0B device class.
+Readers die tot de 0x0B klasse behoren hebben geen drivers nodig als ze gebruikt worden via PC/SC-compliant operating systems, dit is omdat het operating system al standard de driver levert. Dit is mogelijk omdat de laatste PC/SC CCID specificaties een nieuw smart card framework definiëren dat werkt USB devices die behoren tot de 0x0B device class.''\autocite{OnyaitOdekeCardReader}
 
 
 ``Elke lezer moet worden gedefinieerd voor gebruik door het smartcard-subsysteem. Het subsysteem is niet verantwoordelijk voor een lezer die er niet specifiek aan is gegeven.
 
-Smartcardlezers kunnen worden onderverdeeld in logische groepen die lezersgroepen worden genoemd. Deze groepen kunnen worden gedefinieerd door het subsysteem, maar ook door beheerders en gebruikers. Een lezer kan tot meer dan één lezersgroep behoren.``
+Smartcardlezers kunnen worden onderverdeeld in logische groepen die lezersgroepen worden genoemd. Deze groepen kunnen worden gedefinieerd door het subsysteem, maar ook door beheerders en gebruikers. Een lezer kan tot meer dan één lezersgroep behoren.``\autocite{MicrosoftSmartCardReaders}
 
 \subsection{Voordelen van een smart card reader}
-Volgens Onyait Odeke zijn de twee grote voordelen van een smart card reader dat het veilig is en dat het veel wordt gebruikt. Wat beveiliging betreft maken ze gebruik van encryptie en validatie technologie. Toegang tot de informatie op de kaart kan enkel worden verworven als de chip in de kaart contact maakt met de card reader. Smart cards worden dus ook heel veel gebruikt, denk maar aan het betalen in de supermarkt, het gebruik als toegangsbadge of het scannen van de kaart bij het opstappen in het openbaar vervoer.
+Volgens \textcite{OnyaitOdekeCardReader} zijn de twee grote voordelen van een smart card reader dat het veilig is en dat het veel wordt gebruikt. Wat beveiliging betreft maken ze gebruik van encryptie en validatie technologie. Toegang tot de informatie op de kaart kan enkel worden verworven als de chip in de kaart contact maakt met de card reader. Smart cards worden dus ook heel veel gebruikt, denk maar aan het betalen in de supermarkt, het gebruik als toegangsbadge of het scannen van de kaart bij het opstappen in het openbaar vervoer.
 
 \subsection{ACR122U card reader}
 De card reader die bij Jan De Nul wordt gebruikt en dus ook zal gebruikt worden voor deze POC is de ACR122U-A9.
@@ -42,44 +58,107 @@ De card reader die bij Jan De Nul wordt gebruikt en dus ook zal gebruikt worden 
 ``De ACR122U NFC Reader is een PC-gekoppelde contactloze smartcard lezer/schrijver ontwikkeld op basis van 13,56 MHz Contactloze (RFID) Technologie. Hij voldoet aan de ISO/IEC18092 standaard voor Near Field Communication (NFC) en ondersteunt niet alleen MIFARE® en ISO 14443 A en B kaarten, maar ook alle vier typen NFC tags.
 ACR122U is compatibel met zowel CCID als PC/SC. Het is dus een plug-and-play USB-apparaat dat interoperabiliteit met verschillende apparaten en toepassingen mogelijk maakt. Met een toegangssnelheid tot 424 kbps en een volledige USB-snelheid tot 12 Mbps kan ACR122U ook sneller en efficiënter lezen en schrijven. De nabijheidsafstand van de ACR122U is maximaal 5 cm, afhankelijk van het type contactloze tag dat wordt gebruikt.
 Om het beveiligingsniveau te verhogen kan de ACR122U worden geïntegreerd met een ISO 7816-3 SAM-slot. Bovendien is de ACR122U NFC-lezer beschikbaar in modulevorm, zodat hij gemakkelijk kan worden geïntegreerd in grotere machines, zoals POS-terminals, fysieke toegangssystemen en verkoopautomaten.
-De ACR122U NFC Reader is ideaal voor zowel veilige persoonlijke identiteitscontrole als online micro-betalingstransacties. Andere toepassingen van de ACR122U zijn toegangscontrole, e-betaling, e-ticketing voor evenementen en openbaar vervoer, tolheffing en netwerkverificatie.``
+De ACR122U NFC Reader is ideaal voor zowel veilige persoonlijke identiteitscontrole als online micro-betalingstransacties. Andere toepassingen van de ACR122U zijn toegangscontrole, e-betaling, e-ticketing voor evenementen en openbaar vervoer, tolheffing en netwerkverificatie.``\autocite{ACSACR122U}
 
-Aangezien de card reader voor de POC contactloos kaarten gaat inscannen is het handig om te weten dat de card reader volgens ACS onder andere met de ISO 14443-4 Compliant Card, T=CL, MIFARE® Classic Card, T=CL, ISO18092 en NFC Tags protocols kan werken.
+Aangezien de card reader voor de POC contactloos kaarten gaat inscannen is het handig om te weten dat de card reader volgens \textcite{ACSACR122U} onder andere met de ISO 14443-4 Compliant Card, T=CL, MIFARE® Classic Card, T=CL, ISO18092 en NFC Tags protocols kan werken.
 
 De ARC122U card reader support ook PC/SC en CT-API, dit zijn application programming interfaces die voor de integratie van smart card technologie in een computersysteem zorgen.
 
 Ook zijn er drivers beschikbaar op de site van ACS. De laatste driver voor Windows dateert wel van 20 maart 2018 en er wordt duidelijk gemaakt dat de ACR122U end-of-life is, dus dat er waarschijnlijk geen nieuwe drivers meer gaan uit worden gebracht door ACS.
 
 
+
+
 \section{Contactless smart cards}
 \subsection{Inleiding tot de smart cards}
 ``Een intelligente kaart is een fysieke kaart met een ingebouwde chip die dient als veiligheidstoken. Zij zijn gewoonlijk even groot en kunnen gemaakt zijn van metaal of plastic, zoals een rijbewijs of een kredietkaart. De verbinding met een lezer verloopt via direct fysiek contact of via een draadloos netwerkprotocol op korte termijn, zoals herkenning van radiofrequenties of communicatie in het nabije veld. Een microcontroller of een ingebouwde geheugenchip kan de chip op een intelligente kaart zijn.
 
-Intelligente kaarten zijn ontworpen om immuun te zijn voor manipulatie en gebruiken encryptie om informatie in het geheugen te beveiligen. Kaarten met een microcontroller-chip kunnen verwerkingsfuncties op de kaart uitvoeren en hebben toegang tot de gegevens in het geheugen van de chip. Intelligente kaarten worden voor verschillende doeleinden gebruikt, maar vooral voor kredietkaarten en andere betaalkaarten. De verkoop van intelligente kaarten is de laatste jaren gestimuleerd door een drang van de betaalkaartenindustrie om EMV-conforme smartcards te gebruiken.``
+Smard cards zijn ontworpen om immuun te zijn voor manipulatie en gebruiken encryptie om informatie in het geheugen te beveiligen. Kaarten met een microcontroller-chip kunnen verwerkingsfuncties op de kaart uitvoeren en hebben toegang tot de gegevens in het geheugen van de chip. Intelligente kaarten worden voor verschillende doeleinden gebruikt, maar vooral voor kredietkaarten en andere betaalkaarten. De verkoop van intelligente kaarten is de laatste jaren gestimuleerd door een drang van de betaalkaartenindustrie om EMV-conforme smartcards te gebruiken.``\autocite{SwatiTawdeSmartCard}
 
 \subsection{Karakterisering van een smart card}
-A contactless smart card kan volgens Wikipedia op enkele manieren worden gekarakteriseerd. Het heeft de grootte van een normale credit card (85.60 × 53.98 × 0.76 mm volgens de ISO/IEC 7810 standard). Het bevat een beveiligingssysteem met de tamper-resistant properties (bv een beveiligde cryptoprocessor, filesystem en human-readable features). Ook is het voorzien van beveiligingsservices wat voor de confidentialiteit van de data zorgt. Om card data door te geven aan het central administration system kan een apparaat worden gebruik dat de kaart kan uitlezen zoals toegangscontrole apparaten die naast een deur hangen, geldautomaten en card readers.
+``Smartcards hebben verschillende gezichten, hoofdzakelijk afhankelijk van het type geïntegreerde circuitchip (ICC) dat in de plastic kaart is ingebouwd en de fysieke vorm van het verbindingsmechanisme tussen de kaart en de lezer. Het kunnen zeer goedkope tokens zijn voor financiële transacties, zoals kredietkaarten, telefoontokens of getrouwheidstokens van verschillende bedrijven. Het kunnen toegangsmunten zijn om door gesloten deuren te gaan, om in een trein te rijden of om met een auto over een tolweg te rijden. Zij kunnen fungeren als identiteitspasjes om in te loggen op een computersysteem of om toegang te krijgen tot een World Wide Web server met een geauthenticeerde identiteit. Van bijzonder belang zijn verschillende van dergelijke varianten, waaronder kaarten ...''\autocite{OreillySmartCards}
 
 \subsection{Technologie achter de smart card}
-Op de website Secure Technology Alliance staat te lezen dat een smart card communiceert via een inductietechnologie die vergelijkbaar is met die van een RFID (met datasnelheden van 106 tot 848 kbit/s). Om een transactie van data te doen moet de kaart dicht bij een antenne gehouden worden. De standard voor een contactloze smart card om te communiceren is ISO/IEC 14443, wat communicatie van een afstand van 10 cm toelaat. Er is ook de ISO/IEC 15693 standard, en deze laat communicatie van een afstand tot 50 cm toe. De 2 type kaarten met deze standard zijn type A en B. 
+Op de website van \textcite{STASmartCard} staat te lezen dat een smart card communiceert via een inductietechnologie die vergelijkbaar is met die van een RFID (met datasnelheden van 106 tot 848 kbit/s). Om een transactie van data te doen moet de kaart dicht bij een antenne gehouden worden. De standard voor een contactloze smart card om te communiceren is ISO/IEC 14443, wat communicatie van een afstand van 10 cm toelaat. Er is ook de ISO/IEC 15693 standard, en deze laat communicatie van een afstand tot 50 cm toe. De 2 type kaarten met deze standard zijn type A en B. 
 
-Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
+Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of 
 
-``RFID-tags zijn eenvoudig, goedkoop en meestal wegwerpbaar, hoewel dit niet altijd het geval is, zoals bij herbruikbare waslabels. Er is weinig tot geen beveiliging op de RFID-tag of tijdens de communicatie met de lezer. Elke lezer die de juiste RF-frequentie (lage frequentie: 125/134 KHz; hoge frequentie: 13,56 MHz; en ultrahoge frequentie: 900MHz) en het juiste protocol gebruikt, kan de RFID-tag zijn inhoud laten meedelen. (Merk op dat dit niet geldt voor autosleutels die een beveiligde RFID-tag bevatten.) Passieve RFID-tags (d.w.z. tags zonder batterij) kunnen worden gelezen op afstanden van enkele centimeters tot vele meters, afhankelijk van de frequentie en de sterkte van het RF-veld dat voor de specifieke tag wordt gebruikt.''
+microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
+
+``RFID-tags zijn eenvoudig, goedkoop en meestal wegwerpbaar, hoewel dit niet altijd het geval is, zoals bij herbruikbare waslabels. Er is weinig tot geen beveiliging op de RFID-tag of tijdens de communicatie met de lezer. Elke lezer die de juiste RF-frequentie (lage frequentie: 125/134 KHz; hoge frequentie: 13,56 MHz; en ultrahoge frequentie: 900MHz) en het juiste protocol gebruikt, kan de RFID-tag zijn inhoud laten meedelen. (Merk op dat dit niet geldt voor autosleutels die een beveiligde RFID-tag bevatten.) Passieve RFID-tags (d.w.z. tags zonder batterij) kunnen worden gelezen op afstanden van enkele centimeters tot vele meters, afhankelijk van de frequentie en de sterkte van het RF-veld dat voor de specifieke tag wordt gebruikt.''\autocite{STASmartCard}
 
 \subsection{Verschillen tussen smart card technology and RFID technology}
-Volgens Secure Technology Alliance  wordt RFID technologie eerder gebruikt om bijvoorbeeld het fabriceren en versturen van goederen te tracken over een langere afstand. Terwijl contactloze smart cards gebruik maken van RF technologie, wat over een kortere afstand werkt en beter beveiligd is.
+Volgens \textcite{STASmartCard} wordt RFID technologie eerder gebruikt om bijvoorbeeld het fabriceren en versturen van goederen te tracken over een langere afstand. Terwijl contactloze smart cards gebruik maken van RF technologie, wat over een kortere afstand werkt en beter beveiligd is.
 
 \subsection{Voordelen van een smart card}
-Volgens Swati Tawde zijn er drie voordelen aan een smart card. Aangezien smart cards gebruik maken van microprocessors heeft het een betere beveiliging omdat de microprocessors data direct kunnen verwerken zonder toegang vanop afstand. Smart cards hebben ook geen last van electronische interferentie en magnetische velden. En tenslotte als de kaart geüpdate wordt moet er niet steeds opnieuw een nieuwe kaart worden geproduceerd maar wordt de data op de kaart gewoon geüpdate.
+Volgens \textcite{SwatiTawdeSmartCard} zijn er drie voordelen aan een smart card. Aangezien smart cards gebruik maken van microprocessors heeft het een betere beveiliging omdat de microprocessors data direct kunnen verwerken zonder toegang vanop afstand. Smart cards hebben ook geen last van electronische interferentie en magnetische velden. En tenslotte als de kaart geüpdate wordt moet er niet steeds opnieuw een nieuwe kaart worden geproduceerd maar wordt de data op de kaart gewoon geüpdate.
 
 \subsection{Nadelen van een smart card}
-Een smartcard heeft zo zijn voordelen, maar volgens een artikel van Sage-Advice zijn er ook enkele nadelen. Een smart card is namelijk zeer licht en kan makkelijk worden vergeten of kwijt gespeeld. De prijs van de producten die gebruik maken van smart cards ligt hoog. En hoewel de beveiliging van de smart card goed is zoals eerder vermeld bij de voordelen van een smart card, is en blijft het nog steeds een groot risico.
+Een smartcard heeft zo zijn voordelen, maar volgens een artikel van \textcite{SageSmartCard} zijn er ook enkele nadelen. Een smart card is namelijk zeer licht en kan makkelijk worden vergeten of kwijt gespeeld. De prijs van de producten die gebruik maken van smart cards ligt hoog. En hoewel de beveiliging van de smart card goed is zoals eerder vermeld bij de voordelen van een smart card, is en blijft het nog steeds een groot risico.
 
 \subsection{MiFare Classic kaart}
 Voor de POC gaat een MiFare card worden gebruikt, dus vandaar een beetje extra info over MiFare cards.
-De MiFare card is van het merk NXP Semiconductors, de technologie achter de kaart is gebaseerd op de ISO/IEC 14443A standaard en werkt op een frequentie van 13.56 MHz. De MiFare card is een opslagmedium, het geheugen is verdeeld in sectoren en blokken. De kaart kost niet veel en wordt daarom ook veel gebruikt in bijvoorbeeld het openbaar vervoer, of in het geval van Jan De Nul als toegangspas.
+De MiFare card is van het merk NXP Semiconductors, op de \textcite{MiFareSmartCard} website staat te lezen dat de technologie achter de kaart is gebaseerd op de ISO/IEC 14443A standaard en werkt op een frequentie van 13.56 MHz. De MiFare card is een opslagmedium, het geheugen is verdeeld in sectoren en blokken. De kaart kost niet veel en wordt daarom ook veel gebruikt in bijvoorbeeld het openbaar vervoer, of in het geval van Jan De Nul als toegangspas.
 De MiFare Classic 1K heeft een opslagruimte van 1024 Bytes en de MiFare Classic 4k beschikt over een opslagruimte van 4 kilobyte. De kaart kan worden geprogrammeerd voor lees en schrijf operaties.
+
+
+
+
+\section{Uitlezen van de MiFare card tag}
+\subsection{Achtergrond informatie}
+``Elke kaart bevat een geïntegreerde chip met een permanent identificatienummer, of UID. Dit nummer wordt aangemaakt tijdens het fabricageproces en wordt soms het serienummer van de kaart genoemd. De UID kan 4 bytes (32bit), 7 bytes (56Bit) of 10 bytes (80bit) bedragen. Het is ook mogelijk dat een kaart een willekeurige UID produceert.``\autocite{SmartcardFocus}
+
+\subsection{Hoe uitlezen}
+Het uitlezen van de UID van een contactloze storage card kan volgens \textcite{SmartcardFocus} in drie stappen gebeuren:
+\begin{itemize}
+    \item Het ophalen van de context handler (de SCardEstablishContext). 
+    \item Het connecteren van de kaart met de kaart lezer (de SCardConnect). 
+    \item Met behulp van de SCardTransmit kan de command worden aangeroepen die data van de kaart zal kunnen ophalen. 
+\end{itemize}
+Om gebruikt te kunnen maken van de SCardConnect moet er in de parameters de naam van de kaart lezer worden meegegeven. Maar om de SCardConnect te doen werken moet er een kaart op de lezer worden geplaatst. Het is ook mogelijk om te wachten tot de kaart tegen de lezer wordt gehouden, maar dit kost wat extra werk, hiervoor zal de onCardInput command moeten worden gebruikt.
+
+\subsection{Benodigdheden binnen de code}
+Dit is enkel een beschrijving van wat de code zal moeten bevatten om een UID uit te kunnen lezen, omdat deze code licht kan verschillen van de code die in de Proof of Concept zal worden gebruikt. 
+
+Eerst en vooral zal er volgens \textcite{SmartcardFocus} een functie moeten bestaan die een lijst van alle geconnecteerde kaart lezers kan ophalen. Eens de lijst is opgehaald kan er een bepaalde lezer worden uitgehaald die uitgelezen zal worden, in de Proof of Concept weten we de naam van de lezer dus de lezer met de gewenste naam kan uit de lijst worden genomen. Als de lezer niet aanwezig is wordt er een exception gegooid.
+
+De functie die de juiste kaart lezer zal ophalen kan dan vervolgens worden gebruikt in de functie die dan ook echt de UID uit de kaart zal lezen, de GetUID functie. Binnen de GetUID functie zal er verbinding worden gemaakt met de geselecteerde lezer met hehulp van de SCardEstablishContext die wordt meegegeven als parameter in de SCardConnect. Eens de verbinding is gemaakt kan de bytestring van de kaart dat op de reader ligt worden uitgelezen. Deze bytestring zal dan alleen nog worden omgezet naar een normale string. 
+
+
+
+
+\section{Windows Services }
+\subsection{Introductie}
+``Met Microsoft Windows-services, voorheen bekend als NT-services, kunt u langlopende uitvoerbare toepassingen maken die in hun eigen Windows-sessies worden uitgevoerd. Deze services kunnen automatisch worden gestart wanneer de computer wordt opgestart, kunnen worden onderbroken en opnieuw worden opgestart en er wordt geen gebruikersinterface weergegeven. Deze functies maken services ideaal voor gebruik op een server of wanneer u langlopende functionaliteit nodig hebt die geen invloed heeft op andere gebruikers die op dezelfde computer werken. U kunt ook services uitvoeren in de beveiligingscontext van een specifiek gebruikersaccount dat verschilt van de aangemelde gebruiker of het standaardcomputeraccount. Zie de Windows SDK-documentatie voor meer informatie over services en Windows-sessies. 
+
+U kunt eenvoudig services maken door een toepassing te maken die als een service is geïnstalleerd. Stel dat u gegevens van prestatiemeteritems wilt bewaken en wilt reageren op drempelwaarden. U kunt een Windows-servicetoepassing schrijven die luistert naar de prestatiemeteritemgegevens, de toepassing implementeren en beginnen met het verzamelen en analyseren van gegevens. 
+
+U maakt uw service als een Microsoft Visual Studio-project en definieert daarin code waarmee wordt bepaald welke opdrachten naar de service kunnen worden verzonden en welke acties moeten worden uitgevoerd wanneer deze opdrachten worden ontvangen. Opdrachten die naar een service kunnen worden verzonden, zijn onder andere het starten, onderbreken, hervatten en stoppen van de service; u kunt ook aangepaste opdrachten uitvoeren.''\autocite{DevMozService}
+
+\subsection{Levensduur van een service}
+De levensduur van een service gaat volgens \textcite{DevMozService} langs verschillende fases. In de eerste fase moet de service worden geïnstalleerd waarna de service zal kunnen worden gebruikt. Dit gebeurt door het installatieprogramma van de Service uit te voeren. Daarna wordt de service geladen in de Service Control Manager, dit is het centrale programma op Windows waarin een lijst van services bevindt en waaruit services kunnen worden beheerd. 
+
+De tweede fase bestaat uit het opstarten van de service, eens de service is opgestart zal die werken. Het starten van een service kan op drie manieren. Vanuit de Service Control Manager, vanuit de Server Explorer of door vanuit de code de ‘start’ methode aan te roepen. Wanneer de 'start’ methode wordt aangeroepen zal deze de ‘OnStart’ methode aanroepen in de code en de code uitvoeren die daarin staat gedefinieerd. 
+
+Eens de service is opgestart kan deze blijven bestaat tot deze service gestopt of onderbroken wordt of als de computer wordt afgesloten. De service kan drie statussen hebben, running, paused of stopped. De status van de service kan ook worden weergegeven voor deze wordt uitgevoerd. Bijvoorbeeld als de service wordt onderbroken, dan zal de PausePending worden aangeroepen en vervolgens wordt de service gepauzeerd. Er kan tenslotte ook een query worden uitgevoerd om de status van de service te verkrijgen, of met behulp van de WaitForStatus kan er een actie worden uitgevoerd op het moment dat en bepaalde status zich voordoet. 
+
+In de code van de service kunnen de OnStop, OnPause en OnContinue worden geprogrammeerd. De code die zich in die methodes bevindt zal worden uitgevoerd wanneer een van die statussen zich voordoet. Deze methodes kunnen ook worden getriggerd vanuit de Services Control Manager of vanuit de Server Explorer.
+
+\subsection{Typen services}
+``Er zijn twee soorten services die u in Visual Studio kunt maken met behulp van het .NET framework. Aan services die de enige service in een proces zijn, wordt het type Win32OwnProcess toegewezen. Aan services die een proces delen met een andere service, wordt het type Win32ShareProcess toegewezen. U kunt het servicetype ophalen door een query uit te voeren op de ServiceType eigenschap. 
+
+Af en toe ziet u andere servicetypen als u een query uitvoert op bestaande services die niet zijn gemaakt in Visual Studio.''\autocite{DevMozService}
+
+\subsection{Vereisten voor een service}
+Er zijn volgens \textcite{DevMozService} twee vereisten waar rekening mee moet worden gehouden bij het maken van een service. De eerste is dat de service moet worden gemaakt in en Windows-servicetoepassingsproject of een .NET project waarmee een .exe-bestand wordt gemaakt en die de ServiceBase klasse overneemt. 
+
+De tweede vereiste is dat projecten die gebruik maken van services installatieonderdelen nodig hebben om het project en bijhorende services goed te kunnen runnen. 
+
+\subsection{Installeren en verwijderen van een service}
+Het installeren van een service kan volgens \textcite{DevMozServiceInstall} met behulp van InstallUtil.exe of PowerShell. Voor de InstallUtil,exe kan dit met de ‘installutil <yourproject>.exe’ command. Met PowerShell is dit gelijkaardig, met het verschil dat je met PowerShell een naam aan de service kan geven, dit gebeurt met de ‘New-Service -Name "YourServiceName" -BinaryPathName <yourproject>.exe’ command. Verwijderen is eveneens gelijkaardig, voor InstallUtil.exe is dit met de ‘installutil /u <yourproject>.exe’ command en voor PowerShell wordt de ‘Remove-Service -Name "YourServiceName"’ command gebruikt. 
+
+
+
 
 
 \section{WebUSB}
@@ -91,32 +170,50 @@ Naast deze gestandaardiseerde apparaten zijn er een groot aantal apparaten die i
 
 WebUSB biedt een manier om deze niet-gestandaardiseerde diensten voor USB-apparaten bloot te stellen aan het web. Dit betekent dat hardware fabrikanten een manier kunnen bieden om hun apparaat via het web te benaderen, zonder dat ze hun eigen API hoeven aan te bieden.
 
-Wanneer een nieuw WebUSB-compatibel apparaat wordt aangesloten, geeft de browser een melding met een link naar de website van de fabrikant. Bij aankomst op de site vraagt de browser om toestemming om verbinding te maken met het apparaat, waarna het apparaat klaar is voor gebruik. Er hoeven geen drivers te worden gedownload en geïnstalleerd.``
+Wanneer een nieuw WebUSB-compatibel apparaat wordt aangesloten, geeft de browser een melding met een link naar de website van de fabrikant. Bij aankomst op de site vraagt de browser om toestemming om verbinding te maken met het apparaat, waarna het apparaat klaar is voor gebruik. Er hoeven geen drivers te worden gedownload en geïnstalleerd.``\autocite{DevMozWebUSB}
 
 \subsection{WebUSB interfaces}
-Volgens MDN contributors bevat WebUSB een aantal interfaces waar de user gebruik van kan maken om de verbinding met een USB apparaat te programmeren. Bijvoorbeeld met USBConnectionEvent kan er aan het connecten of disconnecten van een USB apparaat een event worden gekoppeld. Of USBConfiguration bevat informatie over de configuratie van het USB apparaat en de interfaces die de kaart support.
+Volgens MDN \textcite{DevMozWebUSB} bevat WebUSB een aantal interfaces waar de user gebruik van kan maken om de verbinding met een USB apparaat te programmeren. Bijvoorbeeld met USBConnectionEvent kan er aan het connecten of disconnecten van een USB apparaat een event worden gekoppeld. Of USBConfiguration bevat informatie over de configuratie van het USB apparaat en de interfaces die de kaart support.
 Om dan ook echt toegang te krijgen tot een verbinden met een USB apparaat zal er gebruik moeten worden gemaakt van de USB.requestDevice() of USB.getDevices()  functie. Bij de USB.requestDevice() functie kan ook de vendorId worden meegegeven zodat alleen gewenste USB apparaten met deze id tevoorschijn zullen komen. Voor de rest kan er met beide functies de product naam en de manufacturer naam worden weergegeven.
+
+
 
 
 \section{Server-sent events}
 \subsection{Introductie tot server-sent events}
 Voor de POC van deze bachelorproef zal gebruik worden gemaakt van server-sent events, maar wat zijn server side event nu eigenlijk?
-``Het ontwikkelen van een webapplicatie die gebruik maakt van server-verzonden gebeurtenissen is eenvoudig. Je hebt een beetje code op de server nodig om events naar de front-end te streamen, maar de code aan de clientzijde werkt bijna identiek aan websockets voor wat betreft het afhandelen van inkomende events. Dit is een eenrichtingsverbinding, dus je kunt geen events van een client naar een server sturen.''
+``Het ontwikkelen van een webapplicatie die gebruik maakt van server-verzonden gebeurtenissen is eenvoudig. Je hebt een beetje code op de server nodig om events naar de front-end te streamen, maar de code aan de clientzijde werkt bijna identiek aan websockets voor wat betreft het afhandelen van inkomende events. Dit is een eenrichtingsverbinding, dus je kunt geen events van een client naar een server sturen.''\autocite{DevMozSSE}
 
 \subsection{EventSource}
-Om in de frontend een connectie te openen met de server zal er volgens MDN contributors een EventSource instantie moeten worden aangemaakt. Deze EventSource zal dan telkens de server messages verstuurd richting de frontend deze message ontvangen, waardoor de message vervolgens gebruikt zal kunnen worden in de frontend.
+Om in de frontend een connectie te openen met de server zal er volgens MDN \textcite{DevMozSSE} een EventSource instantie moeten worden aangemaakt. Deze EventSource zal dan telkens de server messages verstuurd richting de frontend deze message ontvangen, waardoor de message vervolgens gebruikt zal kunnen worden in de frontend.
 Als de message van de server geen event field heeft, zal deze worden ontvangen als ‘message’ events maar als de message van de server wel een event field bevat worden deze ontvangen als events met de naam dat er bij wordt meegegeven. Errors zullen dan op hun beurt worden doorgegeven als error events, deze kunnen ook geprogrammeerd worden door gebruik te maken van de onerror callback van het EventSource object. De event stream kan ten slotte ook worden gesloten met behulp van de .close() method van het EventSource object.
 
 \subsection{Event stream format}
-The event stream is a simple stream of text data which must be encoded using UTF-8. Messages in the event stream are separated by a pair of newline characters. A colon as the first character of a line is in essence a comment, and is ignored.
+``The event stream is a simple stream of text data which must be encoded using UTF-8. Messages in the event stream are separated by a pair of newline characters. A colon as the first character of a line is in essence a comment, and is ignored.
 Note: The comment line can be used to prevent connections from timing out; a server can send a comment periodically to keep the connection alive.
-Each message consists of one or more lines of text listing the fields for that message. Each field is represented by the field name, followed by a colon, followed by the text data for that field's value.
+Each message consists of one or more lines of text listing the fields for that message. Each field is represented by the field name, followed by a colon, followed by the text data for that field's value.''\autocite{DevMozSSE}
 
 \subsection{Message fields}
-De message die wordt ontvangen kan volgens MDN contributors bestaan uit de volgende fields: Event, data, id en retry.
+De message die wordt ontvangen kan volgens MDN \textcite{DevMozSSE} bestaan uit de volgende fields: Event, data, id en retry.
 \begin{itemize}
-    \item -	Event field: Deze zal een string bevatten die het type event zal omschrijven. Als deze string meegegeven wordt zal er een event worden uitgestuurd op de browser naar de listener die het event met die specifieke naam kan ontvangen. Om te kunnen listenen voor events zal de frontend een addEventListener() moeten bevatten. Stel dat er geen string wordt meegegeven die het event type omschrijft dan zal de ‘onmessage’ handler worden aangeroepen.
-    \item -	Data field: Als de EventSource meerdere data lines ontvangt zal het die lines concatenaten en er telkens een newline character tussen plaatsen.
-    \item -	Id field: Dit field zal een event ID bevatten dat kan worden gebruikt om het EventSource’s laatste event ID aan te duiden.
-    \item -	Retry field: Stel dat de connectie met de server verbroken zou worden, dan geeft het retry field aan hoe lang de browser moet wachten voor het zal proberen te reconnecten. Dit field kan alleen een Integer bevatten.
+    \item Event field: Deze zal een string bevatten die het type event zal omschrijven. Als deze string meegegeven wordt zal er een event worden uitgestuurd op de browser naar de listener die het event met die specifieke naam kan ontvangen. Om te kunnen listenen voor events zal de frontend een addEventListener() moeten bevatten. Stel dat er geen string wordt meegegeven die het event type omschrijft dan zal de ‘onmessage’ handler worden aangeroepen.
+    \item Data field: Als de EventSource meerdere data lines ontvangt zal het die lines concatenaten en er telkens een newline character tussen plaatsen.
+    \item Id field: Dit field zal een event ID bevatten dat kan worden gebruikt om het EventSource’s laatste event ID aan te duiden.
+    \item Retry field: Stel dat de connectie met de server verbroken zou worden, dan geeft het retry field aan hoe lang de browser moet wachten voor het zal proberen te reconnecten. Dit field kan alleen een Integer bevatten.
 \end{itemize}
+
+
+
+
+\section{SignalR}
+\subsection{Wat is SignalR}
+SignalR zorgt volgens de tutorial van \textcite{PluralsightSignalR} voor real-time functionaliteit, werken met client types, het sturen van berichten naar groepen en voor authenticatie en autorisatie. Bijvoorbeeld, als de ene gebruiker op de website een value aanpast, die value ook in real-time wordt aangepast voor andere gebruikers. 
+
+\subsection{Hoe werkt SignalR}
+SignalR werkt met Hub en Clients. In de tutorials op \textcite{PluralsightSignalR} wordt uitgelegd dat een Hub een class is die de connectie met de Clients zal onderhouden, elke client is de browser die de gebruiker van de applicatie gebruikt. De connectie is langs beide kanten, dus wanneer de connectie tussen de Hub en de Client is gevormd kan de Hub met de Client communiceren alsook in de omgekeerde richting. Dus bijvoorbeeld als een Client een message verstuurt naar de Hub, bijvoorbeeld een verandering van een value, dan kan de Hub ervoor zorgen dat de verandering bij alle Clients wordt weergegeven. Een Hub kan in alle soorten applicaties worden gebruikt, zo lang het maar een server side application is. 
+
+SignalR maakt gebruik van een Hub protocol, dat het format omschrijft die de messages moeten hebben. Normaal gezien gebruik het Hub protocol Json als message format.
+
+\subsection{Transports}
+Er zijn volgens \textcite{PluralsightSignalR} drie manieren om met SignalR messages te versturen, websockets, server-sent events en long polling. Websockets is de beste van de drie, dit is omdat het het een langdurige connectie is, die 2-way en full-duplex werkt. De andere twee transports simuleren een 2-way connection door normale HTTP requests te gebruiken. Server-sent events kunnen server to client HTTP requests uitvoeren. En tenslotte long polling, waarbij de client een request stuurt naar de server en de server pas gaat terugsturen als het iets heeft om terug te sturen. Long polling verbruikt dus nog meer resources dan server-sent events. Wanneer websockets niet beschikbaar zijn gaat het overschakelen naar server-sent events, en als deze niet beschikbaar zijn gaat het overschakelen naar long polling.
+Voor de Proof of Concept zullen server-sent events vooral belangrijk zijn. 
