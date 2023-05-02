@@ -3,11 +3,11 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Voor het inlezen van MiFare- of chip-kaarten worden card readers gebruikt, deze worden vaak verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web app die online draait. Zo kunnen bijvoorbeeld toegangspassen worden ingelezen, dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
+Voor het inlezen van MiFare kaarten worden card readers gebruikt, deze worden vaak verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web app die online draait. Zo kunnen bijvoorbeeld toegangspassen worden ingelezen, dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
 
 %---------- Stand van zaken ---------------------------------------------------
 
-\section{State-of-the-art}%
+\section{State-of-the-art}%9
 \label{sec:state-of-the-art}
 
 \subsection{Wat is een browser extensie}
@@ -43,17 +43,23 @@ Om de driver te maken die ervoor moet zorgen dat de kaartlezer met de browser ka
     \item 5. Implementeer de code in de webbrowser om de kaartlezer te detecteren en met de juiste toestemming toegang te krijgen tot de kaartinformatie.
 \end{itemize}
 
+\subsection{Server-Sent Events}
+Server-sent Evens zorgen volgens \textcite{DigitalOceanSSE} voor real-time updates van data in een webapplicatie. Aan de client kant voorziet het hiervoor de EventSource API, met behulp van deze API kan er geconnecteerd worden met de server en updates ontvangen. Dus als de server een update verstuurt dan gaat de client side, die dus eigenlijk geabonneerd is op de server, deze data van de server meteen ontvangen en kan de website direct worden geüpdate.
+
+\subsection{Windows Services}
+Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange tijd runnen. Ze kunnen automatisch worden opgestart wanneer de computer wordt gestart en maken geen gebruik van een interface. Services draaien dus vaak op de achtergrond zonder dat de gebruiker er iets van merkt. Via de Windows Service Manager kunnen services worden beheert. Een service zou in dit geval goed van pas kunnen komen om de MiFare kaart uit te lezen en de data ervan door te sturen. Door de kaart op de card reader te leggen zal de service de data van die kaart behandelen voor de gebruiker.
+
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- of chip-kaart en de card reader. In het tweede luik van het onderzoek zal er een requirement analyse worden gemaakt over het verbinden van een kaartlezer met de browser. Dit zal dus alles inhouden wat er nodig is om een kaartlezer te doen werken in een browser. Om hier antwoorden op te krijgen zal een interview worden afgenomen. Tenslotte zal er een Proof of Concept worden gemaakt. Het resultaat van de requirement analyse zal dus uitgewerkt worden. Deze extensie/driver zal verwerkt worden in een webapplicatie. De webapplicatie zal gemaakt worden in Angular voor de front-end en C\# voor de back-end. De bedoeling zal zijn dat er gebruik kan worden gemaakt van toegangskaarten of maaltijdcheques via de webapplicatie.
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- of chip-kaart en de card reader. Uit de state-of-the-art bleek al dat WebUSB een potentiële oplossing is. Om verdere oplossingen te vinden zal er in het tweede fase van de bachelorproef een interview worden afgelegd bij de co-promotor, omdat hij een idee heeft voor een andere mogelijke oplossing. Dit idee omvat Windows Services en Server-sent events. Vervolgens zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de co-promotor zullen hiervoor worden uitgewerkt tot een Proof of Concept. Deze PoC zal Jan De Nul dan kunnen gebruiken om kaarten in te lezen op hun webapplicatie.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat}%
 \label{sec:verwachte_resultaten}
 
-Het verwachte resultaat zal een extensie/driver zijn die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
+Het verwachte resultaat zal een werkende extensie/driver zijn die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
 
 \section{Verwachte conclusies}%
 \label{sec:Verwachte_conclusies}
