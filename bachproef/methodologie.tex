@@ -5,16 +5,33 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
 \label{ch:methodologie}
 
-\section{Inleiding}
-Wat is nu de beste manier om een card reader te verbinden met een webapplicatie? In deze methodologie zal er stap voor stap worden uitgelegd hoe er op deze vraag een oplossing is gevonden. Er zal gesproken worden over WebUSB en SignalR, waarom er voor een van die twee gekozen is als oplossing tot de onderzoeksvraag en hoe deze oplossing uitgewerkt wordt in een Proof of Concept voor Jan De Nul. 
+\section{Stap 1: Bestaande oplossingen vinden}
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Dit zal de eerste vier weken gebeuren. Het is de bedoeling dat er hieruit al één of meerdere manieren worden gevonden die mogelijks de onderzoeksvraag kunnen beantwoorden later in het onderzoek.
 
-Om de methodologie duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Dit zijn de twee manieren die werden getest om een antwoord te vinden op de onderzoeksvraag en zullen eerst nog even kort worden besproken bij de volgende tussentitel. 
+\section{Stap 2: Interview voor nieuwe oplossing}
+Er is geen zekerheid dat er manieren worden gevonden in stap 1. Daarom zal er ook een interview worden afgelegd met Anton D'hondt. Hij heeft het idee voor een mogelijke oplossing met behulp van Windows Services en SignalR. Deze manier bestaat nog niet.
+
+\section{Stap 3: Oplossingen uitwerken}
+Tenslotte zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de Anton D'hondt zullen hiervoor worden uitgewerkt tot een Proof of Concept. Deze PoC zal Jan De Nul dan kunnen gebruiken om smartcards in te lezen op hun webapplicatie. 
+
+\section{Stap 3: Succes bepalen}
+Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehouden met twee factoren. Enerzijds zal de Proof of Concept moeten werken en anderzijds zal de card tag in minder dan een seconde moeten kunnen verschijnen in de webapplicatie. Er zal geen rekening worden gehouden met de veiligheid omdat de Proof of Concept enkel binnen het Jan De Nul netwerk zal worden gebruikt en dus niets zal versturen over het internet.
+
+
+\graphicspath{{graphics/}}
+\chapter{\IfLanguageName{dutch}{Onderzoek en Proof of Concept}{Research and Proof of Concept}}%
+\label{ch:Onderzoek en Proof of Concept}
+\section{Inleiding}
+Wat is nu de beste manier om een card reader te verbinden met een webapplicatie? In dit hoofdstuk zal er stap voor stap worden uitgelegd hoe er op deze vraag een oplossing is gevonden. Er zal gesproken worden over WebUSB en SignalR, waarom er voor een van die twee gekozen is als oplossing tot de onderzoeksvraag en hoe deze oplossing uitgewerkt wordt in een Proof of Concept voor Jan De Nul.
+
+In dit hoofdstuk zullen dus de stappen van de methodologie worden uitgevoerd. Om het duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Voor het deel over SignalR gaat het interview met Anton D'hondt nog worden besproken. In beide delen zal worden gekeken of deze mogelijke oplossingen voldoen aan de vooropgestelde succesfactoren. 
+Eerst zal er in volgende tussentitel de mogelijke oplossingen eens worden besproken.
 
 
 \section{De twee mogelijke oplossingen. }
-Eerst ben ik gaan opzoeken op het internet welke mogelijke oplossingen er zijn om een kaart lezer rechtstreeks te verbinden met een website. Hierbij werd al snel duidelijk dat WebUSB de enige oplossing waarbij de kaart lezer ook echt rechtstreeks met de browser verbonden zou zijn. In het volgende hoofdstuk van deze methodologie gaat deze manier dan ook worden uitgetest. Echter bleek uit die test en nog wat verder onderzoek dat deze manier niet werkt voor kaart lezers. Waarom dit is zal meer gedetailleerd uitgelegd worden in het volgende hoofdstuk. 
+Eerst is er op het internet op zoek gegaan naar welke mogelijke oplossingen er zijn om een card reader rechtstreeks te verbinden met een website. Hierbij werd al snel duidelijk dat WebUSB de enige oplossing is waarbij de kaart lezer ook echt rechtstreeks met de browser verbonden zou zijn. In het volgende hoofdstuk van dit onderzoek gaat deze manier dan ook worden uitgetest. Echter bleek uit die test en nog wat verder onderzoek dat deze manier niet werkt voor kaart lezers. Waarom dit is zal meer gedetailleerd uitgelegd worden in het volgende hoofdstuk. 
 
-Ik ben dus opzoek moeten gaan naar een andere oplossing. Deze oplossing ben ik toegekomen door een interview met Anton D’hondt. Hij had het idee om gebruik te maken van SignalR en Windows Services. Het idee is geïnspireerd op eID software, dat wordt gebruikt door ItsMe. Maar in plaats van het gebruik van een extensie, zoals eID software doet, wordt er hier gebruik gemaakt van SignalR om de data maar de website te versturen. Ook hier gaat in detail over gesproken worden verder in de methodologie. 
+Er is dus nog gezocht naar een andere oplossing. Deze oplossing is bekend geraakt door een interview met Anton D’hondt. Hij had het idee om gebruik te maken van SignalR en Windows Services. Het idee is geïnspireerd op eID software, dat wordt gebruikt door ItsMe. Maar in plaats van het gebruik van een extensie, zoals eID software doet, wordt er hier gebruik gemaakt van SignalR om de data maar de website te versturen. Ook hier gaat in detail over gesproken worden verder in de methodologie. 
 
 
 
@@ -84,11 +101,13 @@ Maar om ook echt de connectie te maken met de kaart lezer, zodat de kaart kan wo
     \includegraphics[width=16cm]{webusb_error}
 \end{center}
 
-Na verder onderzoek over deze error blijkt dat deze wordt gegooid om veiligheidsredenen. Volgens \textcite{ReillyGrant} zijn er buiten de Smart Card interface class nog enkele andere interface classes die worden geblokkeerd bij het gebruik van WebUSB. Dit zijn de Audio, Video, HID, Mass Storage en tenslotte ook nog Wireless Controller (Bluetooth en Wireless USB) classes. Deze interface classes worden in de eerste plaats al vaak geblokkeerd door de ingebouwde class drivers van besturingssystemen. Door deze dus ook te blokkeren voor WebUSB zorgt dit voor consistentie over de verschillende platforms. 
+Na verder onderzoek over deze error blijkt dat deze error wordt gegooid om veiligheidsredenen. Volgens \textcite{ReillyGrant} zijn er buiten de Smart Card interface class nog enkele andere interface classes die worden geblokkeerd bij het gebruik van WebUSB. Dit zijn de Audio, Video, HID, Mass Storage en tenslotte ook nog Wireless Controller (Bluetooth en Wireless USB) classes. Deze interface classes worden in de eerste plaats al vaak geblokkeerd door de ingebouwde class drivers van besturingssystemen. Door deze dus ook te blokkeren voor WebUSB zorgt dit voor consistentie over de verschillende platforms. 
 
 Waarom vormen deze device classes dan een risico voor de veiligheid van gegevens? Sommige device classes kunnen een beveiligingsprobleem vormen voor WebUSB omdat ze niet bedoeld zijn voor algemeen gebruik en kunnen gevoelige informatie bevatten. Wanneer een apparaat via WebUSB toegankelijk wordt gemaakt, kan de inhoud ervan worden gelezen of gewijzigd door de webapplicatie die toegang heeft gekregen. 
 
 Als het apparaat, zoals in dit geval, bijvoorbeeld een smartcard reader is, zou het lezen of wijzigen van de inhoud door een webapplicatie met kwaadaardige bedoelingen tot identiteitsdiefstal kunnen leiden. In dit geval is het belangrijk om ervoor te zorgen dat alleen bevoegde partijen toegang hebben tot de smartcard reader en dat de communicatie tussen de webapplicatie en het apparaat veilig is. Als een apparaat een device klasse heeft die als beveiligingsrisico wordt beschouwd, is het aan de fabrikant van het apparaat om het apparaat te beveiligen tegen onbevoegde toegang.
+
+Deze manier voldoet dus niet aan de succesfactor dat het moet werken en is geen oplossing tot de onderzoeksvraag.
 
 
 
@@ -112,9 +131,9 @@ Waarom wordt er dan geen gebruik gemaakt van een extensie zoals eID het doet? Di
 \section{SignalR en Windows Services als oplossing}
 
 \subsection{Inleiding}
-Nu zal er dus stap voor stap getoond worden hoe het idee van Anton uitgewerkt wordt. Er zal begonnen worden over het uitlezen van de kaart in een Windows Service. Vervolgens zal er getoond worden hoe de SignalR Hub werkt. En tenslotte zal de verbinding tussen de SignalR hub en webapplicatie volgen.   
+Nu zal er dus stap voor stap getoond worden hoe het idee van Anton uitgewerkt wordt. Er zal begonnen worden met het uitlezen van de kaart in een Windows Service. Vervolgens zal er getoond worden hoe de SignalR Hub werkt. En tenslotte zal de verbinding tussen de SignalR hub en webapplicatie volgen.   
 
-In de Windows Service zullen er soms methodes voorbijkomen die te maken hebben met het uitlezen van de kaart. Aangezien dit buiten de scope van de bachelorproef valt zal hier geen gedetailleerde code over getoond worden. 
+In de Windows Service zullen er soms methodes voorbij komen die te maken hebben met het uitlezen van de kaart. Aangezien dit buiten de scope van deze bachelorproef valt zal hier geen gedetailleerde code over getoond worden. 
 
 Hieronder is er een schema dat een beetje meer duidelijkheid moet brengen over hoe het idee in elkaar zit. 
 
@@ -232,7 +251,7 @@ public class TagHub : Hub {
 }
 \end{verbatim}
 
-\subsection{SignalR verbinding met webapp}
+\subsection{SignalR in de webapp}
 
 \subsubsection{Inleiding}
 Nu de Windows Service ervoor kan zorgen dat de tag van de kaart wordt uitgelezen en met behulp van SignalR wordt doorgestuurd naar de SignalR Hub moet enkel nog de verbinding worden gelegd tussen de SignalR Hub en de webapplicatie. Dit zal ervoor zorgen dat de tag die op de webapplicatie wordt in real-time zal worden geüpdatet. In het geval van Jan De Nul zal dit worden verwerkt in een form die een badge zal kunnen aanmaken in het systeem. 
@@ -244,7 +263,7 @@ Om de connection te verkrijgen wordt er gebruik gemaakt van de ‘initializeSign
 
 Nu een instantie van de HubConnectionBuilder is aangemaakt kan de SignalR Hub worden aangesproken. Hierop gaat dan de '.on()' methode worden aangeroepen. Aan deze methode wordt een specifieke event-naam en een callback-functie meegegeven. In dit geval is dat de 'ReceiveNewTag’ event-naam en de methode die de tag zal updaten en deze nog eens zal loggen in de console. Deze methode gaat dus luisteren naar de SignalR Hub naar gebeurtenissen met de ‘ReceiveNewTag' naam. 
 
-Als er nog eens wordt teruggekeken naar de Hub die eerder werd aangemaakt, dan kan worden opgemerkt dat de 'ReceiveNewTag’ event-naam wordt gebruikt binnen de ‘Clients.All.SendAsync()’ methode. Merk dus op dat elke keer dat de Hub een tag binnen krijgt, hij de 'ReceiveNewTag’ event-naam zal uitsturen alsook de tag. Dit zal vervolgens de Clients die luisteren op de 'ReceiveNewTag’ deze tag laten ontvangen. 
+Als er nog eens wordt teruggekeken naar de Hub die eerder werd aangemaakt, dan kan worden opgemerkt dat de 'ReceiveNewTag’ event-naam wordt gebruikt binnen de ‘Clients.All.SendAsync()’ methode. Merk dus op dat elke keer dat de Hub een tag binnen krijgt, hij de 'ReceiveNewTag’ event-naam zal uitsturen alsook de tag. Dit zal vervolgens de Clients die luisteren op de 'ReceiveNewTag’ deze tag laten ontvangen.
 
 \begin{verbatim} 
     
@@ -274,6 +293,8 @@ return connection;
     
 \end{verbatim} 
 
+\subsubsection{Tijd resultaat}
+Na enkele keren de Proof of Concept getest te hebben kan worden geconcludeerd dat het ook voldoet aan de tweede succesfactor. De tag verschijnt na het scannen in minder dan een seconde op de webapplicatie.
 
 %% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
 %% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
