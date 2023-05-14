@@ -5,7 +5,7 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-Wilt u op uw webapplicatie smartcard date kunnen inlezen met behulp van een cardreader? In deze bachelorproef gaat worden uitgezocht wat de beste manier is om dit te doen.
+Wilt u op uw webapplicatie smartcard data kunnen uitlezen met behulp van een card reader? In deze bachelorproef gaat worden uitgezocht wat de beste manier is om dit te doen.
 
 
 %De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de % waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de %inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de %inleiding~\autocite{Pollefliet2011}:
@@ -23,7 +23,7 @@ Wilt u op uw webapplicatie smartcard date kunnen inlezen met behulp van een card
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-De doelgroep voor deze bachelorproef is Jan De Nul, meer bepaald de HR-afdeling. De HR-afdeling beheert alle badges binnen het bedrijf. Hier hebben ze ook een applicatie voor. Maar hiervoor willen ze een nieuwe webapplicatie omdat de oude verouderd is. Deze webapplicatie zal deel uitmaken van een verzameling van andere webapplicaties die de HR-afdeling gebruikt. Een van de functionaliteiten van de webapp is het aanmaken van badges in het systeem. Hiervoor moet de badge worden gescand en wordt er verwacht dat de badge tag vrijwel meteen in de website wordt weergegeven. Hiervoor hebben ze nog geen manier gevonden, maar daar zal het resultaat van deze bachelorproef verandering in moeten brengen.
+De doelgroep voor deze bachelorproef is Jan De Nul, meer bepaald de HR-afdeling. De HR-afdeling beheert alle badges binnen het bedrijf. Hier hebben ze ook een applicatie voor. Maar hiervoor willen ze een nieuwe webapplicatie omdat de oude verouderd is. Deze webapplicatie zal deel uitmaken van een verzameling van andere webapplicaties die de HR-afdeling gebruikt. Een van de functionaliteiten van de webapp is het aanmaken van badges in het systeem. Hiervoor moet de badge worden gescand en wordt er verwacht dat de badge-tag vrijwel meteen in de webapplicatie wordt weergegeven. Hiervoor hebben ze nog geen manier gevonden, maar daar zal het resultaat van deze bachelorproef verandering in moeten brengen.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
@@ -31,7 +31,7 @@ Wat is de beste manier om een card reader te verbinden met een webapplicatie?
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
-Het beoogde resultaat van deze bachelorproef zal de beste manier zijn vanaf de webapplicatie gebruik te maken van een card reader. Of het resultaat succesvol is zal bepaald worden aan de hand van een Proof of Concept. Deze Proof of Concept zal dus binnen de applicatie van Jan De Nul volledig moeten werken om als succesvol aanschouwd te worden.
+Het beoogde resultaat van deze bachelorproef zal de beste manier zijn om vanaf de webapplicatie gebruik te maken van een card reader. Of het resultaat succesvol is zal bepaald worden aan de hand van een Proof of Concept. Deze Proof of Concept zal dus binnen de applicatie van Jan De Nul volledig moeten werken en de tag binnen een seconde moeten kunnen uitlezen om als succesvol aanschouwd te worden.
 
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
@@ -47,9 +47,18 @@ In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand v
 
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
-De methodologie zal beginnen met een korte inleiding waarin ook de structuur van de methodologie zal beschreven worden voor extra duidelijkheid. Dan zal er een korte samenvatting komen van de twee mogelijke oplossingen die gevonden zijn om aan te geven wat er zal onderzocht worden.
-Vervolgens zal de eerste manier, met behulp van WebUSB omschreven worden. Dit zal het volgende inhouden: Een inleiding, een projectje waarin de manier met WebUSB werd getest, tenslotte waarom WebUSB uiteindelijk geen geschikte oplossing bleek te zijn in het geval van card readers.
-Daarna zal het interview met Anton D'hondt worden overlopen. Dit zal een omschrijving zijn van het idee dat hij in gedachten had om dit probleem op te lossen.
-In het laatste deel van de methodologie zal het idee van D'hondt worden uitgewerkt. Dit zal een inleiding bevatten alsook het idee opgesplitst in de volgende drie stappen: Windows Services, SignalR Hub en SignalR in de webapp.
+De methodologie zal bestaan uit de volgende vier stappen:
+
+Stap 1: Bestaande oplossingen vinden
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Dit zal de eerste vier weken gebeuren. Het is de bedoeling dat er hieruit al één of meerdere manieren worden gevonden die mogelijks de onderzoeksvraag kunnen beantwoorden later in het onderzoek.
+
+Stap 2: Interview voor nieuwe oplossing
+Er is geen zekerheid dat er manieren worden gevonden in stap 1. Daarom zal er ook een interview worden afgelegd met Anton D'hondt. Hij heeft het idee voor een mogelijke oplossing met behulp van Windows Services en SignalR.
+
+Stap 3: Oplossingen uitwerken
+Vervolgens zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de Anton D'hondt zullen hiervoor worden uitgewerkt tot een Proof of Concept. Deze PoC zal Jan De Nul dan kunnen gebruiken om smartcards in te lezen op hun webapplicatie. 
+
+Stap 4: Succes bepalen
+Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehouden met twee factoren. Enerzijds zal de Proof of Concept moeten werken en anderzijds zal de tag in minder dan een seconde moeten kunnen verschijnen in de webapplicatie. Er zal geen rekening worden gehouden met de veiligheid omdat de Proof of Concept enkel binnen het Jan De Nul netwerk zal worden gebruikt en dus niets zal versturen over het internet.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
