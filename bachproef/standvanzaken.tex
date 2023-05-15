@@ -8,20 +8,20 @@
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
 \section{Introductie}
-Bij het verbinden van een card reader met de webapplicatie komen verschillende technologieën aan te pas. Om ervoor te zorgen dat u alles goed begrijpt in deze bachelor proef is deze stand van zaken opgesteld die u de nodige inleiding geeft tot de technologieën die voorbij zullen komen in deze bachelor proef.  
+Bij het verbinden van een card reader met de webapplicatie komen verschillende technologieën aan te pas. Om ervoor te zorgen dat u alles goed begrijpt in deze bachelorproef is deze stand van zaken opgesteld die u de nodige inleiding geeft tot de technologieën die voorbij zullen komen in deze bachelorproef.  
 
-Hierin zal er info staan over card readers, hoe een card reader werkt, welke soorten card readers er zijn en meer info over de ACR122U card reader die zal worden gebruikt in de Proof of Concept. Ook zal er uitleg zijn over de contactloze smart card, de karakterisering ervan, de technologie die erachter zit en de voor- en nadelen ervan met nog extra info over de MiFare kaart die zal gebruikt worden voor de Proof of Concept.  
+Hierin zal er info staan over card readers, hoe een card reader werkt, welke soorten card readers er zijn en meer info over de ACR122U card reader die zal worden gebruikt in de Proof of Concept. Ook zal er uitleg zijn over de contactloze smartcard, de karakterisering ervan, de technologie die erachter zit en de voor- en nadelen ervan met nog extra info over de MiFare-kaart die zal gebruikt worden voor de Proof of Concept.  
 
-Vervolgens gaat er info zijn over hoe een smart card kan uitgelezen worden, dit is belangrijk omdat het in de PoC de bedoeling zal zijn dat de tag kan worden opgehaald om die vervolgens richting de webapplicatie te versturen. Verder zal er informatie zijn over WebUSB, dat vanuit de front-end al voor de verbinding met USB-apparaten kan zorgen. Echter zullen Server-Sent Events en de SignalR library van groter belang zijn voor deze bachelor proef, deze zullen namelijk zorgen voor de real-time web functionaliteit. SignalR werkt met Hubs en Clients die voor de communicatie moeten zorgen, hierover zal ook uitleg zijn. 
+Vervolgens gaat er info zijn over hoe een smartcard kan uitgelezen worden, dit is belangrijk omdat het in de PoC de bedoeling zal zijn dat de tag kan worden opgehaald om die vervolgens richting de webapplicatie te versturen. Verder zal er informatie zijn over WebUSB, dat vanuit de front-end al voor de verbinding met USB-apparaten kan zorgen. Echter zullen Server-Sent Events en de SignalR library van groter belang zijn voor deze bachelor proef, deze zullen namelijk zorgen voor de real-time webfunctionaliteit. SignalR werkt met Hubs en Clients die voor de communicatie moeten zorgen, hierover zal meer uitleg volgen. 
 
-Om het plaatje compleet te maken zal er nog info zijn over Services, deze zullen op de achtergrond draaien en wanneer er een kaart wordt gescand de tag van die kaart doorsturen naar de webapplicatie met behulp van de eerder vermelde SignalR library.
+Om het plaatje compleet te maken zal er nog info zijn over Windows Services, deze zullen op de achtergrond draaien en wanneer er een smartcard wordt gescand de tag van die smartcard doorsturen naar de webapplicatie met behulp van de eerder vermelde SignalR library.
 
 
 \section{Card Readers}
 \subsection{Inleiding tot de card reader}
 ``Een kaartlezer is in wezen een stukje elektronische technologie dat ontworpen is om de informatie in de magneetstrip of chip van de kaart te decoderen. Het elektronische apparaat voor gegevensinvoer dat de kaartlezer is, kan in de hand worden gehouden, draadloos zijn, of via een kabel zijn aangesloten op een pc of een verkoopterminal, en heeft verschillende gemeenschappelijke kenmerken voor de verschillende apparaten die op de markt verkrijgbaar zijn.''\autocite{MarinPenchevCardReader}
 
-Een kaartlezer kan volgens \textcite{MarinPenchevCardReader} ook enkele functies bevatten die de kaartlezer de mogelijkheid geven om de kaart van een klant in te lezen. De functies kunnen bestaan uit het fysiek inlezen van de kaart, de mogelijkheid te bieden om de kaart in te lezen door de magneetstrip van de kaart tegen het apparaat te vegen, of de aanwezigheid van een pinpad of touchpad. Ook kan het bijvoorbeeld de functie hebben om contactloze transacties te verwerken. Kaartlezers kunnen tenslotte een scherm, toetsenbord of touchscreen bevatten die het inlezen van de kaart vergemakkelijken.
+Een kaartlezer kan volgens \textcite{MarinPenchevCardReader} ook enkele functies bevatten die de kaartlezer de mogelijkheid geven om de kaart van een klant in te lezen. De functies kunnen bestaan uit het fysiek uitlezen van de kaart, de mogelijkheid te bieden om de kaart uit te lezen door de magneetstrip van de kaart tegen het apparaat te vegen, of de aanwezigheid van een pinpad of touchpad. Ook kan het bijvoorbeeld de functie hebben om contactloze transacties te verwerken. Kaartlezers kunnen tenslotte een scherm, toetsenbord of touchscreen bevatten die het inlezen van de kaart vergemakkelijken.
 
 Volgens \textcite{MarinPenchevCardReader} zijn er verschillende types van card reader. 
 \begin{itemize}
@@ -29,31 +29,31 @@ Volgens \textcite{MarinPenchevCardReader} zijn er verschillende types van card r
     \item De portable card reader is ook een mobiele soort card reader, het verschil tussen de mobile en de portable card readers is dat de mobile card reader gemaakt is om in beweging te gebruiken.
     \item Ook zijn er bijvoorbeeld de countertop card reader, deze is te vinden bij bijvoorbeeld de kassa van een winkelen.
     \item Dan zijn er ook nog de payment gerelateerde card readers zoals de magnetic stripe en de chip\&PIN.
-    \item En ten slotte ook nog de (contactloze) smart card reader. Aangezien er voor de Proof of Concept van deze bachelorproef een ACR122U smart card reader gaat worden gebruikt, omdat Jan De Nul deze cardreader reeds in gebruikt, gaat er gefocust worden op smart card readers.
+    \item En ten slotte ook nog de contactloze smartcard reader. Aangezien er voor de Proof of Concept van deze bachelorproef een ACR122U smartcard reader gaat worden gebruikt, omdat Jan De Nul deze card reader reeds gebruikt, gaat er gefocust worden op smartcard readers.
 \end{itemize}
 
 
 
 
 
-\section{Smart Card Readers}
+\section{Smartcard Readers}
 \subsection{Inleiding tot de smart card reader}
-Volgens \textcite{OnyaitOdekeCardReader} zijn smartcardlezers apparaten die kunnen worden gebruikt om een smartcard uit te lezen. Enkele voorbeelden hiervan zijn kredietkaarten, debet kaarten en medische verzekeringskaarten. Een smartcard is een plastiek kaart die een geïnstalleerd gecoördineerd circuit bevat dat kan bestaan uit enerzijds een microcontroller of anderzijds een geheugenchip. Op een smartcard kan daardoor heel wat informatie worden opgeslagen, gecodeerd en gevalideerd.
+Volgens \textcite{OnyaitOdekeCardReader} zijn smartcard readers apparaten die kunnen worden gebruikt om een smartcard uit te lezen. Enkele voorbeelden hiervan zijn kredietkaarten, debet kaarten en medische verzekeringskaarten. Een smartcard is een plastiek kaart die een geïnstalleerd gecoördineerd circuit bevat dat kan bestaan uit enerzijds een microcontroller of anderzijds een geheugenchip. Op een smartcard kan daardoor heel wat informatie worden opgeslagen, gecodeerd en gevalideerd.
 
-Wat betreft het communicatie protocol maakt de ACR122U-A9 smart card reader (die voor de POC gaat gebruikt worden) gebruik van het contactless protocol, via de contactless interface ISO/IEC 14443. Als een kaart geen gebruik maakt van een standard transmission protocol, maar wel een custom/proprietary protocol, dan wordt het communicatie protocol aangeduid als T=14.
+Wat betreft het communicatie protocol maakt de ACR122U-A9 smart card reader (die voor de PoC gaat gebruikt worden) gebruik van het contactless protocol, via de contactless interface ISO/IEC 14443. Als een kaart geen gebruik maakt van een standard transmission protocol, maar wel een custom/proprietary protocol, dan wordt het communicatie protocol aangeduid als T=14.
 
-Readers die tot de 0x0B klasse behoren hebben geen drivers nodig als ze gebruikt worden via PC/SC-compliant operating systems, dit is omdat het operating system al standard de driver levert. Dit is mogelijk omdat de laatste PC/SC CCID specificaties een nieuw smart card framework definiëren dat werkt USB devices die behoren tot de 0x0B device class.
+Readers die tot de 0x0B klasse behoren hebben geen drivers nodig als ze gebruikt worden via PC/SC-compliant operating systems, dit is omdat het besturingssysteem al standaard de driver levert. Dit is mogelijk omdat de laatste PC/SC CCID specificaties een nieuw smartcard framework definiëren dat werkt met USB devices die behoren tot de 0x0B device class.
 
 
 ``Elke lezer moet worden gedefinieerd voor gebruik door het smartcard-subsysteem. Het subsysteem is niet verantwoordelijk voor een lezer die er niet specifiek aan is gegeven.``\autocite{MicrosoftSmartCardReaders}
 
-Elke smartcardlezer kan volgens \textcite{MicrosoftSmartCardReaders} dus onder een bepaalde lezersgroep vallen, dit kunnen echter ook meerdere lezersgroepen zijn. Deze groepen worden bepaald door het subsysteem, gebruikers en beheerders.
+Elke smartcard lezer kan volgens \textcite{MicrosoftSmartCardReaders} dus onder een bepaalde lezersgroep vallen, dit kunnen echter ook meerdere lezersgroepen zijn. Deze groepen worden bepaald door het subsysteem, gebruikers en beheerders.
 
 \subsection{Voordelen van een smart card reader}
-Volgens \textcite{OnyaitOdekeCardReader} zijn de twee grote voordelen van een smart card reader dat het veilig is en dat het veel wordt gebruikt. Wat beveiliging betreft maken ze gebruik van encryptie en validatie technologie. Toegang tot de informatie op de kaart kan enkel worden verworven als de chip in de kaart contact maakt met de card reader. Smart cards worden dus ook heel veel gebruikt, denk maar aan het betalen in de supermarkt, het gebruik als toegangsbadge of het scannen van de kaart bij het opstappen in het openbaar vervoer.
+Volgens \textcite{OnyaitOdekeCardReader} zijn de twee grote voordelen van een smartcard reader dat het veilig is en dat het veel wordt gebruikt. Wat beveiliging betreft maken ze gebruik van encryptie en validatie technologie. Toegang tot de informatie op de kaart kan enkel worden verworven als de chip in de kaart contact maakt met de card reader. Smartcards worden ook heel veel gebruikt, denk maar aan het betalen in de supermarkt, het gebruik als toegangsbadge of het scannen van de kaart bij het opstappen in het openbaar vervoer.
 
 \subsection{ACR122U card reader}
-De card reader die bij Jan De Nul wordt gebruikt en dus ook zal gebruikt worden voor deze POC is de ACR122U-A9. Lees de info over deze reader gerust eens door indien u meer info wilt over bijvoorbeeld de protocollen dat deze reader gebruikt of andere specificaties hiervan.
+De card reader die bij Jan De Nul wordt gebruikt en dus ook zal gebruikt worden voor deze Proof of Concept is de ACR122U-A9. Lees de info over deze reader gerust eens door indien u meer info wilt over bijvoorbeeld de protocollen dat deze reader gebruikt of andere specificaties hiervan.
 
 ``De ACR122U NFC Reader is een PC-gekoppelde contactloze smartcard lezer/schrijver ontwikkeld op basis van 13,56 MHz Contactloze (RFID) Technologie. Hij voldoet aan de ISO/IEC18092 standaard voor Near Field Communication (NFC) en ondersteunt niet alleen MIFARE® en ISO 14443 A en B kaarten, maar ook alle vier typen NFC tags.
 ACR122U is compatibel met zowel CCID als PC/SC. Het is dus een plug-and-play USB-apparaat dat interoperabiliteit met verschillende apparaten en toepassingen mogelijk maakt. Met een toegangssnelheid tot 424 kbps en een volledige USB-snelheid tot 12 Mbps kan ACR122U ook sneller en efficiënter lezen en schrijven. De nabijheidsafstand van de ACR122U is maximaal 5 cm, afhankelijk van het type contactloze tag dat wordt gebruikt.
@@ -62,46 +62,44 @@ De ACR122U NFC Reader is ideaal voor zowel veilige persoonlijke identiteitscontr
 
 Aangezien de card reader voor de POC contactloos kaarten gaat inscannen is het handig om te weten dat de card reader volgens \textcite{ACSACR122U} onder andere met de ISO 14443-4 Compliant Card, T=CL, MIFARE® Classic Card, T=CL, ISO18092 en NFC Tags protocols kan werken.
 
-De ARC122U card reader support ook PC/SC en CT-API, dit zijn application programming interfaces die voor de integratie van smart card technologie in een computersysteem zorgen.
+De ARC122U card reader support ook PC/SC en CT-API, dit zijn application programming interfaces die voor de integratie van smartcard technologie in een computersysteem zorgen.
 
-Ook zijn er drivers beschikbaar op de site van ACS. De laatste driver voor Windows dateert wel van 20 maart 2018 en er wordt duidelijk gemaakt dat de ACR122U end-of-life is, dus dat er waarschijnlijk geen nieuwe drivers meer gaan uit worden gebracht door ACS.
+Ook zijn er drivers beschikbaar op de site van ACS. De laatste driver voor Windows dateert wel van 20 maart 2018 en er wordt duidelijk gemaakt dat de ACR122U end-of-life is, dus dat er waarschijnlijk geen nieuwe drivers meer gaan worden uitgebracht door ACS.
 
 
 
 
 \section{Contactless smart cards}
 \subsection{Inleiding tot de smart cards}
-De badges die voor de Proof of Concept zullen worden gebruikt zijn MiFare kaarten, dit zijn contactloze smart cards, vandaar deze informatie over (contactloze) smart cards.
+De badges die voor de Proof of Concept zullen worden gebruikt zijn MiFare-kaarten, dit zijn contactloze smartcards, vandaar deze informatie over (contactloze) smartcards.
 
-Volgens \textcite{SwatiTawdeSmartCard} is een intelligente kaart een fysieke kaart met een ingebouwde chip die dient als veiligheidstoken. Zij zijn gewoonlijk even groot en kunnen gemaakt zijn van metaal of plastic, zoals een rijbewijs of een kredietkaart. De verbinding met een lezer verloopt via direct fysiek contact of via een draadloos netwerkprotocol op korte termijn, zoals herkenning van radiofrequenties of communicatie in het nabije veld. Een microcontroller of een ingebouwde geheugenchip kan de chip op een intelligente kaart zijn. 
+Volgens \textcite{SwatiTawdeSmartCard} is een smartcard een fysieke kaart met een ingebouwde chip die dient als veiligheidstoken. Zij zijn gewoonlijk even groot als een bankkaart en kunnen gemaakt zijn van metaal of plastiek, zoals een rijbewijs of een kredietkaart. De verbinding met een card reader verloopt via direct fysiek contact of via een draadloos netwerkprotocol op korte termijn, zoals herkenning van radiofrequenties of communicatie in het nabije veld. Een microcontroller of een ingebouwde geheugenchip kan de chip op een intelligente kaart zijn. 
 
-Intelligente kaarten zijn ontworpen om immuun te zijn voor manipulatie en gebruiken encryptie om informatie in het geheugen te beveiligen. Kaarten met een microcontroller-chip kunnen verwerkingsfuncties op de kaart uitvoeren en hebben toegang tot de gegevens in het geheugen van de chip. Intelligente kaarten worden voor verschillende doeleinden gebruikt, maar vooral voor kredietkaarten en andere betaalkaarten. De verkoop van intelligente kaarten is de laatste jaren gestimuleerd door een drang van de betaalkaartenindustrie om EMV-conforme smartcards te gebruiken. 
+Smartcards zijn ontworpen om immuun te zijn voor manipulatie en gebruiken encryptie om informatie in het geheugen te beveiligen. Kaarten met een microcontroller-chip kunnen verwerkingsfuncties op de kaart uitvoeren en hebben toegang tot de gegevens in het geheugen van de chip. Smartcards worden voor verschillende doeleinden gebruikt, maar vooral voor kredietkaarten en andere betaalkaarten. De verkoop van deze intelligente kaarten is de laatste jaren gestimuleerd door een drang van de betaalkaartenindustrie om EMV-conforme smartcards te gebruiken. 
 
 \subsection{Karakterisering van een smart card}
 ``Smartcards hebben verschillende gezichten, hoofdzakelijk afhankelijk van het type geïntegreerde circuitchip (ICC) dat in de plastic kaart is ingebouwd en de fysieke vorm van het verbindingsmechanisme tussen de kaart en de lezer. Het kunnen zeer goedkope tokens zijn voor financiële transacties, zoals kredietkaarten, telefoontokens of getrouwheidstokens van verschillende bedrijven. Het kunnen toegangsmunten zijn om door gesloten deuren te gaan, om in een trein te rijden of om met een auto over een tolweg te rijden. Zij kunnen fungeren als identiteitspasjes om in te loggen op een computersysteem of om toegang te krijgen tot een World Wide Web server met een geauthenticeerde identiteit. Van bijzonder belang zijn verschillende van dergelijke varianten, waaronder kaarten ...''\autocite{OreillySmartCards}
 
 \subsection{Technologie achter de smart card}
-Op de website van \textcite{STASmartCard} staat te lezen dat een smart card communiceert via een inductietechnologie die vergelijkbaar is met die van een RFID (met datasnelheden van 106 tot 848 kbit/s). Om een transactie van data te doen moet de kaart dicht bij een antenne gehouden worden. De standard voor een contactloze smart card om te communiceren is ISO/IEC 14443, wat communicatie van een afstand van 10 cm toelaat. Er is ook de ISO/IEC 15693 standard, en deze laat communicatie van een afstand tot 50 cm toe. De 2 type kaarten met deze standard zijn type A en B. 
+Op de website van \textcite{STASmartCard} staat te lezen dat een smartcard communiceert via een inductietechnologie die vergelijkbaar is met die van een RFID (met datasnelheden van 106 tot 848 kbit/s). Om een transactie van data te doen moet de kaart dicht bij een antenne gehouden worden. De standaard voor een contactloze smartcard om te communiceren is ISO/IEC 14443, wat communicatie van een afstand van 10 cm toelaat. Er is ook de ISO/IEC 15693 standaard, en deze laat communicatie van een afstand tot 50 cm toe. De 2 type kaarten met deze standaard zijn type A en B. 
 
-Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of 
+Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
 
-microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
-
-Een RFID-tag heeft volgens \textcite{STASmartCard} Alliance enkele voordelen zoals dat ze eenvoudig in elkaar zitten, ze zijn goedkoop en ook wegwerpbaar. Een nadeel is echter dat er weinig tot geen beveiliging op zo een RFID-tag zit, dit kan voor veiligheidsproblemen zorgen tijdens de communicatie met de lezer.
+Een RFID-tag heeft volgens \textcite{STASmartCard} enkele voordelen zoals dat ze eenvoudig in elkaar zitten, ze zijn goedkoop en ook wegwerpbaar. Een nadeel is echter dat er weinig tot geen beveiliging op zo een RFID-tag zit, dit kan voor veiligheidsproblemen zorgen tijdens de communicatie met de lezer.
 
 ``Elke lezer die de juiste RF-frequentie (lage frequentie: 125/134 KHz; hoge frequentie: 13,56 MHz; en ultrahoge frequentie: 900MHz) en het juiste protocol gebruikt, kan de RFID-tag zijn inhoud laten meedelen. (Merk op dat dit niet geldt voor autosleutels die een beveiligde RFID-tag bevatten.) Passieve RFID-tags (d.w.z. tags zonder batterij) kunnen worden gelezen op afstanden van enkele centimeters tot vele meters, afhankelijk van de frequentie en de sterkte van het RF-veld dat voor de specifieke tag wordt gebruikt.''\autocite{STASmartCard}
 
-\subsection{Verschillen tussen smart card technology and RFID technology}
-Volgens \textcite{STASmartCard} wordt RFID technologie eerder gebruikt om bijvoorbeeld het fabriceren en versturen van goederen te tracken over een langere afstand. Terwijl contactloze smart cards gebruik maken van RF technologie, wat over een kortere afstand werkt en beter beveiligd is.
+\subsection{Verschillen tussen smartcard technology and RFID technology}
+Volgens \textcite{STASmartCard} wordt RFID technologie eerder gebruikt om bijvoorbeeld het fabriceren en versturen van goederen te tracken over een langere afstand. Terwijl contactloze smartcards gebruik maken van RF technologie, wat over een kortere afstand werkt en beter beveiligd is.
 
-\subsection{Voordelen van een smart card}
-Volgens \textcite{SwatiTawdeSmartCard} zijn er drie voordelen aan een smart card. Aangezien smart cards gebruik maken van microprocessors heeft het een betere beveiliging omdat de microprocessors data direct kunnen verwerken zonder toegang vanop afstand. Smart cards hebben ook geen last van electronische interferentie en magnetische velden. En tenslotte als de kaart geüpdate wordt moet er niet steeds opnieuw een nieuwe kaart worden geproduceerd maar wordt de data op de kaart gewoon geüpdate.
+\subsection{Voordelen van een smartcard}
+Volgens \textcite{SwatiTawdeSmartCard} zijn er drie voordelen aan een smartcard. Aangezien smartcards gebruik maken van microprocessors heeft het een betere beveiliging omdat de microprocessors data direct kunnen verwerken zonder toegang vanop afstand. Smartcards hebben ook geen last van elektronische interferentie en magnetische velden. En tenslotte als de kaart geüpdate wordt moet er niet steeds opnieuw een nieuwe kaart worden geproduceerd maar wordt de data op de kaart gewoon geüpdate.
 
-\subsection{Nadelen van een smart card}
-Een smartcard heeft zo zijn voordelen, maar volgens een artikel van \textcite{SageSmartCard} zijn er ook enkele nadelen. Een smart card is namelijk zeer licht en kan makkelijk worden vergeten of kwijt gespeeld. De prijs van de producten die gebruik maken van smart cards ligt hoog. En hoewel de beveiliging van de smart card goed is zoals eerder vermeld bij de voordelen van een smart card, is en blijft het nog steeds een groot risico.
+\subsection{Nadelen van een smartcard}
+Een smartcard heeft zo zijn voordelen, maar volgens een artikel van \textcite{SageSmartCard} zijn er ook enkele nadelen. Een smartcard is namelijk zeer licht en kan makkelijk worden vergeten of kwijt gespeeld. De prijs van producten die gebruik maken van smartcards ligt hoog. En hoewel de beveiliging van de smartcard goed is zoals eerder vermeld bij de voordelen van een smartcard, is en blijft het nog steeds een groot risico.
 
 \subsection{MiFare Classic kaart}
-Voor de POC gaat een MiFare card worden gebruikt, dus vandaar een beetje extra info over MiFare cards.
+Voor de Proof of Concept gaat een MiFare card worden gebruikt, dus vandaar een beetje extra info over MiFare cards.
 De MiFare card is van het merk NXP Semiconductors, op de \textcite{MiFareSmartCard} website staat te lezen dat de technologie achter de kaart is gebaseerd op de ISO/IEC 14443A standaard en werkt op een frequentie van 13.56 MHz. De MiFare card is een opslagmedium, het geheugen is verdeeld in sectoren en blokken. De kaart kost niet veel en wordt daarom ook veel gebruikt in bijvoorbeeld het openbaar vervoer, of in het geval van Jan De Nul als toegangspas.
 De MiFare Classic 1K heeft een opslagruimte van 1024 Bytes en de MiFare Classic 4k beschikt over een opslagruimte van 4 kilobyte. De kaart kan worden geprogrammeerd voor lees en schrijf operaties.
 
@@ -110,28 +108,28 @@ De MiFare Classic 1K heeft een opslagruimte van 1024 Bytes en de MiFare Classic 
 
 \section{Uitlezen van de MiFare card tag}
 \subsection{Achtergrond informatie}
-Volgens \textcite{SmartcardFocus} bevat elke Mifare kaart een chip met daarin een identificatienummer, UID, dat niet kan worden veranderd. Dit permanent id wordt tijdens de fabricage al toegewezen tot de een bepaalde kaart. Dit UID kan bestaan uit 4 bytes (32bit), 7 bytes (56Bit) of 10 bytes (80bit). Maar het is ook mogelijk dat een kaart een random UID genereerd die niet bestaat uit een van de eerder opgesomde aantal bytes. 
+Volgens \textcite{SmartcardFocus} bevat elke Mifare kaart een chip met daarin een identificatienummer, UID, dat niet kan worden veranderd. Dit permanent id wordt tijdens de fabricage al toegewezen tot een bepaalde kaart. Dit UID kan bestaan uit 4 bytes (32bit), 7 bytes (56Bit) of 10 bytes (80bit). Maar het is ook mogelijk dat een kaart een random UID genereert die niet bestaat uit een van de eerder opgesomde aantal bytes. 
 
 \subsection{Hoe uitlezen}
-Het uitlezen van de UID van een contactloze storage card kan volgens \textcite{SmartcardFocus} in drie stappen gebeuren:
+Het uitlezen van de UID van een contactloze storage card kan volgens \textcite{SmartcardFocus} in de volgende drie stappen gebeuren:
 \begin{itemize}
     \item Het ophalen van de context handler (de SCardEstablishContext). 
-    \item Het connecteren van de kaart met de kaart lezer (de SCardConnect). 
+    \item Het connecteren van de kaart met de card reader (de SCardConnect). 
     \item Met behulp van de SCardTransmit kan de command worden aangeroepen die data van de kaart zal kunnen ophalen. 
 \end{itemize}
-Om gebruikt te kunnen maken van de SCardConnect moet er in de parameters de naam van de kaart lezer worden meegegeven. Maar om de SCardConnect te doen werken moet er een kaart op de lezer worden geplaatst. Het is ook mogelijk om te wachten tot de kaart tegen de lezer wordt gehouden, maar dit kost wat extra werk, hiervoor zal de onCardInput command moeten worden gebruikt.
+Om gebruik te kunnen maken van de SCardConnect moet er in de parameters de naam van de card reader worden meegegeven. Maar om de SCardConnect te doen werken moet er een kaart op de lezer worden geplaatst. Het is ook mogelijk om te wachten tot de kaart tegen de lezer wordt gehouden, maar dit kost wat extra werk, hiervoor zal de onCardInput command moeten worden gebruikt.
 
 \subsection{Benodigdheden binnen de code}
 Dit is enkel een beschrijving van wat de code zal moeten bevatten om een UID uit te kunnen lezen, omdat deze code licht kan verschillen van de code die in de Proof of Concept zal worden gebruikt. 
 
-Eerst en vooral zal er volgens \textcite{SmartcardFocus} een functie moeten bestaan die een lijst van alle geconnecteerde kaart lezers kan ophalen. Eens de lijst is opgehaald kan er een bepaalde lezer worden uitgehaald die uitgelezen zal worden, in de Proof of Concept weten we de naam van de lezer dus de lezer met de gewenste naam kan uit de lijst worden genomen. Als de lezer niet aanwezig is wordt er een exception gegooid.
+Eerst en vooral zal er volgens \textcite{SmartcardFocus} een functie moeten bestaan die een lijst van alle geconnecteerde card readers kan ophalen. Eens de lijst is opgehaald kan er een bepaalde lezer worden uitgehaald die zal worden gebruikt om de smartcard uit te lezen, in de Proof of Concept weten we de naam van de lezer dus de lezer met de gewenste naam kan uit de lijst worden genomen. Als de lezer niet aanwezig is wordt er een exception gegooid.
 
-De functie die de juiste kaart lezer zal ophalen kan dan vervolgens worden gebruikt in de functie die dan ook echt de UID uit de kaart zal lezen, de GetUID functie. Binnen de GetUID functie zal er verbinding worden gemaakt met de geselecteerde lezer met hehulp van de SCardEstablishContext die wordt meegegeven als parameter in de SCardConnect. Eens de verbinding is gemaakt kan de bytestring van de kaart dat op de reader ligt worden uitgelezen. Deze bytestring zal dan alleen nog worden omgezet naar een normale string. 
-
-
+De functie die de juiste cardreader zal ophalen kan dan vervolgens worden gebruikt in de functie die dan ook echt de UID uit de kaart zal lezen, de GetUID functie. Binnen de GetUID functie zal er verbinding worden gemaakt met de geselecteerde lezer met behulp van de SCardEstablishContext die wordt meegegeven als parameter in de SCardConnect. Eens de verbinding is gemaakt kan de bytestring van de kaart dat op de card reader ligt worden uitgelezen. Deze bytestring zal dan tenslotte nog worden omgezet naar een leesbare string. 
 
 
-\section{Windows Services }
+
+
+\section{Windows Services}
 \subsection{Introductie}
 Voor de Proof of Concept zal er ook gebruik worden gemaakt van Windows Services om een programmatje te maken dat op de achtergrond draait en telkens er een kaart tegen de kaart lezer gehouden wordt de tag van de kaart uit wordt gelezen. 
 
