@@ -8,11 +8,11 @@
 \section{Stap 1: Bestaande oplossingen vinden}
 In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Dit zal de eerste vier weken gebeuren. Het is de bedoeling dat er hieruit al één of meerdere manieren worden gevonden die mogelijks de onderzoeksvraag kunnen beantwoorden later in het onderzoek.
 
-\section{Stap 2: Interview voor nieuwe oplossing}
+\section{Stap 2: Interview met Anton D'hondt}
 Er is geen zekerheid dat er manieren worden gevonden in stap 1. Daarom zal er ook een interview worden afgelegd met Anton D'hondt. Hij heeft het idee voor een mogelijke oplossing met behulp van Windows Services en SignalR.
 
 \section{Stap 3: Oplossingen uitwerken}
-Vervolgens zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de Anton D'hondt zullen hiervoor worden uitgewerkt tot een Proof of Concept. Deze PoC zal Jan De Nul dan kunnen gebruiken om smartcards in te lezen op hun webapplicatie.
+Vervolgens zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de Anton D'hondt zullen hiervoor (indien mogelijk) worden uitgewerkt tot een Proof of Concept. Deze Proof of Concept zal Jan De Nul dan kunnen gebruiken om smartcards in te lezen op hun webapplicatie.
 
 \section{Stap 4: Succes bepalen}
 Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehouden met twee factoren. Enerzijds zal de Proof of Concept moeten werken en anderzijds zal de tag in minder dan een seconde moeten kunnen verschijnen in de webapplicatie. Er zal geen rekening worden gehouden met de veiligheid omdat de Proof of Concept enkel binnen het Jan De Nul netwerk zal worden gebruikt en dus niets zal versturen over het internet.
@@ -24,24 +24,24 @@ Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehou
 \section{Inleiding}
 Wat is nu de beste manier om een card reader te verbinden met een webapplicatie? In dit hoofdstuk zal er stap voor stap worden uitgelegd hoe er op deze vraag een oplossing is gevonden. Er zal gesproken worden over WebUSB en SignalR, waarom er voor een van die twee gekozen is als oplossing tot de onderzoeksvraag en hoe deze oplossing uitgewerkt wordt in een Proof of Concept voor Jan De Nul.
 
-In dit hoofdstuk zullen dus de stappen van de methodologie worden uitgevoerd. Om het duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Voor het deel over SignalR gaat het interview met Anton D'hondt nog worden besproken. In beide delen zal worden gekeken of deze mogelijke oplossingen voldoen aan de vooropgestelde succesfactoren. 
+In dit hoofdstuk zullen dus de stappen van de methodologie worden uitgevoerd. Om het duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Voor het deel over SignalR gaat het interview met Anton D'hondt nog worden besproken. In beide delen zal worden gekeken of deze mogelijke oplossingen voldoen aan de vooropgestelde factoren. 
 Eerst zal er in volgende tussentitel de mogelijke oplossingen eens worden besproken.
 
 
-\section{De twee mogelijke oplossingen. }
-Eerst is er op het internet op zoek gegaan naar welke mogelijke oplossingen er zijn om een card reader rechtstreeks te verbinden met een website. Hierbij werd al snel duidelijk dat WebUSB de enige oplossing is waarbij de kaart lezer ook echt rechtstreeks met de browser verbonden zou zijn. In het volgende hoofdstuk van dit onderzoek gaat deze manier dan ook worden uitgetest. Echter bleek uit die test en nog wat verder onderzoek dat deze manier niet werkt voor kaart lezers. Waarom dit is zal meer gedetailleerd uitgelegd worden in het volgende hoofdstuk. 
+\section{De twee mogelijke oplossingen}
+Eerst is er op het internet op zoek gegaan naar welke mogelijke oplossingen er zijn om een card reader rechtstreeks te verbinden met een website. Hierbij werd al snel duidelijk dat WebUSB de enige oplossing is waarbij de card reader ook echt rechtstreeks met de browser verbonden zou zijn. In het volgende hoofdstuk van dit onderzoek gaat deze manier dan ook worden uitgetest. Echter bleek uit die test en nog wat verder onderzoek dat deze manier niet werkt voor card readers. Waarom dit is zal meer gedetailleerd uitgelegd worden in het volgende hoofdstuk. 
 
-Er is dus nog gezocht naar een andere oplossing. Deze oplossing is bekend geraakt door een interview met Anton D’hondt. Hij had het idee om gebruik te maken van SignalR en Windows Services. Het idee is geïnspireerd op eID software, dat wordt gebruikt door ItsMe. Maar in plaats van het gebruik van een extensie, zoals eID software doet, wordt er hier gebruik gemaakt van SignalR om de data maar de website te versturen. Ook hier gaat in detail over gesproken worden verder in de methodologie. 
+Er is dus nog gezocht naar een andere oplossing. Deze oplossing is bekend geraakt door een interview met Anton D’hondt. Hij had het idee om gebruik te maken van SignalR en Windows Services. Het idee is geïnspireerd op eID software, dat wordt gebruikt door ItsMe. Maar in plaats van het gebruik van een extensie, zoals eID software doet, wordt er hier gebruik gemaakt van SignalR om de data maar de website te versturen. Ook hier gaat in detail over gesproken worden in verdere hoofdstukken. 
 
 
 
 \section{WebUSB als oplossing}
 
 \subsection{Inleiding}
-WebUSB is de eerste mogelijke oplossing die opkwam om een deze onderzoeksvraag te beantwoorden. Zoals eerder al vermeld in de literatuurstudie is WebUSB zeer handig om USB-apparaten te verbinden met, en rechten te geven aan een website. Het plan was dus om te testen of WebUSB een oplossing is voor het gebruik van kaart lezers. 
+WebUSB is de eerste mogelijke oplossing die opkwam om deze onderzoeksvraag te beantwoorden. Zoals eerder al vermeld in de literatuurstudie is WebUSB zeer handig om USB-apparaten te verbinden met, en rechten te geven aan een website. Het plan was dus om te testen of WebUSB een oplossing is voor het gebruik van een card reader op een website.
 
 \subsection{Test project met WebUSB}
-Om dit te testen is er een klein projectje opgesteld waarin WebUSB wordt gedemonstreerd. Dit projectje bestaat uit een simpele HTML-file en een typescript file.  De HTML-file zal een simpele titel en een knop bevatten. Wanneer er op die knop gedrukt wordt zal de connectDevice() command aangeroepen worden. 
+Om dit te testen is er een klein projectje opgesteld waarin WebUSB wordt gedemonstreerd. Dit projectje bestaat uit een simpele HTML file en een typescript file.  De HTML file zal een simpele titel en een knop bevatten. Wanneer er op die knop gedrukt wordt zal de ´connectDevice()´ command aangeroepen worden. 
 
 HTML: 
 \begin{verbatim} 
@@ -51,9 +51,9 @@ HTML:
     
 \end{verbatim} 
 
-De connectDevice() command werkt als volgt. Er zal als eerste gebruik worden gemaakt van ‘navigator[‘usb’]’, dit is een property van het 'navigator’ object in het environment van de webbrowser. Als de WebUSB API wordt ondersteund door de browser dan zal ‘navigator[‘usb’]’ een object teruggeven dat kan worden gebruikt om toegang te krijgen tot USB devices. Als de WebUSB API niet ondersteund wordt door de browser dan zal dit een undefined error teruggeven bij het aanroepen van ‘navigator[‘usb’]’. Browsers zoals Chrome, Firefox, Microsoft Edge en Opera ondersteunen WebUSB, maar Safari niet. 
+De ´connectDevice()´ command werkt als volgt. Er zal als eerste gebruik worden gemaakt van ‘navigator[‘usb’]’, dit is een property van het 'navigator’ object in het environment van de webbrowser. Als de WebUSB API wordt ondersteund door de browser zal ‘navigator[‘usb’]’ een object teruggeven dat kan worden gebruikt om toegang te krijgen tot USB devices. Als de WebUSB API niet ondersteund wordt door de browser dan zal dit een undefined error teruggeven bij het aanroepen van ‘navigator[‘usb’]’. Browsers zoals Chrome, Firefox, Microsoft Edge en Opera ondersteunen WebUSB, maar Safari niet. 
 
-Via ‘navigator[‘usb’]’ kan er dan vervolgens de ‘connectDevice()’ functie worden aangeroepen. Deze functie gaat ervoor zorgen dat er een pop-up schermpje tevoorschijn komt met daarin alle USB-apparaten die verbonden zijn met de computer. Handig om te weten is dat er ook filters kunnen aan worden meegegeven, zoals 'vendorId’ of ‘productId’. Deze filters moeten worden meegegeven binnen de { }. In het geval van dit projectje wordt er geen gebruik gemaakt van deze filters omdat het nog onnodig is voor dit test projectje, dit wordt gedaan door de { } leeg te laten. De ‘requestDevice’ functie geeft het geselecteerde apparaat terug. Met behulp van de ‘.then’ functie, waarin het ‘selectedDevice’ het geselecteerde apparaat voorstelt, kunnen er vervolgens verdere verwerkingen worden uitgevoerd met het ‘selectedDevice’. In dit projectje gaat er om de verbinding te testen gebruik worden gemaakt van een simpele ‘console.log(selectedDevice)’ om indien de verbinding er is de apparaat data te loggen in de console. 
+Via ‘navigator[‘usb’]’ kan er dan vervolgens de ‘connectDevice()’ functie worden aangeroepen. Deze functie gaat ervoor zorgen dat er een pop-up schermpje tevoorschijn komt met daarin alle USB-apparaten die verbonden zijn met de computer. Handig om te weten is dat er ook filters kunnen aan worden meegegeven, zoals vendorId of productId. Deze filters moeten worden meegegeven binnen de ´{ }´. In het geval van dit projectje wordt er geen gebruik gemaakt van deze filters omdat het nog onnodig is voor dit test projectje, dit wordt gedaan door de { } leeg te laten. De ‘requestDevice’ functie geeft het geselecteerde apparaat terug. Met behulp van de ‘.then’ functie, waarin het ‘selectedDevice’ het geselecteerde apparaat voorstelt, kunnen er vervolgens verdere verwerkingen worden uitgevoerd met het ‘selectedDevice’. In dit projectje gaat er om de verbinding te testen gebruik worden gemaakt van een simpele ‘console.log(selectedDevice)’ om indien de verbinding er is de apparaat data te loggen in de console. 
 
 Typescript: 
 \begin{verbatim} 
@@ -83,19 +83,19 @@ Typescript:
 \end{verbatim} 
 
 \subsection{Waarom geen WebUSB}
-Als de bovenliggende code wordt uitgevoerd zal er dus een pop-up verschijnen met daarin alles USB-apparaten die met de computer verbonden zijn.
+Als de bovenliggende code wordt uitgevoerd zal er dus een pop-up verschijnen met daarin alle USB-apparaten die met de computer verbonden zijn.
 
 \begin{center}
     \includegraphics[width=8cm]{device_list}
 \end{center}
 
-Als er in de lijst dan de ACR122U cardreader wordt geselecteerd, dan zal de informatie over deze kaart lezer in de console worden gelogd. Dit werkt allemaal zoals het hoort te werken.
+Als er in de lijst dan de ACR122U cardreader wordt geselecteerd, dan zal de informatie over deze card reader in de console worden gelogd. Dit werkt allemaal zoals het hoort te werken.
 
 \begin{center}
     \includegraphics[width=16cm]{device_log}
 \end{center}
 
-Maar om ook echt de connectie te maken met de kaart lezer, zodat de kaart kan worden uitgelezen, moet het geselecteerde device geopend worden. Dit kan ongeveer op dezelfde manier als in de code hierboven. Maar in plaats van het device te loggen in de console zal de ‘open()’ hierop functie worden uitgevoerd. Deze geeft een promise terug die duidelijk maakt wanneer de sessie op het USB-apparaat is gestart. Dit geeft volgende error terug: 
+Maar om ook echt de connectie te maken met de card reader, zodat de kaart kan worden uitgelezen, moet het geselecteerde device geopend worden. Dit kan ongeveer op dezelfde manier als in de code hierboven. Maar in plaats van het device te loggen in de console zal de ‘open()’ functie hierop worden uitgevoerd. Deze zou een promise terug moeten geven die duidelijk maakt wanneer de sessie op het USB-apparaat is gestart. Dit geeft volgende error terug: 
 
 \begin{center}
     \includegraphics[width=16cm]{webusb_error}
@@ -103,11 +103,11 @@ Maar om ook echt de connectie te maken met de kaart lezer, zodat de kaart kan wo
 
 Na verder onderzoek over deze error blijkt dat deze error wordt gegooid om veiligheidsredenen. Volgens \textcite{ReillyGrant} zijn er buiten de Smart Card interface class nog enkele andere interface classes die worden geblokkeerd bij het gebruik van WebUSB. Dit zijn de Audio, Video, HID, Mass Storage en tenslotte ook nog Wireless Controller (Bluetooth en Wireless USB) classes. Deze interface classes worden in de eerste plaats al vaak geblokkeerd door de ingebouwde class drivers van besturingssystemen. Door deze dus ook te blokkeren voor WebUSB zorgt dit voor consistentie over de verschillende platforms. 
 
-Waarom vormen deze device classes dan een risico voor de veiligheid van gegevens? Sommige device classes kunnen een beveiligingsprobleem vormen voor WebUSB omdat ze niet bedoeld zijn voor algemeen gebruik en kunnen gevoelige informatie bevatten. Wanneer een apparaat via WebUSB toegankelijk wordt gemaakt, kan de inhoud ervan worden gelezen of gewijzigd door de webapplicatie die toegang heeft gekregen. 
+Waarom vormen deze device classes dan een risico voor de veiligheid van gegevens? Sommige device classes kunnen een beveiligingsprobleem vormen voor WebUSB omdat ze niet bedoeld zijn voor algemeen gebruik en kunnen gevoelige informatie bevatten. Wanneer een apparaat via WebUSB toegankelijk wordt gemaakt, kan de inhoud ervan worden gelezen of gewijzigd worden door de webapplicatie die toegang heeft gekregen. 
 
-Als het apparaat, zoals in dit geval, bijvoorbeeld een smartcard reader is, zou het lezen of wijzigen van de inhoud door een webapplicatie met kwaadaardige bedoelingen tot identiteitsdiefstal kunnen leiden. In dit geval is het belangrijk om ervoor te zorgen dat alleen bevoegde partijen toegang hebben tot de smartcard reader en dat de communicatie tussen de webapplicatie en het apparaat veilig is. Als een apparaat een device klasse heeft die als beveiligingsrisico wordt beschouwd, is het aan de fabrikant van het apparaat om het apparaat te beveiligen tegen onbevoegde toegang.
+Als het apparaat, dat zoals in dit geval een smartcard reader is, zou het lezen of wijzigen van de inhoud door een webapplicatie met kwaadaardige bedoelingen tot identiteitsdiefstal kunnen leiden. In dit geval is het belangrijk om ervoor te zorgen dat alleen bevoegde partijen toegang hebben tot de smartcard reader en dat de communicatie tussen de webapplicatie en het apparaat veilig is. Als een apparaat een device class heeft die als beveiligingsrisico wordt beschouwd, is het aan de fabrikant van het apparaat om het apparaat te beveiligen tegen onbevoegde toegang.
 
-Deze manier voldoet dus niet aan de succesfactor dat het moet werken en is geen oplossing tot de onderzoeksvraag.
+Deze manier voldoet niet aan de factor dat het moet werken en is dus geen oplossing tot de onderzoeksvraag.
 
 
 
