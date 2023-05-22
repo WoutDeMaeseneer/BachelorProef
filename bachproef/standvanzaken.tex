@@ -18,7 +18,7 @@ Om het plaatje compleet te maken zal er nog info zijn over Windows Services, dez
 
 
 \section{Card Readers}
-\subsection{Inleiding tot de card reader}
+\subsection{Inleiding}
 ``Een kaartlezer is in wezen een stukje elektronische technologie dat ontworpen is om de informatie in de magneetstrip of chip van de kaart te decoderen. Het elektronische apparaat voor gegevensinvoer dat de kaartlezer is, kan in de hand worden gehouden, draadloos zijn, of via een kabel zijn aangesloten op een pc of een verkoopterminal, en heeft verschillende gemeenschappelijke kenmerken voor de verschillende apparaten die op de markt verkrijgbaar zijn.''\autocite{MarinPenchevCardReader}
 
 Een kaartlezer kan volgens \textcite{MarinPenchevCardReader} ook enkele functies bevatten die de kaartlezer de mogelijkheid geven om de kaart van een klant in te lezen. De functies kunnen bestaan uit het fysiek uitlezen van de kaart, de mogelijkheid te bieden om de kaart uit te lezen door de magneetstrip van de kaart tegen het apparaat te vegen, of de aanwezigheid van een pinpad of touchpad. Ook kan het bijvoorbeeld de functie hebben om contactloze transacties te verwerken. Kaartlezers kunnen tenslotte een scherm, toetsenbord of touchscreen bevatten die het inlezen van de kaart vergemakkelijken.
@@ -37,7 +37,7 @@ Volgens \textcite{MarinPenchevCardReader} zijn er verschillende types van card r
 
 
 \section{Smartcard Readers}
-\subsection{Inleiding tot de smart card reader}
+\subsection{Inleiding}
 Volgens \textcite{OnyaitOdekeCardReader} zijn smartcard readers apparaten die kunnen worden gebruikt om een smartcard uit te lezen. Enkele voorbeelden hiervan zijn kredietkaarten, debet kaarten en medische verzekeringskaarten. Een smartcard is een plastiek kaart die een geïnstalleerd gecoördineerd circuit bevat dat kan bestaan uit enerzijds een microcontroller of anderzijds een geheugenchip. Op een smartcard kan daardoor heel wat informatie worden opgeslagen, gecodeerd en gevalideerd.
 
 Wat betreft het communicatie protocol maakt de ACR122U-A9 smart card reader (die voor de PoC gaat gebruikt worden) gebruik van het contactless protocol, via de contactless interface ISO/IEC 14443. Als een kaart geen gebruik maakt van een standard transmission protocol, maar wel een custom/proprietary protocol, dan wordt het communicatie protocol aangeduid als T=14.
@@ -49,7 +49,7 @@ Readers die tot de 0x0B klasse behoren hebben geen drivers nodig als ze gebruikt
 
 Elke smartcard lezer kan volgens \textcite{MicrosoftSmartCardReaders} dus onder een bepaalde lezersgroep vallen, dit kunnen echter ook meerdere lezersgroepen zijn. Deze groepen worden bepaald door het subsysteem, gebruikers en beheerders.
 
-\subsection{Voordelen van een smart card reader}
+\subsection{Voordelen}
 Volgens \textcite{OnyaitOdekeCardReader} zijn de twee grote voordelen van een smartcard reader dat het veilig is en dat het veel wordt gebruikt. Wat beveiliging betreft maken ze gebruik van encryptie en validatie technologie. Toegang tot de informatie op de kaart kan enkel worden verworven als de chip in de kaart contact maakt met de card reader. Smartcards worden ook heel veel gebruikt, denk maar aan het betalen in de supermarkt, het gebruik als toegangsbadge of het scannen van de kaart bij het opstappen in het openbaar vervoer.
 
 \subsection{ACR122U card reader}
@@ -69,21 +69,21 @@ Ook zijn er drivers beschikbaar op de site van ACS. De laatste driver voor Windo
 
 
 
-\section{Contactless smart cards}
-\subsection{Inleiding tot de smart cards}
+\section{Contactless smartcards}
+\subsection{Inleiding}
 De badges die voor de Proof of Concept zullen worden gebruikt zijn MiFare-kaarten, dit zijn contactloze smartcards, vandaar deze informatie over (contactloze) smartcards.
 
 Volgens \textcite{SwatiTawdeSmartCard} is een smartcard een fysieke kaart met een ingebouwde chip die dient als veiligheidstoken. Zij zijn gewoonlijk even groot als een bankkaart en kunnen gemaakt zijn van metaal of plastiek, zoals een rijbewijs of een kredietkaart. De verbinding met een card reader verloopt via direct fysiek contact of via een draadloos netwerkprotocol op korte termijn, zoals herkenning van radiofrequenties of communicatie in het nabije veld. Een microcontroller of een ingebouwde geheugenchip kan de chip op een intelligente kaart zijn. 
 
 Smartcards zijn ontworpen om immuun te zijn voor manipulatie en gebruiken encryptie om informatie in het geheugen te beveiligen. Kaarten met een microcontroller-chip kunnen verwerkingsfuncties op de kaart uitvoeren en hebben toegang tot de gegevens in het geheugen van de chip. Smartcards worden voor verschillende doeleinden gebruikt, maar vooral voor kredietkaarten en andere betaalkaarten. De verkoop van deze intelligente kaarten is de laatste jaren gestimuleerd door een drang van de betaalkaartenindustrie om EMV-conforme smartcards te gebruiken. 
 
-\subsection{Karakterisering van een smart card}
+\subsection{Karakterisering}
 ``Smartcards hebben verschillende gezichten, hoofdzakelijk afhankelijk van het type geïntegreerde circuitchip (ICC) dat in de plastic kaart is ingebouwd en de fysieke vorm van het verbindingsmechanisme tussen de kaart en de lezer. Het kunnen zeer goedkope tokens zijn voor financiële transacties, zoals kredietkaarten, telefoontokens of getrouwheidstokens van verschillende bedrijven. Het kunnen toegangsmunten zijn om door gesloten deuren te gaan, om in een trein te rijden of om met een auto over een tolweg te rijden. Zij kunnen fungeren als identiteitspasjes om in te loggen op een computersysteem of om toegang te krijgen tot een World Wide Web server met een geauthenticeerde identiteit. Van bijzonder belang zijn verschillende van dergelijke varianten, waaronder kaarten ...''\autocite{OreillySmartCards}
 
-\subsection{Technologie achter de smart card}
+\subsection{Technologie}
 Op de website van \textcite{STASmartCard} staat te lezen dat een smartcard communiceert via een inductietechnologie die vergelijkbaar is met die van een RFID (met datasnelheden van 106 tot 848 kbit/s). Om een transactie van data te doen moet de kaart dicht bij een antenne gehouden worden. De standaard voor een contactloze smartcard om te communiceren is ISO/IEC 14443, wat communicatie van een afstand van 10 cm toelaat. Er is ook de ISO/IEC 15693 standaard, en deze laat communicatie van een afstand tot 50 cm toe. De 2 type kaarten met deze standaard zijn type A en B. 
 
-Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
+Een verwante contactloze technologie is RFID (radiofrequentie-identificatie). In bepaalde gevallen kan deze worden gebruikt voor toepassingen die vergelijkbaar zijn met die van contactloze smartcards, zoals voor elektronische tolheffing. RFID-apparaten hebben gewoonlijk geen schrijfbaar geheugen of \newline microcontroller-verwerkingscapaciteit, zoals contactloze smartcards vaak wel hebben.
 
 Een RFID-tag heeft volgens \textcite{STASmartCard} enkele voordelen zoals dat ze eenvoudig in elkaar zitten, ze zijn goedkoop en ook wegwerpbaar. Een nadeel is echter dat er weinig tot geen beveiliging op zo een RFID-tag zit, dit kan voor veiligheidsproblemen zorgen tijdens de communicatie met de lezer.
 
@@ -92,10 +92,10 @@ Een RFID-tag heeft volgens \textcite{STASmartCard} enkele voordelen zoals dat ze
 \subsection{Verschillen tussen smartcard technology and RFID technology}
 Volgens \textcite{STASmartCard} wordt RFID technologie eerder gebruikt om bijvoorbeeld het fabriceren en versturen van goederen te tracken over een langere afstand. Terwijl contactloze smartcards gebruik maken van RF technologie, wat over een kortere afstand werkt en beter beveiligd is.
 
-\subsection{Voordelen van een smartcard}
+\subsection{Voordelen}
 Volgens \textcite{SwatiTawdeSmartCard} zijn er drie voordelen aan een smartcard. Aangezien smartcards gebruik maken van microprocessors heeft het een betere beveiliging omdat de microprocessors data direct kunnen verwerken zonder toegang vanop afstand. Smartcards hebben ook geen last van elektronische interferentie en magnetische velden. En tenslotte als de kaart geüpdate wordt moet er niet steeds opnieuw een nieuwe kaart worden geproduceerd maar wordt de data op de kaart gewoon geüpdate.
 
-\subsection{Nadelen van een smartcard}
+\subsection{Nadelen}
 Een smartcard heeft zo zijn voordelen, maar volgens een artikel van \textcite{SageSmartCard} zijn er ook enkele nadelen. Een smartcard is namelijk zeer licht en kan makkelijk worden vergeten of kwijt gespeeld. De prijs van producten die gebruik maken van smartcards ligt hoog. En hoewel de beveiliging van de smartcard goed is zoals eerder vermeld bij de voordelen van een smartcard, is en blijft het nog steeds een groot risico.
 
 \subsection{MiFare Classic kaart}
@@ -106,7 +106,7 @@ De MiFare Classic 1K heeft een opslagruimte van 1024 Bytes en de MiFare Classic 
 
 
 
-\section{Uitlezen van de MiFare card tag}
+\section{Uitlezen MiFare-kaart tag}
 \subsection{Achtergrond informatie}
 Volgens \textcite{SmartcardFocus} bevat elke Mifare kaart een chip met daarin een identificatienummer, UID, dat niet kan worden veranderd. Dit permanent id wordt tijdens de fabricage al toegewezen tot een bepaalde kaart. Dit UID kan bestaan uit 4 bytes (32bit), 7 bytes (56Bit) of 10 bytes (80bit). Maar het is ook mogelijk dat een kaart een random UID genereert die niet bestaat uit een van de eerder opgesomde aantal bytes. 
 
@@ -139,7 +139,7 @@ Windows Services, dat voorheen beter bekend stond als NT-services, zijn langlope
 
 Een Windows Service maken kan volgens \textcite{DevMozService} simpel worden gedaan door een Microsoft Visual Studio-project aan te maken. In dat project kunnen dan de opdrachten worden gecodeerd die worden verzonden naar de service, en er kan in het project ook worden gedefinieerd wat er moet gebeuren als de opdracht ontvangen wordt in de service. Er zijn verschillende opdrachten die de service kan uitvoeren, enkele voorbeelden hiervan, en degene die in de Proof of Concept zullen worden gebruikt, zijn het starten en stoppen van de Windows Service. Maar ook het onderbreken, het hervatten en aangepaste opdrachten kunnen worden gedefinieerd. 
 
-\subsection{Levensduur van een Windows Service}
+\subsection{Levensduur Windows Service}
 De levensduur van een Windows Service gaat volgens \textcite{DevMozService} langs verschillende fases. In de eerste fase moet de service worden geïnstalleerd waarna de service zal kunnen worden gebruikt. Dit gebeurt door het installatieprogramma van de Service uit te voeren. Daarna wordt de service geladen in de Service Control Manager, dit is het centrale programma op Windows waarin zich een lijst van Windows Services bevindt en waaruit services kunnen worden beheerd. 
 
 De tweede fase bestaat uit het opstarten van de service, eens de service is opgestart zal die werken. Het starten van een service kan op drie manieren. Vanuit de Service Control Manager, vanuit de Server Explorer of door vanuit de code de ‘start’ methode aan te roepen. Wanneer de 'start’ methode wordt aangeroepen zal deze de ‘OnStart’ methode aanroepen in de service zelf en de code uitvoeren die daarin staat gedefinieerd. 
@@ -153,12 +153,12 @@ In de code van de Windows Service kunnen de OnStop, OnPause en OnContinue worden
 
 Af en toe ziet u andere servicetypen als u een query uitvoert op bestaande services die niet zijn gemaakt in Visual Studio.''\autocite{DevMozService}
 
-\subsection{Vereisten voor een Windows Service}
+\subsection{Vereisten}
 Er zijn volgens \textcite{DevMozService} twee vereisten waar rekening mee moet worden gehouden bij het maken van een service. De eerste is dat de service moet worden gemaakt in en Windows-servicetoepassingsproject of een .NET project waarmee een .exe-bestand wordt gemaakt en die de ServiceBase klasse overneemt. 
 
 De tweede vereiste is dat projecten die gebruik maken van services installatieonderdelen nodig hebben om het project en bijhorende services goed te kunnen runnen. 
 
-\subsection{Installeren en verwijderen van een service}
+\subsection{Installeren en verwijderen van service}
 Het installeren van een service kan volgens \textcite{DevMozServiceInstall} met behulp van InstallUtil.exe of PowerShell. Voor de InstallUtil.exe kan dit met de ‘installutil <yourproject>.exe’ command. Met PowerShell is dit gelijkaardig, met het verschil dat je met PowerShell een naam aan de service kan geven, dit gebeurt met de ‘New-Service -Name "YourServiceName" -BinaryPathName <yourproject>.exe’ command. Verwijderen is eveneens gelijkaardig, voor InstallUtil.exe is dit met de ‘installutil /u <yourproject>.exe’ command en voor PowerShell wordt hiervoor de ‘Remove-Service -Name "YourServiceName"’ command gebruikt. 
 
 
