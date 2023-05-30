@@ -15,7 +15,7 @@ Er is geen zekerheid dat er manieren worden gevonden in stap 1. Daarom zal er oo
 Vervolgens zal er een vergelijkende studie worden gedaan om te kijken welke mogelijke oplossing het beste is. Zowel WebUSB als het idee van de Anton D'hondt zullen hiervoor (indien mogelijk) worden uitgewerkt tot een Proof of Concept. Deze Proof of Concept zal Jan De Nul dan kunnen gebruiken om smartcards in te lezen op hun webapplicatie.
 
 \section{Stap 4: Succes bepalen}
-Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehouden met twee factoren. Enerzijds zal de Proof of Concept moeten werken en anderzijds zal de tag in minder dan een seconde moeten kunnen verschijnen in de webapplicatie. Er zal geen rekening worden gehouden met de veiligheid omdat de Proof of Concept enkel binnen het Jan De Nul netwerk zal worden gebruikt en dus niets zal versturen over het internet.
+Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehouden met twee eisen. Enerzijds zal de Proof of Concept moeten werken en anderzijds zal de tag in minder dan een seconde moeten kunnen verschijnen in de webapplicatie. Er zal geen rekening worden gehouden met de veiligheid omdat de Proof of Concept enkel binnen het Jan De Nul netwerk zal worden gebruikt en dus niets zal versturen over het internet.
 
 
 \graphicspath{{graphics/}}
@@ -24,7 +24,7 @@ Bij het bepalen van succes voor deze Proof of Concepts zal worden rekening gehou
 \section{Inleiding}
 Wat is nu de beste manier om een card reader te verbinden met een webapplicatie? In dit hoofdstuk zal er stap voor stap worden uitgelegd hoe er op deze vraag een oplossing is gevonden. Er zal gesproken worden over WebUSB en SignalR, waarom er voor een van die twee gekozen is als oplossing tot de onderzoeksvraag en hoe deze oplossing uitgewerkt wordt in een Proof of Concept voor Jan De Nul.
 
-In dit hoofdstuk zullen dus de stappen van de methodologie worden uitgevoerd. Om het duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Voor het deel over SignalR gaat het interview met Anton D'hondt nog worden besproken. In beide delen zal worden gekeken of deze mogelijke oplossingen voldoen aan de vooropgestelde factoren. 
+In dit hoofdstuk zullen dus de stappen van de methodologie worden uitgevoerd. Om het duidelijk te houden is het opgesplitst in twee delen, een deel over WebUSB en een deel over SignalR. Voor het deel over SignalR gaat het interview met Anton D'hondt nog worden besproken. In beide delen zal worden gekeken of deze mogelijke oplossingen voldoen aan de vooropgestelde eisen. 
 Eerst zal er in volgende tussentitel de mogelijke oplossingen eens worden besproken.
 
 
@@ -107,7 +107,7 @@ Waarom vormen deze device classes dan een risico voor de veiligheid van gegevens
 
 Als het apparaat, dat zoals in dit geval een smartcard reader is, zou het lezen of wijzigen van de inhoud door een webapplicatie met kwaadaardige bedoelingen tot identiteitsdiefstal kunnen leiden. In dit geval is het belangrijk om ervoor te zorgen dat alleen bevoegde partijen toegang hebben tot de smartcard reader en dat de communicatie tussen de webapplicatie en het apparaat veilig is. Als een apparaat een device class heeft die als beveiligingsrisico wordt beschouwd, is het aan de fabrikant van het apparaat om het apparaat te beveiligen tegen onbevoegde toegang.
 
-Deze manier voldoet niet aan de factor dat het moet werken en is dus geen oplossing tot de onderzoeksvraag.
+Deze manier voldoet niet aan de eis dat het moet werken en is dus geen oplossing tot de onderzoeksvraag.
 
 
 
@@ -170,6 +170,8 @@ public class Worker : IHostedService {
     
     public Task StartAsync(CancellationToken cancellationToken) {
         
+        _logger.LogInformation("Tag Service running.");
+        
         string readerName = GetCardReader();
         
         monitor.CardInserted += GetUID;    
@@ -179,6 +181,8 @@ public class Worker : IHostedService {
     }
 
     public Task StopAsync(CancellationToken cancellationToken) {
+        
+        _logger.LogInformation("Tag Service stopping.");
         
         monitor.Cancel();
         monitor.Dispose();
@@ -195,7 +199,8 @@ public class Worker : IHostedService {
         
         //Create a connection to the Hub.
         var connection = new HubConnectionBuilder()
-        .WithUrl("https://localhost:7286/taghub", options => options.UseDefaultCredentials = true)
+        .WithUrl("https://localhost:7286/taghub", options => 
+        options.UseDefaultCredentials = true)
         .Build();
         
         //Start the connection to the Hub.
@@ -205,7 +210,8 @@ public class Worker : IHostedService {
             Console.WriteLine(ex.Message.ToString());
         }
         
-        //Invoke the 'NotifyNewTag' function in the Hub. (Which passes the badgeTag to the web app using server-sent events).
+        //Invoke the 'NotifyNewTag' function in the Hub. 
+        //(Which passes the badgeTag to the web app using server-sent events).
         await connection.InvokeAsync("NotifyNewTag", BadgeTag);
         await connection.StopAsync();
     }
@@ -294,7 +300,7 @@ return connection;
 \end{verbatim} 
 
 \subsubsection{Tijd resultaat}
-Na enkele keren de Proof of Concept getest te hebben kan worden geconcludeerd dat het ook voldoet aan de tweede succesfactor. De tag verschijnt na het scannen in minder dan een seconde op de webapplicatie.
+Na enkele keren de Proof of Concept getest te hebben kan worden geconcludeerd dat het ook voldoet aan de tweede eis, de tag verschijnt na het scannen in minder dan een seconde op de webapplicatie.
 
 %% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
 %% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je

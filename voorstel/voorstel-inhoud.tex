@@ -53,17 +53,17 @@ Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange 
 \section{Methodologie}%
 \label{sec:methodologie}
 
-In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Uit de state-of-the-art bleek al dat WebUSB een potentiële oplossing is. Om verdere oplossingen te vinden zal er in het tweede fase van de bachelorproef een interview worden afgelegd bij de co-promotor, omdat hij een idee heeft voor een andere mogelijke oplossing. Dit idee omvat Windows Services en Server-sent events. Vervolgens zullen deze potentiële oplossingen (indien mogelijk) worden uitgewerkt tot een Proof of Concept. En tenslotte zal er een vergelijkende studie worden gedaan op basis van de Proof of Concepts om te kijken welke mogelijke oplossing het beste is. De uiteindelijke PoC zal Jan De Nul dan kunnen gebruiken om MiFare cards in te lezen op hun webapplicatie. 
+In de eerste fase van het onderzoek zal er een literatuurstudie worden gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Als mogelijk alternatief zal er ook gekeken worden naar Windows Services en SignalR. Vervolgens zal elke potentiële oplossingen (indien mogelijk) worden uitgewerkt tot een Proof of Concept. Deze Proof of Concepts zullen de tag van de smartcard moeten kunnen uitlezen en ze op de webapplicatie doen verschijnen in een input veld. En tenslotte zal er een vergelijkende studie worden gedaan op basis van de Proof of Concepts om te kijken welke mogelijke oplossing het beste is. Bij het vergelijken zal er ten eerste worden gekeken of de Proof of Concept daadwerkelijk werkt en ten tweede zal de tag binnen een seconde op de webapplicatie zichtbaar moeten zijn. De uiteindelijke PoC zal Jan De Nul dan kunnen gebruiken om MiFare cards in te lezen op hun webapplicatie. 
 
 \begin{center}
-    \includegraphics[width=4cm]{flowChart3}
+    \includegraphics[width=4cm]{flowChart4}
 \end{center}
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat}%
 \label{sec:verwachte_resultaten}
 
-Het verwachte resultaat zal een werkende extensie/driver zijn die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Via die webapplicatie zal men de mogelijkheid hebben om toeganskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
+Het verwachte resultaat zal een werkende extensie/driver zijn die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Via die webapplicatie zal men de mogelijkheid hebben om toegangskaarten en maaltijdcheques in te scannen om zo het start/stop uur in te geven of gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
 
 \section{Verwachte conclusies}%
 \label{sec:Verwachte_conclusies}
