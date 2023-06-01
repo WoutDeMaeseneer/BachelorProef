@@ -31,30 +31,30 @@
 \maketitle
 
 \begin{abstract}
-Jan De Nul zoekt de beste manier om een kaartlezer te kunnen gebruiken binnen hun webapplicatie. In deze bachelorproef werd dit onderzocht. Twee mogelijke oplossingen werden hiervoor (wanneer mogelijk) uitgewerkt tot een Proof of Concept. Een werkte met WebUSB en de andere met een Windows Service en SignalR. Hierbij kwam de oplossing met Windows Service en SignalR als enigste werkende oplossing uit.
+Jan De Nul zoekt de beste manier om een kaartlezer te kunnen gebruiken binnen hun webapplicatie. In deze bachelorproef werd dit onderzocht. Twee mogelijke oplossingen werden hiervoor (wanneer mogelijk) uitgewerkt tot een Proof of Concept. Één werkte met WebUSB en de andere met een Windows Service en SignalR. Hier kwam de oplossing met Windows Service en SignalR als enigste werkende oplossing uit.
 \end{abstract}
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
 \section{Introductie}
 
-Stel dat het gebouw moet geëvacueerd worden, maar je weet niet wie er zich allemaal in het gebouw bevindt, toegangspassen zijn daarvoor de oplossing.
-Om Toegangspassen en maaltijdcheques (MiFare- of chipkaarten) in te scannen heeft Jan De Nul een webapplicatie nodig die met een card reader deze kaarten rechtstreeks kan inlezen in de browser, hiervoor moet WebUSB worden gebruikt of een extensie/driver worden voorzien.
+Stel dat het gebouw moet geëvacueerd worden, maar er is niet geweten wie er zich allemaal in het gebouw bevindt, toegangspassen zijn daarvoor de oplossing.
+Om toegangspassen en maaltijdcheques in te scannen heeft Jan De Nul een webapplicatie nodig die met een card reader deze kaarten rechtstreeks kan inlezen in de browser, hiervoor moet WebUSB worden gebruikt of een driver worden voorzien.
 Wat is de beste manier om een card reader te verbinden met een webapplicatie in de browser? 
 Er zal een Proof of Concept worden gemaakt die zal worden gebruikt binnen de badges webapplicatie van Jan De Nul. Deze webapplicatie zal onder andere nieuwe kaarten aan het systeem moeten kunnen toevoegen. Er zal dus een MiFare-kaart worden gescand en de tag van de kaart zal via de Proof of Concept op de site verschijnen zodat deze kan worden toegevoegd in het systeem.
 
 \section{Onderzoek}
-Er zijn niet veel manieren te vinden over hoe een kaartlezer kan worden gebruikt binnen een webapplicatie. WebUSB kwam na de literatuurstudie als enige mogelijke oplossing naar boven die al wordt ondersteund door browsers. De tweede mogelijke oplossing kwam er na een interview met Anton D'hondt. Hij had het idee om met behulp van een Windows Service en SignalR de kaart data door te sturen naar de webapplicatie telkens er een kaart tegen de reader wordt gehouden. Vervolgens werden de mogelijke oplossingen (wanneer mogelijk) uitgewerkt tot een Proof of Concept. Tenslotte werd er nog gecheckt of de tag binnen de seconde op de webapplicatie terechtkwam.
+WebUSB kwam na de literatuurstudie als enige mogelijke oplossing naar boven die al wordt ondersteund door browsers. De tweede mogelijke oplossing kwam er na een interview met Anton D'hondt. Hij had het idee om met behulp van een Windows Service en SignalR de kaart data door te sturen naar de webapplicatie. Vervolgens werden de mogelijke oplossingen (wanneer mogelijk) uitgewerkt tot een Proof of Concept. Tenslotte werd er nog gecheckt of de tag binnen de seconde op de webapplicatie verschijnt.
 
 %\section{Sectie met figuur}
 
 %De {\LaTeX} figure-omgeving bepaalt zelf waar een afbeelding komt en dat is meestal niet op de plek in de tekst waar de figure-omgeving gedefinieerd wordt. Als je wilt forceren dat afbeeldingen toch in de flow van de tekst blijven, dan kan je dat zoals hieronder:
 
-%\begin{center}
-%  \captionsetup{type=figure}
- % \includegraphics[width=1.0\linewidth]{grail}
-%  \captionof{figure}{He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say `Ni' %again to you, if you do not appease us}
-%\end{center}
+\begin{center}
+  \captionsetup{type=figure}
+  \includegraphics[width=1.0\linewidth]{BP_voorbeeld_schema.drawio}
+  \captionof{figure}{Schema dat toont hoe het idee met Windows Service en SignalR in elkaar zit.}
+\end{center}
 
 %Let er wel op dat dit tot problemen met bladschikking kan leiden.
 
@@ -66,7 +66,7 @@ Het antwoord op de onderzoeksvraag biedt een meerwaarde voor Jan De Nul. Om de w
 
 \section{Toekomstig onderzoek}
 
-Bijkomend onderzoek is nodig om de Proof of Concept te laten werken met andere soorten smartcards. In de toekomst in Jan De Nul namelijk van plan om MiFare DESFire kaarten te gaan gebruiken. En de het zal ook de bedoeling zijn om maaltijdcheque kaarten te gebruiken. De maaltijdcheque kaarten zijn gelijkaardig aan bankkaarten, ze bevatten een chip en kunnen ook draadloos worden gebruikt. Deze kaarten werken dus met iets andere technologie waardoor er nog toekomstig onderzoek zal moeten worden gedaan om de Proof of Concept aan te passen zodat deze werkt met deze technologie.
+Bijkomend onderzoek is nodig om de Proof of Concept te laten werken met andere soorten smartcards. In de toekomst is Jan De Nul namelijk van plan om MiFare DESFire kaarten te gaan gebruiken. En de het zal ook de bedoeling zijn om maaltijdcheque kaarten te gebruiken. De maaltijdcheque kaarten zijn gelijkaardig aan bankkaarten, ze bevatten een chip en kunnen ook draadloos worden gebruikt. Deze kaarten werken dus met iets andere technologie waardoor er nog toekomstig onderzoek zal moeten worden gedaan om de Proof of Concept aan te passen zodat deze werkt met deze technologie.
 
 \end{multicols}
 \end{document}
