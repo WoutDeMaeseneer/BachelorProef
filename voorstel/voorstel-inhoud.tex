@@ -3,7 +3,7 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Voor het inlezen van MiFare kaarten worden card readers gebruikt. Deze worden vaak verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat echter onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web applicatie. Zo kunnen bijvoorbeeld toegangspassen worden ingelezen. Dit is handig om te weten wie er zich in het gebouw bevindt voor moest het gebouw geëvacueerd worden bijvoorbeeld.
+Voor het inlezen van MiFare kaarten worden card readers gebruikt. Deze worden deze verbonden met een web app die op de computer zelf draait. Echter, in deze bachelorproef gaat er onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web applicatie. Op deze manier kunnen bijvoorbeeld toegangspassen worden ingelezen. Dit is handig om te weten wie er zich in het gebouw bevindt, voor het geval het gebouw bijvoorbeeld geëvacueerd moet worden.
 
 %---------- Stand van zaken ---------------------------------------------------
 
@@ -11,27 +11,30 @@ Voor het inlezen van MiFare kaarten worden card readers gebruikt. Deze worden va
 \label{sec:state-of-the-art}
 
 \subsection{Wat is een browser extensie}
-Op \textcite{Desktop.com} is te lezen dat een browser extensie een klein software programmatje is dat kan gebruikt worden om je web browser aan te passen en te verbeteren. Een extensie kan bestaande functies van de browser aanpassen of nieuwe toevoegen. Ook kan het aanpassen hoe de browser eruit ziet.
-Een extensie kan bijvoorbeeld worden gebruikt om advertenties te blokkeren. Of om video's te downloaden van het internet.
+Op \textcite{Desktop.com} is te lezen dat een browser extensie een klein software programmatje is dat gebruikt kan worden om je web browser aan te passen en te verbeteren. Daarnaast kan een extensie bestaande functies van de browser aanpassen of nieuwe functies toevoegen. Bovendien kan het de manier waarop de browser eruitziet aanpassen.
+Een extensie kan bijvoorbeeld worden gebruikt om advertenties te blokkeren. Daarnaast kan het worden gebruikt om video's van het internet te downloaden.
+
 
 \subsection{Wat is een driver}
-Volgens \textcite{Webopedia} zorgen drivers voor de verbinding tussen een operating system en een hardware device of software applicatie. Zonder de drivers zou de hardware en software niet (goed) werken. Drivers vertellen aan de hardware of applicatie hoe ze moeten functioneren. Dit gebeurt aan de hand van requests. Enkele apparaten die gebruik maken van driver zijn: Printers, Controllers, Modems en \textbf{Card readers}.
+Volgens \textcite{Webopedia} zorgen drivers voor de verbinding tussen een operating system en een hardware device of software applicatie. Zonder de drivers zou de hardware en software niet (goed) werken. Bovendien vertellen drivers aan de hardware of applicatie hoe ze moeten functioneren. Dit gebeurt aan de hand van requests. Enkele apparaten die gebruik maken van drivers zijn onder andere printers, controllers, modems en \textbf{card readers}.
 
 \subsection{Wat is een MiFare kaart}
-MiFare is de naam die de fabrikant aan deze kaart heeft gegeven. Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger vooral populair waren als transport passen. Maar tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data kan op worden bewaard dankzij de technologische mogelijkheden van de kaart.
-De MiFare kaarten hebben net als andere contactloze kaarten een chip, die wanneer ze in het magnetisch veld van een card reader komen erop gaan reageren. Ook maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
+MiFare is de naam die de fabrikant aan deze kaart heeft gegeven. Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger vooral populair waren als transport passen. Echter, tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data op kan worden bewaard, dankzij de technologische mogelijkheden van de kaart.
+Net als andere contactloze kaarten hebben de MiFare kaarten een chip. Wanneer deze chip in het magnetisch veld van een card reader komen, zal deze erop reageren. Bovendien maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
 
 \subsection{Voordelen van MiFare kaart}
-Een MiFare kaart heeft volgens \textcite{Printplast} ook enkele voordelen. Het eerste voordeel is dat de kaart kan ingelezen worden van een maximum afstand van 10cm, wat de gebruiker een touch-and-go beleving geeft.
-Het maakt ook gebruik van een beveiligingsencryptie dat moeilijk te clonen is. Ook supporten MiFare kaarten een multi interface. Dit wil zeggen dat het buiten contactloos inlezen ook mogelijk is om de kaart met contact in te lezen. En tenslotte kan de technologie buiten kaarten ook gebruikt worden in bijvoorbeeld sleutelhangers en smartphones.
+Een MiFare kaart heeft volgens \textcite{Printplast} ook enkele voordelen. Ten eerste kan de kaart van een maximum afstand van 10cm worden ingelezen, wat de gebruiker een touch-and-go beleving geeft.
+Daarnaast maakt het gebruik van een beveiligingsencryptie die moeilijk te clonen is. Bovendien ondersteunen MiFare kaarten een multi interface. Dit betekent dat naast contactloos inlezen ook de mogelijkheid bestaat om de kaart met contact in te lezen. Tot slot kan de technologie niet alleen worden toegepast op kaarten, maar ook bijvoorbeeld op sleutelhangers en smartphones.
 
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
-Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel dingen worden gebruikt. Hier zijn enkele voorbeelden: Campus/studentenkaarten, transport tickets, event tickets, bib kaarten, hotelsleutelkaarten en bankkaarten.
+Door de vele voordelen van een MiFare kaart kan deze volgens \textcite{Digitalid} voor veel verschillende doeleinden worden gebruikt. Hier volgen enkele voorbeelden: Campus- en studentenkaarten, transporttickets, eventtickets, bibliotheekkaarten, hotelsleutelkaarten en bankkaarten.
 
 \subsection{Wat zijn Web NFC en Web USB}
-Volgens een artikel van \textcite{FrançoisBeaufortUSB} zorgt Web USB ervoor dat USB apparaat services kunnen worden gebruikt op het Web. Met deze API hebben hardware fabrikanten de mogelijkheid om cross-platform SDK’s te bouwen voor hun apparaten. Maar het belangrijkste voordeel is dat het USB veiliger maakt door het naar het Web te brengen.
-NFC staat voor ‘Near Field Communication’. De communicatie tussen het scan toestel en de tag gebeurt volgens \textcite{FrançoisBeaufortNFC} op een afstand van minder dan 10 centimeter. Web NFC zorgt ervoor dat je via sites read en write acties kan uitvoeren op een NFC tag die zich in de buurt van het scan toestel bevindt. Web NFC maakt gebruik van het NFC Data Exchange Format (NDEF) om data uit te wisselen. Omdat de security eigenschappen van NDEF makkelijker kwantificeerbaar zijn.
-Over het algemeen geldt dat als de kaartlezer een USB-interface gebruikt en nauwkeurige controle over de communicatie met het apparaat nodig is, Web USB waarschijnlijk de betere optie is. Als de kaartlezer NFC gebruikt en een hoogwaardige API nodig is voor het lezen en schrijven van NFC-tags, is Web NFC wellicht de betere optie.
+Volgens een artikel van \textcite{FrançoisBeaufortUSB} zorgt Web USB ervoor dat USB-apparaatservices kunnen worden gebruikt op het web. Met deze API hebben hardwarefabrikanten de mogelijkheid om cross-platform SDK's te bouwen voor hun apparaten. Het belangrijkste voordeel hiervan is dat het USB veiliger maakt door het naar het web te brengen.
+
+NFC staat voor "Near Field Communication". Volgens \textcite{FrançoisBeaufortNFC} vindt de communicatie tussen het scanapparaat en de tag plaats op een afstand van minder dan 10 centimeter. Met behulp van Web NFC kan men via websites lees- en schrijfacties uitvoeren op een NFC-tag die zich in de buurt van het scanapparaat bevindt. Web NFC maakt gebruik van het NFC Data Exchange Format (NDEF) voor gegevensuitwisseling omdat de beveiligingseigenschappen van NDEF gemakkelijker kwantificeerbaar zijn.
+
+Over het algemeen geldt dat als de kaartlezer een USB-interface gebruikt en nauwkeurige controle over de communicatie met het apparaat nodig is, Web USB waarschijnlijk de betere optie is. Aan de andere kant, als de kaartlezer NFC gebruikt en een geavanceerde API vereist is voor het lezen en schrijven van NFC-tags, is Web NFC wellicht de betere optie.
 
 \subsection{Stappen om de driver te maken}
 Om de driver te maken die ervoor moet zorgen dat de kaartlezer met de browser kan worden verbonden kunnen over het algemeen de volgende stappen worden gevolgd:
@@ -44,10 +47,10 @@ Om de driver te maken die ervoor moet zorgen dat de kaartlezer met de browser ka
 \end{itemize}
 
 \subsection{Server-Sent Events}
-Server-sent Evens zorgen volgens \textcite{DigitalOceanSSE} voor real-time updates van data in een webapplicatie. Aan de client kant voorziet het hiervoor de EventSource API. Met behulp van deze API kan er geconnecteerd worden met de server en updates ontvangen. Dus als de server een update verstuurt dan gaat de client side deze data van de server meteen ontvangen en kan de website direct worden geüpdate.
+Server-sent Events zorgen, volgens \textcite{DigitalOceanSSE}, voor real-time updates van data in een webapplicatie. Aan de clientkant wordt hiervoor de EventSource API gebruikt. Door middel van deze API kan er een verbinding worden gemaakt met de server en kunnen updates worden ontvangen. Dit betekent dat wanneer de server een update verstuurt, de client direct deze data van de server ontvangt en de website direct kan worden bijgewerkt.
 
 \subsection{Windows Services}
-Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange tijd runnen. Ze kunnen automatisch worden opgestart wanneer de computer wordt gestart en maken geen gebruik van een interface. Services draaien dus vaak op de achtergrond zonder dat de gebruiker er iets van merkt. Via de Windows Service Manager kunnen services worden beheert. Een service is in dit geval ideaal om de MiFare kaart uit te lezen en de data ervan door te sturen. Door de kaart op de card reader te leggen kan de service de data van die kaart behandelen voor de gebruiker.
+Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange tijd blijven draaien. Ze kunnen automatisch worden opgestart wanneer de computer wordt gestart en hebben geen gebruikersinterface. Hierdoor draaien services vaak op de achtergrond zonder dat de gebruiker er iets van merkt. Via de Windows Service Manager kunnen services worden beheerd. In het geval van het uitlezen van een MiFare kaart en het doorsturen van de data ervan, is een service ideaal. Door de kaart op de card reader te plaatsen, kan de service de gegevens van die kaart verwerken voor de gebruiker.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
