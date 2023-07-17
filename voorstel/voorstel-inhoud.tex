@@ -55,8 +55,9 @@ Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
-
-In de eerste fase van het onderzoek wordt er een literatuurstudie gedaan over het maken van een driver, MiFare- en smartcards en de card reader. Als mogelijk alternatief wordt er ook gekeken naar Windows Services en SignalR. Vervolgens wordt elke potentiële oplossingen indien mogelijk uitgewerkt tot een Proof of Concept. Deze Proof of Concepts zullen de tag van de smartcard moeten kunnen uitlezen en ze op de webapplicatie doen verschijnen in een input veld. En tenslotte wordt er een vergelijkende studie gedaan op basis van de Proof of Concepts. Om te kijken welke mogelijke oplossing het beste is. Bij het vergelijken wordt er ten eerste gekeken of de Proof of Concept daadwerkelijk werkt en ten tweede wordt de tag binnen een seconde op de webapplicatie getoond. De uiteindelijke PoC wordt door Jan De Nul HR gebruikt om MiFare cards in te lezen op hun webapplicatie. 
+In de eerste fase van het onderzoek wordt er een literatuurstudie gedaan over het maken van een driver, MiFare- en smartcards, en de card reader. Als mogelijk alternatief wordt er ook gekeken naar Windows Services en SignalR. Vervolgens worden, indien mogelijk, alle potentiële oplossingen uitgewerkt tot een Proof of Concept. Deze Proof of Concepts moeten in staat zijn om de tag van de smartcard uit te lezen en deze te tonen in een inputveld op de webapplicatie.
+Daarna wordt er een vergelijkende studie uitgevoerd op basis van de Proof of Concepts om te bepalen welke mogelijke oplossing het beste is. Bij het vergelijken wordt er ten eerste gekeken of de Proof of Concept daadwerkelijk werkt, en ten tweede wordt er beoordeeld of de tag binnen een seconde op de webapplicatie wordt getoond.
+De uiteindelijke Proof of Concept zal door Jan De Nul HR worden gebruikt om MiFare-kaarten in te lezen op hun webapplicatie.
 
 \begin{center}
     \includegraphics[width=4cm]{flowChart4}
@@ -65,10 +66,8 @@ In de eerste fase van het onderzoek wordt er een literatuurstudie gedaan over he
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat}%
 \label{sec:verwachte_resultaten}
-
-Het verwachte resultaat is een werkende extensie/driver die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Vervolgens worden de toegangskaarten of maaltijdcheques via die webapplicatie ingescand om zo het start/stop uur in te geven. Of om gebruik te kunnen maken van de cheques door de persoon die gelinkt is aan de kaart.
+Het verwachte resultaat is een werkende extensie/driver die ervoor zorgt dat een webapplicatie MiFare kaarten rechtstreeks in kan lezen in de browser. Met behulp van deze extensie/driver kunnen vervolgens de toegangskaarten of maaltijdcheques worden gescand via de webapplicatie. Dit stelt gebruikers in staat om start- en stoptijden in te voeren of om gebruik te maken van de maaltijdcheques die aan de kaart zijn gekoppeld.
 
 \section{Verwachte conclusies}%
 \label{sec:Verwachte_conclusies}
-
-Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De PoC zal aantonen dat dit mogelijk is en dat er dus MiFare kaarten ingescand kunnen worden in de web app. Waardoor die gebruik zal kunnen maken van data op de kaart om toegangskaarten of maaltijdcheques te kunnen beheren. Hopelijk vloeit uit dit onderzoek een PoC die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De Proof of Concept (PoC) zal aantonen dat dit haalbaar is en dat MiFare kaarten kunnen worden ingelezen in de web app. Hierdoor kan de web app gebruikmaken van de data op de kaart om toegangskaarten of maaltijdcheques te beheren. Hopelijk vloeit uit dit onderzoek een Proof of Concept die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
