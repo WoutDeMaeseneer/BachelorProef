@@ -10,11 +10,11 @@
 
 % Invoegen bibliografiebestand
 \addbibresource{voorstel.bib}
-
+\usepackage{parskip}
 % Informatie over de opleiding, het vak en soort opdracht
 \studyprogramme{Professionele bachelor toegepaste informatica}
 \course{Bachelorproef}
-\assignmenttype{Onderzoeksvoorstel}
+\assignmenttype{Paper: Onderzoeksvoorstel}
 % Voor een voorstel in het Engels, haal de volgende 3 regels uit commentaar
 % \studyprogramme{Bachelor of applied information technology}
 % \course{Bachelor thesis}
@@ -23,7 +23,7 @@
 \academicyear{2022-2023} % TODO: pas het academiejaar aan
 
 % TODO: Werktitel
-\title{Ontwikkeling van een driver/extensie voor het inlezen van MiFare- en chipkaarten in een webapplicatie: Een vergelijkende studie en proof of concept.}
+\title{Ontwikkeling van een driver/extensie voor het inlezen van chipkaarten in een webapplicatie: Een vergelijkende studie en proof of concept.}
 
 % TODO: Studentnaam en emailadres invullen
 \author{Wout De Maeseneer}
@@ -36,7 +36,7 @@
 % \email{yasmine.alaoui@student.hogent.be}
 
 % TODO: Geef de co-promotor op
-\supervisor[Co-promotor]{K. Lommens (Jan De Nul, \href{mailto:Kevin.Lommens@jandenul.com}{Kevin.Lommens@jandenul.com})}
+\projectrepo{https://github.com/WoutDeMaeseneer/BachelorProef}
 
 % Binnen welke specialisatierichting uit 3TI situeert dit onderzoek zich?
 % Kies uit deze lijst:
@@ -56,7 +56,7 @@
     
     \begin{abstract}
         Stel dat het gebouw moet geëvacueerd worden, maar je weet niet wie er zich allemaal in het gebouw bevindt. In dat geval zijn toegangspassen de oplossing.
-        Om Toegangspassen en maaltijdcheques (MiFare- of chipkaarten) in te scannen, heeft Jan De Nul een webapplicatie nodig die met een card reader deze kaarten rechtstreeks kan inlezen in de browser. Hiervoor moet een extensie/driver worden voorzien.
+        Om toegangspassen en maaltijdcheques (MiFare- of chipkaarten) in te scannen, heeft Jan De Nul een webapplicatie nodig die met een card reader deze kaarten rechtstreeks kan inlezen in de browser. Hiervoor moet een extensie/driver worden voorzien.
         Maar wat is de beste manier om een extensie/driver te maken die een card reader rechtstreeks kan verbinden met een webapplicatie in de browser?
         Als Proof of Concept zal er een webapplicatie worden gemaakt die m.b.v. die extensie/driver MiFare- of chipkaarten direct zal kunnen inlezen in de web app met een card reader. Deze web-app zal kunnen dienen voor het gebruik van toegangskaarten, zowel voor werknemers als bezoekers van het gebouw.
     \end{abstract}
