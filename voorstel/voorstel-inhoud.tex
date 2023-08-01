@@ -3,7 +3,7 @@
 \section{Introductie}%
 \label{sec:introductie}
 \paragraph{}
-Voor het inlezen van MiFare kaarten worden card readers gebruikt. Deze worden deze verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat er onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web applicatie. Zo kunnen bijvoorbeeld toegangspassen worden ingelezen. Dit is handig om te weten wie er zich in het gebouw bevindt, voor het geval het gebouw bijvoorbeeld geëvacueerd moet worden.
+Voor het inlezen van smartcards worden card readers gebruikt. Het is de bedoeling dat die worden verbonden met een web app die op de computer zelf draait. In deze bachelorproef gaat er onderzoek worden gedaan naar een driver/extensie die het mogelijk maakt om de card reader te verbinden met een web applicatie. Zo kunnen bijvoorbeeld toegangspassen en maaltijdcheques worden ingelezen. Dit is bijvoorbeeld handig om te weten wie er zich in het gebouw bevindt, voor als het gebouw geëvacueerd moet worden.
 
 %---------- Stand van zaken ---------------------------------------------------
 
@@ -13,25 +13,25 @@ Voor het inlezen van MiFare kaarten worden card readers gebruikt. Deze worden de
 \bigskip
 \subsection{Wat is een browser extensie}
 \paragraph{}
-Op \textcite{Desktop.com} is te lezen dat een browser extensie een klein software programma is dat gebruikt kan worden om je web browser aan te passen en te verbeteren. Daarnaast kan een extensie bestaande functies van de browser aanpassen of nieuwe functies toevoegen. Bovendien kan het de manier waarop de browser eruitziet aanpassen.
-Een extensie kan bijvoorbeeld worden gebruikt om advertenties te blokkeren. Daarnaast kan het worden gebruikt om video's van het internet te downloaden.
+Op \textcite{Desktop.com} is te lezen dat een browser extensie een klein software programma is dat gebruikt kan worden om je web browser aan te passen en te verbeteren. Daarnaast kan een extensie bestaande functies van de browser aanpassen of nieuwe functies toevoegen. Bovendien kan het aanpassen hoe de browser eruitziet.
+Een extensie kan bijvoorbeeld worden gebruikt om advertenties te blokkeren of om video's van het internet te downloaden.
 
 \bigskip
 \subsection{Wat is een driver}
 \paragraph{}
-Volgens \textcite{Webopedia} zorgen drivers voor de verbinding tussen een operating system en een hardware device of software applicatie. Zonder de drivers zou de hardware en software niet (goed) werken. Bovendien vertellen drivers aan de hardware of applicatie hoe ze moeten functioneren. Dit gebeurt aan de hand van requests. Enkele apparaten die gebruik maken van drivers zijn onder andere printers, controllers, modems en \textbf{card readers}.
+Volgens \textcite{Webopedia} zorgen drivers voor de verbinding tussen een operating system en een hardware device of software applicatie. Zonder de drivers zou de hardware en software niet (goed) werken. Bovendien vertellen drivers aan de hardware of applicatie hoe ze moeten functioneren. Hiervoor wordt gebruik gemaakt van requests. Enkele apparaten die gebruik maken van drivers zijn printers, controllers, modems en \textbf{card readers}.
 
 \bigskip
 \subsection{Wat is een MiFare kaart}
 \paragraph{}
-MiFare is de naam die de fabrikant aan deze kaart heeft gegeven. Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger vooral populair waren als transport passen. Echter, tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data op kan worden bewaard, dankzij de technologische mogelijkheden van de kaart.
-Net als andere contactloze kaarten hebben de MiFare kaarten een chip. Wanneer deze chip in het magnetisch veld van een card reader komen, zal deze erop reageren. Bovendien maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
+Volgens \textcite{Digitalid} zijn MiFare kaarten contactloze kaarten die vroeger vooral populair waren als transport passen. Echter, tegenwoordig hebben ze hun populariteit vooral te danken aan het feit dat er data op kan worden bewaard, dankzij de technologische mogelijkheden van de kaart. MiFare is de naam die de fabrikant aan deze kaart heeft gegeven. 
+Net als andere contactloze kaarten hebben MiFare kaarten een chip. Wanneer deze chip in het magnetisch veld van een card reader komt zal deze erop reageren. Bovendien maken ze gebruik van de ISO14443A industry-standard en werken ze op een frequentie van 13.56MHz.
 
 \bigskip
 \subsection{Voordelen van MiFare kaart}
 \paragraph{}
 Een MiFare kaart heeft volgens \textcite{Printplast} ook enkele voordelen. Ten eerste kan de kaart van een maximum afstand van 10cm worden ingelezen, wat de gebruiker een touch-and-go beleving geeft.
-Daarnaast maakt het gebruik van een beveiligingsencryptie die moeilijk te clonen is. Bovendien ondersteunen MiFare kaarten een multi interface. Dit betekent dat naast contactloos inlezen ook de mogelijkheid bestaat om de kaart met contact in te lezen. Tot slot kan de technologie niet alleen worden toegepast op kaarten, maar ook bijvoorbeeld op sleutelhangers en smartphones.
+Daarnaast maakt het gebruik van een beveiligingsencryptie die moeilijk te clonen is. MiFare kaarten ondersteunen ook een multi interface. Dit betekent dat naast contactloos inlezen ook de mogelijkheid bestaat om de kaart met contact in te lezen. Ten slotte kan de technologie niet alleen worden toegepast op kaarten, maar ook bijvoorbeeld op sleutelhangers en smartphones.
 
 \bigskip
 \subsection{Waarvoor worden MiFare kaarten gebruikt}
@@ -50,13 +50,13 @@ Over het algemeen geldt dat als de kaartlezer een USB-interface gebruikt en nauw
 \bigskip
 \subsection{Server-sent events}
 \paragraph{}
-Server-sent events zorgen, volgens \textcite{DigitalOceanSSE}, voor real-time updates van data in een webapplicatie. Aan de clientkant wordt hiervoor de EventSource API gebruikt. Door middel van deze API kan er een verbinding worden gemaakt met de server en kunnen updates worden ontvangen. Dit betekent dat wanneer de server een update verstuurt, de client direct deze data van de server ontvangt en de website direct kan worden bijgewerkt.
+Server-sent events zorgen, volgens \textcite{DigitalOceanSSE} voor real-time updates van data in een webapplicatie. Aan de clientkant wordt hiervoor de EventSource API gebruikt. Door middel van deze API kan er een verbinding worden gemaakt met de server en kunnen er updates ontvangen worden. Dit betekent dat wanneer de server een update verstuurt, de client direct deze data van de server ontvangt en de website direct kan worden bijgewerkt.
 
 \bigskip
 \subsection{Windows Services}
 \paragraph{}
-Server-sent events kunnen binnen een Windows Service worden gebruikt om data van de service te versturen naar de frontend.
-Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange tijd blijven draaien. Ze kunnen automatisch worden opgestart wanneer de computer wordt gestart en hebben geen gebruikersinterface. Hierdoor draaien services vaak op de achtergrond zonder dat de gebruiker er iets van merkt. Via de Windows Service Manager kunnen services worden beheerd. In het geval van het uitlezen van een MiFare kaart en het doorsturen van de data ervan, is een service ideaal. Door de kaart op de card reader te plaatsen, kan de service de gegevens van die kaart verwerken voor de gebruiker.
+Server-sent events kunnen in combinatie met een Windows Service worden gebruikt om smartcard data van de service te versturen naar de frontend.
+Windows services zijn volgens \textcite{MicrosoftWS} applicaties die voor lange tijd blijven draaien. Ze kunnen automatisch worden opgestart wanneer de computer wordt gestart en hebben geen gebruikersinterface. Hierdoor draaien services vaak op de achtergrond zonder dat de gebruiker er iets van merkt. Via de Windows Service Manager kunnen services worden beheerd. In het geval van het uitlezen van een MiFare kaart en het doorsturen van de data ervan, is een service ideaal. Door de kaart op de card reader te plaatsen, kan in de service de gegevens van die kaart verwerken voor de gebruiker.
 
 %---------- Methodologie ------------------------------------------------------
 \bigskip
@@ -82,4 +82,4 @@ Het verwachte resultaat is een werkende extensie/driver die ervoor zorgt dat een
 \section{Verwachte conclusies}%
 \label{sec:Verwachte_conclusies}
 \paragraph{}
-Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De Proof of Concept (PoC) zal aantonen dat dit haalbaar is en dat MiFare kaarten kunnen worden ingelezen in de web app. Hierdoor kan de web app gebruikmaken van de data op de kaart om toegangskaarten of maaltijdcheques te beheren. Hopelijk vloeit uit dit onderzoek een Proof of Concept die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
+Uit deze bachelorproef moet duidelijk blijken dat het mogelijk is om een card reader rechtstreeks te verbinden met een web app vanuit de browser. De Proof of Concept zal aantonen dat dit haalbaar is en dat MiFare kaarten kunnen worden ingelezen in de web app. Hierdoor kan de web app gebruikmaken van de data op de kaart om toegangskaarten of maaltijdcheques te beheren. Hopelijk vloeit uit dit onderzoek een Proof of Concept die klaar is voor de consument die opzoek is naar een extensie/driver voor het inlezen van chipkaarten in zijn webapplicatie.
